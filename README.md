@@ -1,6 +1,5 @@
 # sjr-new-geoitbi
 
-
 - Admin: representa o módulo administrativo do geoitbi
 - App: representa o app react do geoitbi, na pasta public possui o webapp dojo (legado)
 - Api: representa o backend da área admin e do geoitbi para o filtro de transmissões e login

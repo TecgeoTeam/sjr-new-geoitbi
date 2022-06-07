@@ -1,0 +1,104 @@
+2018-10-17 08:39:38 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Administrator\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\projetos\geo_integration_jb\server.js --log "Geo_Integration wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2018-10-17 08:39:38 - Started 14108
+2018-11-27 09:13:36 - Stopping geo_integration.exe
+2018-11-27 09:13:36 - Finished geo_integration.exe
+2018-11-27 09:14:52 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Administrator\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\projetos\geo_integration_jb\server.js --log "Geo_Integration wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2018-11-27 09:14:52 - Started 29304
+2018-11-27 09:16:03 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Administrator\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\projetos\geo_integration_jb\server.js --log "Geo_Integration wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2018-11-27 09:16:03 - Started 18320
+2018-11-27 09:17:15 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Administrator\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\projetos\geo_integration_jb\server.js --log "Geo_Integration wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2018-11-27 09:17:15 - Started 10660
+2018-11-27 09:18:28 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Administrator\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\projetos\geo_integration_jb\server.js --log "Geo_Integration wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2018-11-27 09:18:28 - Started 3820
+2018-11-27 09:19:40 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Administrator\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\projetos\geo_integration_jb\server.js --log "Geo_Integration wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2018-11-27 09:19:40 - Started 6416
+2018-11-27 09:19:44 - Stopping geo_integration.exe
+2018-11-27 09:19:44 - ProcessKill 6416
+2018-11-27 09:19:45 - Found child process: 29096 Name: conhost.exe
+2018-11-27 09:19:45 - Stopping process 29096
+2018-11-27 09:19:45 - Send SIGINT 29096
+2018-11-27 09:19:46 - SIGINT to 29096 failed - Killing as fallback
+2018-11-27 09:19:46 - Stopping process 6416
+2018-11-27 09:19:46 - Send SIGINT 6416
+2018-11-27 09:19:46 - SIGINT to 6416 failed - Killing as fallback
+2018-11-27 09:19:46 - Finished geo_integration.exe
+2018-11-29 10:37:01 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Administrator\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\projetos\geo_integration_jb\server.js --log "Geo_Integration wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2018-11-29 10:37:01 - Started 18556
+2018-11-29 14:48:30 - Stopping geo_integration.exe
+2018-11-29 14:48:30 - ProcessKill 18556
+2018-11-29 14:48:30 - Found child process: 10504 Name: conhost.exe
+2018-11-29 14:48:30 - Found child process: 29100 Name: node.exe
+2018-11-29 14:48:31 - Stopping process 10504
+2018-11-29 14:48:31 - Send SIGINT 10504
+2018-11-29 14:48:31 - SIGINT to 10504 failed - Killing as fallback
+2018-11-29 14:48:32 - Stopping process 29100
+2018-11-29 14:48:32 - Send SIGINT 29100
+2018-11-29 14:48:32 - SIGINT to 29100 failed - Killing as fallback
+2018-11-29 14:48:32 - Stopping process 18556
+2018-11-29 14:48:32 - Send SIGINT 18556
+2018-11-29 14:48:32 - SIGINT to 18556 failed - Killing as fallback
+2018-11-29 14:48:32 - Finished geo_integration.exe
+2018-11-29 14:48:35 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Administrator\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\projetos\geo_integration_jb\server.js --log "Geo_Integration wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2018-11-29 14:48:35 - Started 5484
+2018-12-11 16:47:24 - Stopping geo_integration.exe
+2018-12-11 16:47:24 - ProcessKill 5484
+2018-12-11 16:47:24 - Found child process: 28616 Name: conhost.exe
+2018-12-11 16:47:24 - Found child process: 20708 Name: node.exe
+2018-12-11 16:47:25 - Stopping process 28616
+2018-12-11 16:47:25 - Send SIGINT 28616
+2018-12-11 16:47:25 - SIGINT to 28616 failed - Killing as fallback
+2018-12-11 16:47:26 - Stopping process 20708
+2018-12-11 16:47:26 - Send SIGINT 20708
+2018-12-11 16:47:26 - SIGINT to 20708 failed - Killing as fallback
+2018-12-11 16:47:26 - Stopping process 5484
+2018-12-11 16:47:26 - Send SIGINT 5484
+2018-12-11 16:47:26 - SIGINT to 5484 failed - Killing as fallback
+2018-12-11 16:47:26 - Finished geo_integration.exe
+2018-12-11 16:47:41 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Administrator\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\projetos\geo_integration_jb\server.js --log "Geo_Integration wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2018-12-11 16:47:41 - Started 14016
+2018-12-19 10:28:16 - Stopping geo_integration.exe
+2018-12-19 10:28:16 - ProcessKill 14016
+2018-12-19 10:28:16 - Found child process: 6084 Name: conhost.exe
+2018-12-19 10:28:16 - Found child process: 20892 Name: node.exe
+2018-12-19 10:28:17 - Stopping process 6084
+2018-12-19 10:28:17 - Send SIGINT 6084
+2018-12-19 10:28:17 - SIGINT to 6084 failed - Killing as fallback
+2018-12-19 10:28:18 - Stopping process 20892
+2018-12-19 10:28:18 - Send SIGINT 20892
+2018-12-19 10:28:18 - SIGINT to 20892 failed - Killing as fallback
+2018-12-19 10:28:18 - Stopping process 14016
+2018-12-19 10:28:18 - Send SIGINT 14016
+2018-12-19 10:28:18 - SIGINT to 14016 failed - Killing as fallback
+2018-12-19 10:28:18 - Finished geo_integration.exe
+2018-12-19 10:28:19 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Administrator\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\projetos\geo_integration_jb\server.js --log "Geo_Integration wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2018-12-19 10:28:19 - Started 25676
+2018-12-19 10:52:53 - Stopping geo_integration.exe
+2018-12-19 10:52:53 - ProcessKill 25676
+2018-12-19 10:52:53 - Found child process: 17640 Name: conhost.exe
+2018-12-19 10:52:53 - Found child process: 9532 Name: node.exe
+2018-12-19 10:52:54 - Stopping process 17640
+2018-12-19 10:52:54 - Send SIGINT 17640
+2018-12-19 10:52:54 - SIGINT to 17640 failed - Killing as fallback
+2018-12-19 10:52:55 - Stopping process 9532
+2018-12-19 10:52:55 - Send SIGINT 9532
+2018-12-19 10:52:55 - SIGINT to 9532 failed - Killing as fallback
+2018-12-19 10:52:55 - Stopping process 25676
+2018-12-19 10:52:55 - Send SIGINT 25676
+2018-12-19 10:52:55 - SIGINT to 25676 failed - Killing as fallback
+2018-12-19 10:52:55 - Finished geo_integration.exe
+2018-12-19 10:52:55 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Administrator\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\projetos\geo_integration_jb\server.js --log "Geo_Integration wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2018-12-19 10:52:55 - Started 1692
+2018-12-20 08:21:52 - Stopping geo_integration.exe
+2018-12-20 08:21:52 - ProcessKill 1692
+2018-12-20 08:21:53 - Found child process: 20320 Name: conhost.exe
+2018-12-20 08:21:53 - Found child process: 12496 Name: node.exe
+2018-12-20 08:21:54 - Stopping process 20320
+2018-12-20 08:21:54 - Send SIGINT 20320
+2018-12-20 08:21:54 - SIGINT to 20320 failed - Killing as fallback
+2018-12-20 08:21:55 - Stopping process 12496
+2018-12-20 08:21:55 - Send SIGINT 12496
+2018-12-20 08:21:55 - SIGINT to 12496 failed - Killing as fallback
+2018-12-20 08:21:55 - Stopping process 1692
+2018-12-20 08:21:55 - Send SIGINT 1692
+2018-12-20 08:21:55 - SIGINT to 1692 failed - Killing as fallback
+2018-12-20 08:21:55 - Finished geo_integration.exe

@@ -1,0 +1,13 @@
+{
+  "showLegend": true,
+  "hide":["TRANSMISSÃO","CONDOMINIO","UNIDADES NÃO CONTEMPLADAS","UNIDADES","PROP. COMPROM. - NÃO PRIORITÁRIO","LOTE - NÃO PRIORITÁRIO", "PROP. COMPROM.","LOTE"],
+  "contextMenu": {
+    "ZoomTo": true,
+    "Transparency": true,
+    "EnableOrDisablePopup": false,
+    "MoveupOrMovedown": false,
+    "OpenAttributeTable": true,
+    "DescriptionOrShowItemDetailsOrDownload": false
+  },
+  "layerOptions": {}
+}

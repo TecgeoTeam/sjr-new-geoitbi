@@ -1,0 +1,143 @@
+	<div>
+	<div class="my-title barAzul" ><label class="labelBar">Cadastrar Pesquisa</label></div>
+	<button class="btn btn-danger font-btns voltarCadastrar" onclick="fecharCadastrar()"><span class="glyphicon glyphicon-circle-arrow-left"></span> Voltar</button>
+	<!-- conteudo -->
+	<div style="margin-top: 3px;" class="div-filtro" align="center">
+	<label style="margin-top: 3px;">Nova Pesquisa</label>
+	</div>
+	<div class="row row-cadastrar">
+		<div class="col-xs-12">
+		<table class="table table-condensed table-hover table-cadastrar">
+			<tr>
+				<td class="td-middle"><span>Data da Pesquisa</span></td>
+				<td><!-- <input class="form-control input-height" type="date" name="" id="dataDeCadastro"> -->
+					  <div class="input-group date form_date" data-date="" data-link-field="dtp_input2">
+    <input class="form-control input-tipo-valor input-height" type="text" id="dataDeCadastro" >
+    <span class="input-group-addon input-group-addon-calendar"><span class="glyphicon glyphicon-remove"></span></span>
+    <span class="input-group-addon input-group-addon-calendar"><span class="glyphicon glyphicon-calendar"></span></span>
+  </div>
+				</td>
+			</tr>
+			<tr>
+				<td class="td-middle"><span>Fonte da Pesquisa</span></td>
+				<td><select class="form-control input-height" id="fontePesquisa">
+					<option></option>
+					<option>Campo</option>
+					<option>Site</option>
+					</select></td>
+			</tr>
+			<tr>
+				<td class="td-middle"><span>Tipo do Ímovel</span></td>
+				<td><select class="form-control input-height" id="tipoImovel" onchange="hideByTipoImovel()">
+					<option></option>
+					<option>Predial</option>
+					<option>Territorial</option>
+					</select></td>
+			</tr>
+			<tr>
+				<td class="td-middle"><span>Valor de Mercado</span></td>
+				<td><input oninput="validity.valid||(value='');" type="number" min="0" class="form-control input-height" name="" id="valorMercado"></td>
+			</tr>
+			<tr>
+				<td class="td-middle"><span>Tipo do Lote</span></td>
+				<td><select class="form-control input-height" id="tipoLote">
+					<option></option>
+					<option>Lote</option>
+					<option>Gleba</option>
+					</select></td>
+			</tr>
+			<tr>
+				<td class="td-middle"><span>Área do Terreno (m²)</span></td>
+				<td><input oninput="validity.valid||(value='');" type="number" min="0" class="form-control input-height " name="" id="areaTerreno"></td>
+			</tr>
+
+			<tr  id="trTipologia" disabled>
+				<td class="td-middle" ><span>Tipologia</span></td>
+				<td><select class="form-control input-height" id="tipologia" disabled>
+					<option></option>
+					<option>Apartamento</option>
+					<option>Casa</option>
+					<option>Comercial com Residencial</option>
+					<option>Edificio Comercial</option>
+					<option>Galpao</option>
+					<option>Loja_Sala_Conjunto</option>
+					<option>Sobrado</option>
+					<option>Sobrado Colonial</option>
+					</select></td>
+			</tr>
+			<tr  id="trPadrao">
+				<td class="td-middle"><span>Padrão</span></td>
+				<td><select class="form-control input-height" id="padrao" disabled>
+					<option></option>
+					<option>Baixo</option>
+					<option>Médio</option>
+					<option>Alto</option>
+					</select></td>
+			</tr>
+			<tr  id="trIdade">
+				<td class="td-middle"><span>Idade</span></td>
+				<td><input oninput="validity.valid||(value='');" type="number" min="0" class="form-control input-height" name="" id="idade" disabled></td>
+			</tr>
+			<tr  id="trAreaUtil">
+				<td><span>Área Útil (m²)</span></td>
+				<td><input oninput="validity.valid||(value='');" type="number" min="0" class="form-control input-height " name="" id="areaUtil" disabled></td>
+			</tr>
+			<tr  id="trConservacao">
+				<td class="td-middle"><span>Conservação</span></td>
+				<td><select class="form-control input-height" id="conservacao" disabled>
+					<option></option>
+					<option>Precária</option>
+					<option>Regular</option>
+					<option>Boa</option>
+					<option>Ótima</option>
+					</select></td>
+			</tr>
+			<tr  id="trQuarto">
+				<td class="td-middle"><span>Quartos</span></td>
+				<td><input oninput="validity.valid||(value='');" type="number" min="0" class="form-control input-height" name="" id="quarto" disabled></td>
+			</tr>
+
+			<tr  id="trBanheiro">
+				<td class="td-middle" ><span>Banheiros</span></td>
+				<td><input oninput="validity.valid||(value='');" type="number" min="0" class="form-control input-height" name="" id="banheiro" disabled></td>
+			</tr>
+			<tr  id="trGaragem">
+				<td class="td-middle"><span>Garagem</span></td>
+				<td><input oninput="validity.valid||(value='');" type="number" min="0" class="form-control input-height" name="" id="garagem" disabled></td>
+			</tr>
+			<tr  id="trPavimento">
+				<td class="td-middle"><span>Pavimento</span></td>
+				<td><input oninput="validity.valid||(value='');" type="number" min="0" class="form-control input-height" name="" id="pavimento" disabled></td>
+			</tr>
+			<tr  id="trTipoPavimento">
+				<td class="td-middle"><span>Tipo do Pavimento</span></td>
+				<td><select class="form-control input-height" id="tipoPavimento" disabled>
+					<option></option>
+					<option>Antepo</option>
+					<option>Asfalto</option>
+					<option>Paralelepipedo</option>
+					</select></td>
+			</tr>
+
+			<tr class="success">
+				<td colspan="2"><input type="file" name="arquivos" onchange="previewFile()"  accept="image/png, image/jpeg" id="cadastroPesquisaPhoto" /></td>
+			</tr>
+		</table>
+		</div>
+		<div class="row row-cadastrar-obs">
+			<div class="col-xs-12 div-col-cadastrar">
+			<span>Observação</span>
+			<textarea class="form-control" cols="48" rows="2" id="observacao"></textarea>
+			</div>
+		</div>
+
+	</div>
+	<div style="margin-top: 10px;">
+		<button class="btn btn-success btn-block" onclick="novoCadastro()"><span class="glyphicon glyphicon-ok"></span> Cadastrar</button>
+	</div>
+	<!-- fim do conteudo -->
+	<!-- <div class="div-frame" align="center">
+		<label>Clique no mapa para cadastrar uma pesquisa!</label>
+	</div> -->
+	</div>
+	<script src="widgets/FiltroPesq/dialogCadastrar.js"></script>

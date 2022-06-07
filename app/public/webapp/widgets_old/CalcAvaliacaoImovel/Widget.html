@@ -1,0 +1,89 @@
+<div>
+	<div id="ToasterPane"> </div>
+	<div id="snackbar-calculo">Carregando...</div>
+	<div id="snackbar-error-calculo">Carregando...</div>
+	<div id="messagesCalculoDiv" style="position:fixed;left: 30%;"></div>
+
+	<div style="margin-top: -5px">
+		<form>
+			<div class="input-group" style="margin-bottom: 5px">
+				<input type="text" list="containerGeocodes" class="form-control" placeholder="Inscrição Imobiliária" id="geocode" onkeypress='return event.charCode >= 48 && event.charCode <= 57' onkeyup='activeBuscarCalculo(event)' maxlength="17">
+				<datalist id="containerGeocodes"></datalist>
+                <span class="input-group-btn">
+                <button class="btn btn-danger" type="button" id="searchImovelButton" data-dojo-attach-event="click:searchImovel" style="font-size: 14px" disabled>Buscar</button>
+                <button class="btn btn-default btn-info-calc" type="button" data-dojo-attach-event="click:buttonAction"><span class="glyphicon glyphicon-info-sign" style="color: #ba0001; font-size: 15px"></span></button>
+				</span>
+			</div>
+		</form>
+	</div>
+
+	<div class="panel panel-default" style="margin-bottom: 5px">
+		<div style="display:block; height: 165px; overflow-y: scroll">
+			<table style="margin-bottom: 0px" class="table table-condensed" id="unidadeTable">
+
+			</table>
+		</div>
+	</div>
+
+	<div align="center" style="margin-bottom: 5px">
+		<button id="visualizarNoMapaButton" style="width: 250px;" type="button" class="btn btn-danger" data-dojo-attach-event="click:goToLayer" disabled>
+       <span class="glyphicon glyphicon-globe"></span> Visualizar no Mapa
+    </button>
+        <!--<button id="exportResultCalculo" style="" type="button" class="btn btn-danger" data-dojo-attach-event="click:exportResultCalculo" disabled>
+            <span class="glyphicon glyphicon-file"></span> Exportar
+        </button>-->
+		<button id="calculoLimparButton" type="button" class="btn btn-default" data-dojo-attach-event="click:clearGraphics" disabled>
+        <span class="glyphicon glyphicon-trash"></span> Limpar
+    </button>
+	</div>
+	<script type="text/javascript">
+		console.log(tdis);
+	</script>
+
+	<div class="panel panel-default" style="margin-bottom: 5px">
+		<div class="panel-heading">Estimativa de valores</div>
+		<table style="font-size: 10px" class="table" id="estimativaTable">
+			<tr>
+				<td><strong>Valor</strong></td>
+				<td class="alert alert-success"><strong>Mínimo</strong></td>
+				<td class="alert alert-warning"><strong>Médio</strong></td>
+				<td class="alert alert-danger"><strong>Máximo</strong></td>
+			</tr>
+			<tr>
+				<td class="td-gray"><strong>Terreno</strong></td>
+				<td class="alert alert-success"></td>
+				<td class="alert alert-warning"></td>
+				<td class="alert alert-danger"></td>
+			</tr>
+			<tr>
+				<td class="td-gray"><strong>Edificação</strong></td>
+				<td class="alert alert-success"></td>
+				<td class="alert alert-warning"></td>
+				<td class="alert alert-danger"></td>
+			</tr>
+			<tr>
+				<td class="td-gray"><strong>Total</strong></td>
+				<td class="alert alert-success"></td>
+				<td class="alert alert-warning"></td>
+				<td class="alert alert-danger"></td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="panel panel-default" style="margin-bottom: 10px">
+		<div class="panel-heading">3ª Avaliação</div>
+		<form class="form-inline" style="width: 100%">
+			<div class="form-group" style="width: 100%">
+				<label class="sr-only" for="exampleInputAmount">Definir (em reais)</label>
+				<div class="input-group" style="width: 341px;">
+					<div class="input-group-addon" style="border-radius: 0; border: 0;">R$</div>
+					<input id="terceiraAvaliacaoInput" type="text" class="money form-control" placeholder="Ex.: 100.000,00" disabled>
+					<input id="terceiraAvaliacaoBancaria" type="text" class="money form-control" placeholder="Avaliação Bancária (R$)" disabled>
+					<span class="input-group-btn">
+            <button id="terceiraAvaliacaoButton" class="btn btn-success" type="button" style="border-radius: 0" data-dojo-attach-event="click:saveTerceiraAvaliacao" disabled>Definir</button>
+        </span>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

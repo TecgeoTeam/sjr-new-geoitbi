@@ -1,0 +1,8 @@
+{
+  "serviceURL": "http://www.senocwb.com/senoportal/rest/services/IMPRESSAO/Impressao/GPServer/Export%20Web%20Map",
+  "defaultTitle": "Mapa - GeoITBI",
+  "defaultAuthor": "Prefeitura Municipal de São José de Ribamar",
+  "defaultCopyright": "",
+  "defaultFormat": "PDF",
+  "defaultLayout": "Letter ANSI A Landscape"
+}

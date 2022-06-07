@@ -1,0 +1,77 @@
+/*@import url('https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+
+}
+
+html, body, #root {
+    height: 100%;
+}
+
+body{
+    font: 14px 'Nunito', sans-serif;
+    background: #ecf1f8;
+    color:#333;
+    -webkit-font-smoothing:antialiased !important;
+}
+
+.tableFlexRow {
+    display: flex;
+}
+
+.tableFlexColumn {
+    flex: 50%;
+    padding: 4px;
+    border: 1px solid #dfdede;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.tableFlexColumn_bg1 {
+    background-color:#f1f1f1;
+}
+.tableFlexColumn_bg1 strong {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+
+    -ms-word-break: break-all;
+    /* This is the dangerous one in WebKit, as it breaks things wherever */
+    word-break: break-all;
+    /* Instead use this non-standard one: */
+    word-break: break-word;
+
+    /* Adds a hyphen where the word breaks, if supported (No Blink) */
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+.tableFlexColumn_bg2 {
+    background-color:#f8f8f8;
+}
+.tableFlexColumn_bg2 span {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+
+    -ms-word-break: break-all;
+    /* This is the dangerous one in WebKit, as it breaks things wherever */
+    word-break: break-all;
+    /* Instead use this non-standard one: */
+    word-break: break-word;
+
+    /* Adds a hyphen where the word breaks, if supported (No Blink) */
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+
+.esri-popup__header-title {
+    cursor: move;
+ }

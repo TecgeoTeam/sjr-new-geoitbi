@@ -1,0 +1,204 @@
+<div>
+  <div id="snackbar-transmissao">Carregando...</div>
+  <div id="snackbar-error-transmissao">Carregando...</div>
+<div id="messagesTransmissaoDiv" style="position:fixed;left: 30%;"></div>
+  <div class="spinner-tec" id="spinner-filtro-transmissao" style="display: none">
+    <div class="loading-container">
+        <div data-dojo-attach-point="imgDiv" class="img-div">
+          <img data-dojo-attach-point="loadingImg" src="jimu.js/images/loading2.gif">
+        </div>
+        <p data-dojo-attach-point="textNode"></p>
+    </div>
+  </div>
+<div class="div-filtro" style="height: 113px;">
+  <div class="input-date">
+  <div class="input-group date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2">
+    <input class="form-control input-tipo-valor-trans input-height disabled-white" type="text" id="filtroTransmissaoInputDe" disabled>
+    <!-- <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span> -->
+    <span class="input-group-addon input-group-addon-calendar"><span class="glyphicon glyphicon-calendar"></span></span>
+  </div>
+  </div>
+  <div class="span-ate">a</div>
+  <div class="input-date">
+  <div class="input-group date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2">
+    <input class="form-control input-tipo-valor-trans input-height disabled-white" type="text" id="filtroTransmissaoInputAte" disabled>
+    <!-- <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span> -->
+    <span class="input-group-addon input-group-addon-calendar"><span class="glyphicon glyphicon-calendar"></span></span>
+  </div>
+  </div>
+  <div style="margin-bottom: 4px;">
+    <label class="label-padding">Coluna:</label>
+    <label style="margin-left: -27px;">Operador:</label>
+    <label class="label-padding" style="margin-left: 8px;">Valor:</label>
+  </div>
+  <!--select do critério-->
+  <div class="div-left input-padding">
+    <select class="form-control input-tipo-valor-trans input-height" id="criterioInputTransmissao" onchange="showTransmisaoDiv(this)">
+      <option>Geocódigo da Unidade</option>
+      <option>ID da Transmissao</option>
+      <option>Tipo do Ímovel</option>
+      <option>Tipologia</option>
+      <option>Padrão</option>
+      <option>Idade</option>
+      <option>Área Construída</option>
+      <option>Conservação</option>
+      <!--<option>Garagem</option>-->
+      <option>Pavimento</option>
+    </select>
+  </div>
+  <!--fim do select do valor-->
+  <div class="div-left input-padding">
+  <div class="text-center">
+  <div class="form-group" id="operadorPesquisaInput">
+      <div class="btn-group user_toggle" data-toggle="buttons">
+          <label class="btn btn-default btn-default-cond btn-sm active btn-equals" id="operadorTransmissaoIgualLabel">
+              <input type="radio" checked="checked" id="operadorTransmissaoIgual" name="default_branding" value="Igual" autocomplete="off" > =
+          </label>
+          <label class="btn btn-default btn-default-cond btn-sm btn-equals" id="operadorTransmissaoDiferenteLabel">
+              <input type="radio"  name="default_branding" id="operadorTransmissaoDiferente" value="Diferente" autocomplete="off"> ≠
+          </label>
+          <br>
+          <label class="btn btn-default btn-default-cond btn-sm btn-equals btn-equals-2nd" id="operadorTransmissaoMenorqueLabel">
+              <input type="radio"  name="default_branding" id="operadorTransmissaoMenorque" value="Menor que" autocomplete="off"> <
+          </label>
+          <label class="btn btn-default btn-default-cond btn-sm btn-equals btn-equals-2nd" id="operadorTransmissaoMaiorqueLabel">
+              <input type="radio"  name="default_branding" id="operadorTransmissaoMaiorque" value="Maior que" autocomplete="off"> >
+          </label>
+      </div>
+  </div>
+</div>
+  </div>
+  <!--select do valor-->
+  <div id="criteriosDivTransmissao">
+    <div class="div-left input-padding" id="geocodigoSTMTransmissao" style="display: block;">
+      <input type="text" class="form-control input-tipo-valor-trans input-height" name="" id="geocodigoSTMTransmissaoInput">
+    </div>
+    <div class="div-left input-padding" id="idTransmissao" style="display: none;">
+      <input type="text" class="form-control input-tipo-valor-trans input-height" name="" id="idTransmissaoInput">
+    </div>
+    <div class="div-left input-padding" id="tipoImovelDivTransmissao" style="display: none;">
+      <select class="form-control input-tipo-valor-trans input-height" id="tipoImovelTransmissaoInput">
+        <option>PREDIAL</option>
+        <option>TERRITORIAL</option>
+      </select>
+    </div>
+    <div class="div-left input-padding" id="tipologiaDivTransmissao" style="display: none;">
+      <select class="form-control input-tipo-valor-trans input-height" id="tipologiaTransmissaoInput">
+        <!--<option>Apartamento de Frente</option>
+        <option>Apartamento de Fundo</option>
+        <option value="31-APARTAMENTO">Apartamento Térreo</option>
+        <option>Barraco</option>
+        <option value="15-CASA">Casa</option>
+        <option>Cobertura Metálica</option>
+        <option value="92-COM./RESIDÊNCIA">Comercial com Residência</option>
+        <option>Depósito</option>
+        <option>Edificação Complementar</option>
+        <option>Edifício Comercial</option>
+        <option value="66-GALPÃO">Galpão</option>
+        <option>Garagem</option>
+        <option>Indústria</option>
+        <option value="89-POSTO DE SERVIÇO">Posto de serviço</option>
+        <option value="86-SALA/CONJUNTO">Loja/Sala/Conjunto</option>
+        <option>NULL</option>
+        <option>Palafita</option>
+        <option>Sobrado</option>
+        <option>Sobrado Colonial</option>
+        <option>Telheiro</option>
+        <option>Templo</option>-->
+        <option value="APARTAMENTO">Apartamento</option>
+        <option value="CASA">Casa</option>
+        <option value="BARRACO">Barraco</option>
+        <option value="TELHEIRO">Telheiro</option>
+        <option value="SALA/CONJUNTO">Sala/Conjunto</option>
+        <option value="EDICULA">Edicula</option>
+        <option value="LOJA">Loja</option>
+        <option value="COM/RESIDÊNCIA">Comercial com Residência</option>
+        <option value="POSTO DE SERVIÇO">Posto de Serviço</option>
+        <option value="EDI. COMERCIAL">Edificio Comercial</option>
+        <option value="INDÚSTRIA">Indústria</option>
+        <option value="COBERTURA METÁLICA">Cobertura Metálica</option>
+        <option value="GARAGEM">Garagem</option>
+        <option value="DEPÓSITO">Depósito</option>
+        <option value="GALPÃO">Galpão</option>
+        <option value="TEMPLO">Templo</option>
+        <option value="SOBRADO">Sobrado</option>
+        <option value="PALAFITA">Palafita</option>
+        <option value="NULL">Não Definido (NULL)</option>
+      </select>
+    </div>
+    <div class="div-left input-padding" id="padraoDivTransmissao" style="display: none;">
+     <select class="form-control input-tipo-valor-trans input-height" id="padraoTransmissaoInput">
+        <!--<option>1 - ALTO</option>
+        <option>2 - MEDIO</option>
+        <option>3 - BAIXO</option>-->
+        <option>ALTO</option>
+        <option>MEDIO</option>
+        <option>BAIXO</option>
+      </select>
+    </div>
+    <div class="div-left input-padding" id="idadeDivTransmissao" style="display: none;">
+     <input type="number" min="0" class="form-control input-tipo-valor-trans input-height" name="" id="idadeTransmissaoInput">
+    </div>
+    <div class="div-left input-padding" id="areaUtilDivTransmissao" style="display: none;">
+      <input type="number" min="0" class="form-control input-tipo-valor-trans input-height input-number-tec" name="" id="areaUtilTransmissaoInput">
+    </div>
+    <div class="div-left input-padding" id="conservacaoDivTransmissao" style="display: none;">
+      <select class="form-control input-tipo-valor-trans input-height" id="conservacaoTransmissaoInput">
+        <!--<option value="88-ÓTIMA">1-ÓTIMA</option>
+        <option value="87-BOA">2-BOA</option>
+        <option value="86-REGULAR">3-REGULAR</option>
+        <option value="90-PRECÁRIA">4-PRECARIA</option>-->
+        <option value="OTIMA">OTIMA</option>
+        <option value="BOA">BOA</option>
+        <option value="REGULAR">REGULAR</option>
+        <option value="PRECARIA">PRECARIA</option>
+      </select>
+    </div>
+    <!--<div class="div-left input-padding" id="garagemDivTransmissao" style="display: none;">
+      <input type="number" min="0" class="form-control input-tipo-valor-trans input-height" name="" id="garagemTransmissaoInput">
+    </div>-->
+    <div class="div-left input-padding" id="pavimentoDivTransmissao" style="display: none;">
+      <input type="number" min="0" class="form-control input-tipo-valor-trans input-height" name="" id="pavimentoTransmissaoInput">
+    </div>
+  </div>
+  <button class="btn btn-danger btn-plus font-btns" data-dojo-attach-event="click:addParametroTransmissao"><span class="glyphicon glyphicon-plus" aria-hidden="true" ></span></button>
+</div>
+
+  <div class="div-filtro">
+    <label>Condição:</label>
+    <button class="btn btn-default btn-trash font-btns" data-dojo-attach-event="click:limparFiltroTransmissao" id="btnlimparFiltroTransmissao" onclick="delAllParametroTransmissao()" disabled>Limpar filtros</button>
+    <div class="table-condicao-div-transmissao">
+      <table class="table table-condensed table-condicao table-hover" id="parametroTransmissaoTable">
+      <thead>
+        <tr>
+          <th class="th-condicao">Coluna</th>
+          <th class="th-condicao">Operador</th>
+          <th class="th-condicao">Valor</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+      </table>
+    </div>
+    <div align="right">
+      <button class="btn btn-success" data-dojo-attach-event="click:filtroTransmissao" id="btnAplicarTransmissao" disabled><span class="glyphicon glyphicon-ok" ></span> Aplicar</button>
+    </div>
+  </div>
+
+  <div class="div-filtro-pesquisas">
+    <label>Transmissões</label>
+    <button class="btn btn-danger btn-export font-btns" id="btnExport" data-dojo-attach-event="click:exportarTransmissao" disabled><span class="glyphicon glyphicon-paste"></span> Exportar</button>
+    <div class="table-pesquisa-div" id="table_wrapper">
+      <table class="table table-condensed table-hover table-bordered" id="table-filtro-Transmissao">
+
+      </table>
+    </div>
+    <div class="div-pesquisa-btn">
+      <button class="btn btn-danger" id="zoomParaTodos" data-dojo-attach-event="click:zoomParaTodos" disabled><span class="glyphicon glyphicon-zoom-in"></span> Zoom para todos</button>
+    </div>
+    <div align="right" class="label-ocorrencias">
+      <label id="labelQtTransmissao"></label>
+    </div>
+  </div>
+
+</div>

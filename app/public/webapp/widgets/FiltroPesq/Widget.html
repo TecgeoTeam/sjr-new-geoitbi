@@ -1,0 +1,295 @@
+<div class="filtroPesq">
+  <div id="snackbar">Carregando...</div>
+  <div id="snackbar-error">Carregando...</div>
+  <div id="messagesPesquisaDiv" style="position:fixed;left: 30%;"></div>
+  <div class="spinner-tec" id="spinner-filtro-cadastro" style="display: none">
+    <div class="loading-container">
+        <div data-dojo-attach-point="imgDiv" class="img-div">
+          <img data-dojo-attach-point="loadingImg" src="jimu.js/images/loading2.gif">
+        </div>
+        <p data-dojo-attach-point="textNode"></p>
+    </div>
+  </div>
+
+  <div class="tab">
+    <button class="tablinks" onclick="openTab(event, 'tab1')" id="defaultOpen" style="width: 50%;">Cadastro</button>
+    <button class="tablinks" onclick="openTab(event, 'tab2')" style="width: 50%;" >Pesquisa</button>
+  </div>
+
+  <div id="tab1" class="tabcontent">
+
+<div class="div-filtro">
+	<div>
+  <div class="input-date-pesq">
+  <div class="input-group date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2">
+    <input class="form-control input-tipo-valor input-height disabled-white" type="text" id="filtroInputDe" disabled>
+    <!-- <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span> -->
+    <span class="input-group-addon input-group-addon-calendar"><span class="glyphicon glyphicon-calendar"></span></span>
+  </div>
+  </div>
+  <div class="span-ate">a</div>
+  <div class="input-date-pesq">
+  <div class="input-group date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2">
+    <input class="form-control input-tipo-valor input-height disabled-white" type="text" id="filtroInputAte" disabled>
+    <!-- <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span> -->
+    <span class="input-group-addon input-group-addon-calendar"><span class="glyphicon glyphicon-calendar"></span></span>
+  </div>
+  </div>
+  <div class="btn-group" role="group" style="display: table-cell; padding-left: 5px;">
+	<button title="Pesquisas do Usuário" type="button" class="btn btn-danger font-btns btn-filter-drop" data-dojo-attach-event="click:filtroCadastro"><i class="fa fa-filter" aria-hidden="true"></i></button>
+  <button title="Pesquisa por Clique no Mapa" type="button" class="btn btn-danger font-btns btn-filter-drop" data-dojo-attach-event="click:filtroCadastroByMapClick"><i class="fa fa-map-marker" aria-hidden="true"></i></button>
+  </div>
+  </div>
+</div>
+<div class="div-filtro">
+<label>Minhas Pesquisas</label>
+
+<button class="btn btn-default font-btns limpar-filtro-cadastrar" data-dojo-attach-event="click:limparFiltroCadastro">Limpar Filtro</button>
+	<div class="table-pesquisa-cadastro-div">
+	<table class="table table-condensed table-hover" id="table-filtro-cadastro">
+		<!-- <tr>
+			<th class="th-condicao">ID</th>
+			<th class="th-condicao">Proprietário</th>
+			<th class="th-condicao">Valor</th>
+			<th class="th-condicao">Cadastrador</th>
+			<th class="th-condicao">Padrão</th>
+			<th class="th-condicao">Idade</th>
+			<th class="th-condicao">Área</th>
+		</tr>
+		<tr>
+			<td>48</td>
+			<td>Michely Tavares</td>
+			<td>120.000,00</td>
+			<td>José</td>
+			<td>Baixo</td>
+			<td>01</td>
+			<td>50m²</td>
+		</tr>
+		<tr>
+			<td>20</td>
+			<td>Elton Ayres</td>
+			<td>240.000,00</td>
+			<td>Armando</td>
+			<td>Alto</td>
+			<td>12</td>
+			<td>320m²</td>
+		</tr>
+		<tr>
+			<td>65</td>
+			<td>Maria Antonieta</td>
+			<td>150.000,00</td>
+			<td>Carlos</td>
+			<td>Baixo</td>
+			<td>05</td>
+			<td>80m²</td>
+		</tr> -->
+	</table>
+	</div>
+   <div align="right" class="label-ocorrencias">
+      <label id="labelQtCadastros"></label>
+    </div>
+</div>
+<div class="btn-group" role="group" >
+  <button type="button" class="btn btn-danger" data-dojo-attach-event="click:activateTool">Cadastrar</button>
+  <button type="button" class="btn btn-danger" data-dojo-attach-event="click:buttonActionEditar" id="editarButton" disabled>Editar</button>
+</div>
+</div>
+<!-- fim da tab content 1 -->
+<div id="tab2" class="tabcontent">
+
+<div class="div-filtro" style="height: 113px;">
+  <div class="input-date">
+  <div class="input-group date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2">
+    <input class="form-control input-tipo-valor input-height disabled-white" type="text" id="filtroPesquisaInputDe" disabled>
+    <!-- <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span> -->
+    <span class="input-group-addon input-group-addon-calendar"><span class="glyphicon glyphicon-calendar"></span></span>
+  </div>
+  </div>
+  <div class="span-ate">a</div>
+  <div class="input-date">
+  <div class="input-group date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2">
+    <input class="form-control input-tipo-valor input-height disabled-white" type="text" id="filtroPesquisaInputAte" disabled>
+    <!-- <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span> -->
+    <span class="input-group-addon input-group-addon-calendar"><span class="glyphicon glyphicon-calendar"></span></span>
+  </div>
+  </div>
+  <div style="margin-bottom: 4px;">
+    <label class="label-padding">Coluna:</label>
+    <label style="margin-left: -27px;">Operador:</label>
+    <label class="label-padding" style="margin-left: 8px;">Valor:</label>
+  </div>
+  <!--select do critério-->
+  <div class="div-left input-padding">
+    <select class="form-control input-tipo-valor input-height" id="criterioInput" onchange="showDiv(this)">
+      <option>Tipo do Ímovel</option>
+      <option>Tipologia</option>
+      <option>Padrão</option>
+      <option>Idade</option>
+      <option>Área Útil</option>
+      <option>Conservação</option>
+      <option>Quartos</option>
+      <option>Fonte da Pesquisa</option>
+      <option>Banheiros</option>
+      <option>Garagem</option>
+      <option>Pavimento</option>
+      <option>Tipo do Pavimentação</option>
+      <option>Valor de Mercado</option>
+      <option>Tipo do Lote</option>
+      <option>Área do Terreno Cadastro</option>
+      <option>Área do Terreno Site</option>
+      <option>Observação</option>
+    </select>
+  </div>
+  <div class="div-left input-padding">
+   <!--  <select class="form-control input-tipo-valor input-height" id="operadorPesquisaInput">
+      <option>Igual</option>
+      <option>Diferente</option>
+    </select> -->
+<div class="text-center">
+  <div class="form-group" id="operadorPesquisaInput">
+      <div class="btn-group user_toggle" data-toggle="buttons">
+          <label class="btn btn-default btn-default-cond btn-sm active btn-equals" id="operadorPesquisaIgualLabel">
+              <input type="radio" checked="checked" id="operadorPesquisaIgual" name="default_branding" value="Igual" autocomplete="off" > =
+          </label>
+          <label class="btn btn-default btn-default-cond btn-sm btn-equals" id="operadorPesquisaDiferenteLabel">
+              <input type="radio"  name="default_branding" id="operadorPesquisaDiferente" value="Diferente" autocomplete="off"> ≠
+          </label>
+          <br>
+          <label class="btn btn-default btn-default-cond btn-sm btn-equals btn-equals-2nd" id="operadorPesquisaMenorqueLabel">
+              <input type="radio"  name="default_branding" id="operadorPesquisaMenorque" value="Menor que" autocomplete="off"> <
+          </label>
+          <label class="btn btn-default btn-default-cond btn-sm btn-equals btn-equals-2nd" id="operadorPesquisaMaiorqueLabel">
+              <input type="radio"  name="default_branding" id="operadorPesquisaMaiorque" value="Maior que" autocomplete="off"> >
+          </label>
+      </div>
+  </div>
+</div>
+  </div>
+	<!--fim do select do valor-->
+  <!--select do valor-->
+  <div id="criteriosDiv">
+    <div class="div-left input-padding" id="tipoImovelDiv" style="display: block;">
+      <select class="form-control input-tipo-valor input-height" id="tipoImovelInput">
+        <option>Predial</option>
+        <option>Territorial</option>
+      </select>
+    </div>
+    <div class="div-left input-padding" id="tipologiaDiv" style="display: none;">
+      <select class="form-control input-tipo-valor input-height" id="tipologiaInput">
+        <option>Apartamento</option>
+        <option>Casa</option>
+        <option>Comercial com Residencial</option>
+        <option>Edificio Comercial</option>
+        <option>Galpao</option>
+        <option>Loja_Sala_Conjunto</option>
+        <option>Sobrado</option>
+        <option>Sobrado Colonial</option>
+      </select>
+    </div>
+    <div class="div-left input-padding" id="padraoDiv" style="display: none;">
+      <select class="form-control input-tipo-valor input-height" id="padraoInput">
+        <option>Baixo</option>
+        <option>Médio</option>
+        <option>Alto</option>
+      </select>
+    </div>
+    <div class="div-left input-padding" id="idadeDiv" style="display: none;">
+      <input type="number" min="0" class="form-control input-tipo-valor input-height" name="" id="idadeInput">
+    </div>
+    <div class="div-left input-padding" id="areaUtilDiv" style="display: none;">
+      <input type="number" min="0" class="form-control input-tipo-valor input-height input-number-tec" name="" id="areaUtilInput">
+    </div>
+    <div class="div-left input-padding" id="conservacaoDiv" style="display: none;">
+      <select class="form-control input-tipo-valor input-height" id="conservacaoInput">
+        <option>Precária</option>
+        <option>Regular</option>
+        <option>Boa</option>
+        <option>Ótima</option>
+      </select>
+    </div>
+    <div class="div-left input-padding" id="quartoDiv" style="display: none;">
+      <input type="number" min="0" class="form-control input-tipo-valor input-height" name="" id="quartoInput">
+    </div>
+    <div class="div-left input-padding" id="fontePesquisaDiv" style="display: none;">
+      <select class="form-control input-tipo-valor input-height" id="fontePesquisaInput">
+        <option>Campo</option>
+        <option>Site</option>
+      </select>
+    </div>
+    <div class="div-left input-padding" id="banheiroDiv" style="display: none;">
+      <input type="number" min="0" class="form-control input-tipo-valor input-height" name="" id="banheiroInput">
+    </div>
+    <div class="div-left input-padding" id="garagemDiv" style="display: none;">
+      <input type="number" min="0" class="form-control input-tipo-valor input-height" name="" id="garagemInput">
+    </div>
+    <div class="div-left input-padding" id="pavimentoDiv" style="display: none;">
+      <input type="number" min="0" class="form-control input-tipo-valor input-height" name="" id="pavimentoInput">
+    </div>
+    <div class="div-left input-padding" id="tipoPavimentoDiv" style="display: none;">
+      <select class="form-control input-tipo-valor input-height" id="tipoPavimentoInput">
+        <option>Antepo</option>
+        <option>Asfalto</option>
+        <option>Paralelepipedo</option>
+      </select>
+    </div>
+    <div class="div-left input-padding" id="valorMercadoDiv" style="display: none;">
+      <input type="text" class="form-control input-tipo-valor input-height" name="" id="valorMercadoInput">
+    </div>
+    <div class="div-left input-padding" id="tipoLoteDiv" style="display: none;">
+      <select class="form-control input-tipo-valor input-height" id="tipoLoteInput">
+        <option>Lote</option>
+        <option>Gleba</option>
+      </select>
+    </div>
+    <div class="div-left input-padding" id="areaTerrenoCadastroDiv" style="display: none;">
+      <input type="number" min="0" class="form-control input-tipo-valor input-height input-number-tec" name="" id="areaTerrenoCadastroInput">
+    </div>
+    <div class="div-left input-padding" id="areaTerrenoSiteDiv" style="display: none;">
+      <input type="number" min="0" class="form-control input-tipo-valor input-height input-number-tec" name="" id="areaTerrenoSiteInput">
+    </div>
+    <div class="div-left input-padding" id="observacaoDiv" style="display: none;">
+      <input type="text" class="form-control input-tipo-valor input-height" name="" id="observacaoInput">
+    </div>
+  </div>
+	<button class="btn btn-danger btn-plus font-btns" data-dojo-attach-event="click:addParametroPesquisa"><span class="glyphicon glyphicon-plus" aria-hidden="true" ></span></button>
+</div>
+
+  <div class="div-filtro">
+    <label>Condição:</label>
+    <button class="btn btn-default btn-trash font-btns" data-dojo-attach-event="click:limparFiltroPesquisa" onclick="delAllParametroPesquisa()" id="btnlimparFiltroPesquisa" disabled>Limpar filtros</button>
+    <div class="table-condicao-div">
+      <table class="table table-condensed table-condicao table-hover" id="parametroPesquisaTable">
+        <thead>
+        <tr>
+          <th class="th-condicao">Coluna</th>
+          <th class="th-condicao">Operador</th>
+          <th class="th-condicao">Valor</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div align="right">
+      <button class="btn btn-success" data-dojo-attach-event="click:filtroPesquisa" id="btnAplicarPesquisas" disabled><span class="glyphicon glyphicon-ok" ></span> Aplicar</button>
+    </div>
+  </div>
+
+  <div class="div-filtro-pesquisas">
+    <label>Pesquisas</label>
+    <button class="btn btn-danger btn-export font-btns" id="btnExportPesquisas" data-dojo-attach-event="click:exportarPesquisas" disabled><span class="glyphicon glyphicon-paste"></span> Exportar</button>
+    <div class="table-pesquisa-div" id="table_wrapper_pesquisas">
+      <table class="table table-condensed table-hover table-bordered" id="table-filtro-pesquisa">
+      </table>
+    </div>
+    <div class="div-pesquisa-btn">
+      <button class="btn btn-danger" id="zoomParaTodosPesq" data-dojo-attach-event="click:zoomParaTodosPesq" disabled><span class="glyphicon glyphicon-zoom-in"></span> Zoom para todos</button>
+    </div>
+    <div align="right" class="label-ocorrencias">
+      <label id="labelQtPesquisas"></label>
+    </div>
+  </div>
+
+</div>
+
+</div>

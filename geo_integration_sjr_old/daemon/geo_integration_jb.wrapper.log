@@ -1,0 +1,32 @@
+2018-10-17 08:35:03 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Administrator\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\projetos\geo_integration_jb\server.js --log "Geo_integration_jb wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2018-10-17 08:35:03 - Started 10048
+2018-10-17 08:36:30 - Stopping geo_integration_jb.exe
+2018-10-17 08:36:30 - ProcessKill 10048
+2018-10-17 08:36:30 - Found child process: 18508 Name: conhost.exe
+2018-10-17 08:36:30 - Found child process: 15756 Name: node.exe
+2018-10-17 08:36:31 - Stopping process 18508
+2018-10-17 08:36:31 - Send SIGINT 18508
+2018-10-17 08:36:31 - SIGINT to 18508 failed - Killing as fallback
+2018-10-17 08:36:32 - Stopping process 15756
+2018-10-17 08:36:32 - Send SIGINT 15756
+2018-10-17 08:36:32 - SIGINT to 15756 failed - Killing as fallback
+2018-10-17 08:36:32 - Stopping process 10048
+2018-10-17 08:36:32 - Send SIGINT 10048
+2018-10-17 08:36:32 - SIGINT to 10048 failed - Killing as fallback
+2018-10-17 08:36:32 - Finished geo_integration_jb.exe
+2018-10-17 08:36:59 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\Administrator\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js --file C:\projetos\geo_integration_jb\server.js --log "Geo_integration_jb wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2018-10-17 08:36:59 - Started 13764
+2018-10-17 08:37:13 - Stopping geo_integration_jb.exe
+2018-10-17 08:37:13 - ProcessKill 13764
+2018-10-17 08:37:13 - Found child process: 11532 Name: conhost.exe
+2018-10-17 08:37:13 - Found child process: 18536 Name: node.exe
+2018-10-17 08:37:14 - Stopping process 11532
+2018-10-17 08:37:14 - Send SIGINT 11532
+2018-10-17 08:37:14 - SIGINT to 11532 failed - Killing as fallback
+2018-10-17 08:37:14 - Stopping process 18536
+2018-10-17 08:37:14 - Send SIGINT 18536
+2018-10-17 08:37:14 - SIGINT to 18536 failed - Killing as fallback
+2018-10-17 08:37:14 - Stopping process 13764
+2018-10-17 08:37:14 - Send SIGINT 13764
+2018-10-17 08:37:14 - SIGINT to 13764 failed - Killing as fallback
+2018-10-17 08:37:14 - Finished geo_integration_jb.exe

@@ -1,0 +1,57 @@
+{
+  "spatialReferences": [{
+                    "wkid": "3857",
+                    "label": "WGS_1984_Web_Mercator_Auxiliary_Sphere",
+                    "outputUnit": "DECIMAL_DEGREES",
+                    "transformationWkid": "",
+                    "transformationLabel": "",
+                    "transformForward": false,
+                    "options": {
+                        "sameSRWithMap": true,
+                        "isGeographicCS": false,
+                        "isGeographicUnit": true,
+                        "isProjectedCS": true,
+                        "isProjectUnit": false,
+                        "spheroidCS": 4326,
+                        "defaultUnit": "Meter",
+                        "unitRate": 1
+                    }
+                }, {
+                    "wkid": "3857",
+                    "label": "WGS_1984_Web_Mercator_Auxiliary_Sphere",
+                    "outputUnit": "DEGREE_MINUTE_SECONDS",
+                    "transformationWkid": "",
+                    "transformationLabel": "Transformation Name",
+                    "transformForward": false,
+                    "options": {
+                        "sameSRWithMap": true,
+                        "isGeographicCS": false,
+                        "isGeographicUnit": true,
+                        "isProjectedCS": true,
+                        "isProjectUnit": false,
+                        "spheroidCS": 4326,
+                        "defaultUnit": "Meter",
+                        "unitRate": 1
+                    }
+                }, {
+                    "wkid": "31983",
+                    "label": "SIRGAS_2000_UTM_Zone_23S",
+                    "outputUnit": "Meter",
+                    "transformationWkid": "1581",
+                    "transformationLabel": "SIRGAS_To_WGS_1984_1",
+                    "transformForward": false,
+                    "options": {
+                        "sameSRWithMap": false,
+                        "isGeographicCS": false,
+                        "isGeographicUnit": false,
+                        "isProjectedCS": true,
+                        "isProjectUnit": true,
+                        "spheroidCS": 4674,
+                        "defaultUnit": "Meter",
+                        "unitRate": 1
+                    }
+                }],
+  "decimalPlaces": 3,
+  "addSeparator": true,
+  "displayOrderLonLat": true
+}

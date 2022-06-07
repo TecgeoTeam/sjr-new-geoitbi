@@ -1,0 +1,86 @@
+  
+  .navbar{
+    padding: .1rem 1rem !important;
+  }
+  
+  
+  .btnSidebarWidget{
+    margin-left: 2px;
+  }
+  
+  .btnSidebarWidget:hover{
+    color:#dedede;
+  }
+  
+
+  .navbar {
+    z-index: 100;
+    box-shadow: 0 1px 6px 0 rgba(40,100,100,0.3);
+  }
+  
+  .btnMenu{
+    border-radius: 50%;
+    background: rgba(100, 40, 40, 0.5);
+    box-shadow: 0 1px 6px 0 rgba(56, 13, 13, 0.3);
+    margin-left: 4px;
+  }
+  
+  .btnMenu:hover{
+    border-radius: 50%;
+    background: rgba(100, 8, 8, 0.7);
+    box-shadow: 0 1px 6px 0 rgba(80, 35, 35, 0.3);
+  }
+  
+  .btnMenu:focus{
+    border-radius: 50%;
+    background: rgba(124, 44, 44, 0.6);
+    box-shadow: 0 1px 6px 0 rgba(212, 96, 96, 0.3);
+  }
+  
+  #measurementTools{
+    padding: 10px;;
+  }
+  
+  #layers-switch-btn{
+    border: none;
+  }
+
+
+.colAtributos{
+    height: 230px;
+    overflow-y: auto;
+    box-shadow: 0 1px 3px 0 rgba(40,100,100,0.3);
+    border-radius: 6px;
+}
+
+.colCalculo{
+    box-shadow: 0 1px 3px 0 rgba(40,100,100,0.3);
+    border-radius: 6px;
+}
+
+.mh3{
+    font-size: 15px;
+    font-weight: bold;
+    padding: 5px;
+    margin: 5px;
+}
+
+.rowSpacing{
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.headTableGreen{
+    background-color: #EEFEF1;
+    color: #4E9358;
+}
+
+.headTableYellow{
+    background-color: #F8F6D1;
+    color: #C1AE02;
+}
+
+.headTableRed{
+    background-color: #FFF5F5;
+    color: #C10202;
+}

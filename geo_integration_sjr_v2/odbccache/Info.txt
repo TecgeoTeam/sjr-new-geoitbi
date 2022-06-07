@@ -1,0 +1,59 @@
+Guia de Instalação Driver ODBC Node - Intersystems Cache DB 3.5
+
+##Versão do Driver Intersystems Cache DB
+ODBC.2018.1.2.309.0
+
+sudo apt install build-essential
+gcc --version
+
+sudo apt install make
+
+#Instalar Nodegyp (https://github.com/nodejs/node-gyp) em Python v2.7, v3.5, v3.6, v3.7, or v3.8
+npm install -g node-gyp
+
+sudo apt install unixodbc unixodbc-de
+
+
+# Acesse a pasta do driver (odbcdriver) na pasta lib na raiz de seu peojto
+e execute o comando
+./ODBCinstall
+
+#Instale a dependendia ODBC em seu projeto
+https://www.npmjs.com/package/odbc
+npm install odbc --save
+
+###Exemplo de código node usando a lib
+const odbc = require('odbc');
+
+exports.DoMigration = async function (req, res) {
+
+    const connection = await odbc.connect("DRIVER={/var/www/html/geo_integration_sjr/lib/odbccache_linux/ODBC-2018.1.2.309.0-lnxrhx64/bin/libcacheodbc35.so};SERVER=www2.tinus.com.br;PORT=56773;UID=tecgeoSJR;PWD=T3cG3@SJR;DATABASE=SAOJOSEDERIBAMAR;");
+
+    const result = await connection.query('SELECT * FROM TecGeo.Bairros');
+
+    const data = { message: result};
+
+    res.json(data);
+    
+};
+
+
+exports.DoMigrationCall = function (req, res) {
+    odbc.connect("DRIVER={/var/www/html/geo_integration_sjr/odbccache_linux/ODBC-2018.1.2.309.0-lnxrhx64/bin/libcacheodbc35.so};SERVER=www2.tinus.com.br;PORT=56773;UID=tecgeoSJR;PWD=T3cG3@SJR;DATABASE=SAOJOSEDERIBAMAR;", (error, connection) => {
+        if (error) {
+            const data = { message: error};
+            res.json(data);
+        } else{
+            connection.query('SELECT * FROM TecGeo.Bairros', (error2, result) => {
+                if (error2) {
+                    const data = { message: error2};
+                    res.json(data);
+                }else{
+                    const data = result;
+                    res.json(data);
+                }
+                
+            })
+        }
+     });
+};

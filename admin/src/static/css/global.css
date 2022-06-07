@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+
+}
+
+html, body, #root {
+    height: 100%;
+}
+
+body{
+    font: 14px 'Nunito', sans-serif;
+    background: #ecf1f8;
+    color:#333;
+    -webkit-font-smoothing:antialiased !important;
+}
+
+.tableFlexRow {
+    display: flex;
+}
+
+.tableFlexColumn {
+    flex: 50%;
+    padding: 4px;
+    border: 1px solid #dfdede;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.tableFlexColumn_bg1 {
+    background-color:#f1f1f1;
+}
+.tableFlexColumn_bg2 {
+    background-color:#f8f8f8;
+}
+
+/*-------------------- 2.3 Page Title Area -------------------*/
+
+.page-title-area {
+    padding: 0 20px;
+    background: #fff;
+    position: relative;
+}
+
+.page-title-area:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 4px;
+    height: 36px;
+    background: var(--primary-color);
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+}
+
+.page-title {
+    font-size: 22px;
+    font-weight: 300;
+    color: #313b3d;
+    letter-spacing: 0;
+    margin-right: 30px;
+    margin-top: 10px;
+    
+}
+
+ul.breadcrumbs {
+    margin-top: 4px;
+}
+
+.breadcrumbs li {
+    display: inline-block;
+}
+
+.breadcrumbs li a,
+.breadcrumbs li span {
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    color: #c91122;
+    letter-spacing: 0;
+    margin-right: 16px;
+    position: relative;
+}
+
+.breadcrumbs li a:before {
+    content: '/';
+    color: #768387;
+    position: absolute;
+    right: -13px;
+    top: 0;
+}
+
+.breadcrumbs li span {
+    margin-right: 0;
+    color: #768387;
+    text-transform: capitalize;
+}
+
+
+.main-content-inner {
+    padding: 0 30px 50px;
+}

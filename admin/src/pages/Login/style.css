@@ -1,0 +1,86 @@
+/* App brand */
+.app-brand {
+    position: relative;
+    display: block;
+    background-color: #2a3850; }
+    .app-brand a {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: 75px;
+      line-height: 75px;
+      width: 400px;
+      transition: width 0.3s ease-in-out;
+      padding-left: 1.56rem; }
+      @media (prefers-reduced-motion: reduce) {
+        .app-brand a {
+          transition: none; } }
+      @media (min-width: 768px) {
+        .app-brand a {
+          overflow: hidden; } }
+      .app-brand a img {
+        max-width: 80px;
+        vertical-align: middle; }
+    .app-brand .brand-name {
+      color: #ffffff;
+      font-size: 24px;
+      font-weight: 400;
+      margin-left: 0.94rem;
+      max-width: 300px;
+      text-decoration: none;
+     }
+
+
+    .card-header {
+      background-color: #2a3850;
+    }
+
+    .btn-blue-dark {
+      background-color: #2a3850;
+      color: #ffffff;
+    }
+
+    .btn-blue-dark:hover {
+      background-color: #1d2839;
+      color: #d1d1d1;
+    }
+
+    .toastMsg{
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 1000;
+    }
+
+    .form-signin {
+      width: 100%;
+      max-width: 330px;
+      padding: 15px;
+      margin: 0 auto;
+      background-color: rgba(255, 255, 255, 0.822);
+      border-radius: 6px;
+      
+    }
+    .form-signin .checkbox {
+      font-weight: 400;
+    }
+    .form-signin .form-control {
+      position: relative;
+      box-sizing: border-box;
+      height: auto;
+      padding: 10px;
+      font-size: 16px;
+    }
+    .form-signin .form-control:focus {
+      z-index: 2;
+    }
+    .form-signin input[type="email"] {
+      margin-bottom: -1px;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+    .form-signin input[type="password"] {
+      margin-bottom: 10px;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }

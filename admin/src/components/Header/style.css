@@ -1,0 +1,59 @@
+/* Mobile Menu */
+.mobileMenu{
+    display:none;
+  }
+  
+  #mobileMenuPanel{
+    display:none;
+  }
+  
+  #mobileMenuPanelBtnOpen{
+    display:block;
+  }
+  
+  #mobileMenuPanelBtnClose{
+    display:none;
+  }
+  
+  
+  
+  /* Large devices (desktops, 992px and up)*/
+  @media (max-width: 991.98px) {  
+    .mobileMenu{
+      display:block;
+    }
+  
+    .defaultMenu{
+      display:none;
+    }
+  
+    .mobileFont{
+      font-size: 12px !important;
+    }
+  
+  }
+  
+  .has-hidden {
+    display: none !important;
+  }
+
+  .sidenav100{
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 100%; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1009; /* Stay on top */
+    top: 65px; /* Stay at the top */
+    right: 0px;
+    min-height: 100%;
+    padding: 7px;
+    background-color: #fff;
+    box-shadow: 0 1px 6px 0 rgba(40,100,100,0.3);
+    overflow-x: hidden;
+    overflow-y: auto;
+  
+    -webkit-animation: fadein .2s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein .2s; /* Firefox < 16 */
+     -ms-animation: fadein .2s; /* Internet Explorer */
+      -o-animation: fadein .2s; /* Opera < 12.1 */
+         animation: fadein .2s;
+  }

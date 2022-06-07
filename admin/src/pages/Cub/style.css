@@ -1,0 +1,9 @@
+#modalPermissoes{
+    width:80% !important;
+}
+
+@media (min-width: 576px){
+    #modalPermissoes {
+        max-width:80% !important;
+    }
+}

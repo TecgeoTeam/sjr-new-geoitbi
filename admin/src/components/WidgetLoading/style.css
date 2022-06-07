@@ -1,0 +1,14 @@
+.loading_widget_centered{
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:#007bff;
+    overflow: hidden;
+}
+  
+.scaleLoader_widget_panel {
+    margin: 0 auto;
+}

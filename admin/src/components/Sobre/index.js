@@ -1,6 +1,6 @@
 import React from 'react';
-import {Modal, Button}  from "react-bootstrap";
-import './style.css'
+import { Button, Modal } from "react-bootstrap";
+import './style.css';
 
 class Sobre extends React.Component {
 
@@ -24,7 +24,7 @@ class Sobre extends React.Component {
                     <Modal.Body className="text-center">
                         <h5>Geoportal de ITBI da Prefeitura Municipal de São José de Ribamar</h5>
                         <a href="https://www.saojosederibamar.ma.gov.br/" rel="noopener noreferrer" target="_blank">
-                            <img src="/logoHeader.png" width="100" height="150" alt="logo sjr"/>
+                            <img src="/geoitbi_admin/logoHeader.png" width="100" height="150" alt="logo sjr"/>
                         </a>
 
                         <p className="p-2">
@@ -36,7 +36,7 @@ class Sobre extends React.Component {
                        
                         <h6> <strong>Desenvolvimento:</strong> <a href="http://tecgeobr.com.br" target="_blank" rel="noopener noreferrer">Tecgeo | Tecnologia em Geoprocessamento.</a></h6>
                         <a href="http://tecgeobr.com.br" target="_blank" rel="noopener noreferrer">
-                            <img src="/logoTecgeo.png" alt="logo tecgeo"/>
+                            <img src="/geoitbi_admin/logoTecgeo.png" alt="logo tecgeo"/>
                         </a>
 
                     </Modal.Body>

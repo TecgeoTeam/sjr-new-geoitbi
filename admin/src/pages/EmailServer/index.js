@@ -1,14 +1,14 @@
 import React from 'react';
-import { Redirect  } from "react-router-dom";
-import {Form, Button, Col, Alert}  from "react-bootstrap";
-import ClipLoader from "react-spinners/BarLoader";
+import { Alert, Button, Col, Form } from "react-bootstrap";
 import ReactHtmlParser from 'react-html-parser';
-import Perfil from '../../components/Perfil';
-import Sobre from '../../components/Sobre';
-import Sair from '../../components/Sair';
-import Header from '../../components/Header';
+import { Redirect } from "react-router-dom";
+import ClipLoader from "react-spinners/BarLoader";
 import Breadcrumbs from '../../components/Breadcrumbs';
+import Header from '../../components/Header';
 import PageLoading from '../../components/PageLoading';
+import Perfil from '../../components/Perfil';
+import Sair from '../../components/Sair';
+import Sobre from '../../components/Sobre';
 import Config from '../../config';
 import './style.css';
 
@@ -377,7 +377,7 @@ class EmailServer extends React.Component {
     }else if(this.state.logged === "loading"){
       content = <PageLoading />;
     }else{
-      content = <Redirect push to="/"/>;
+      content = <Redirect push to="/geoitbi_admin"/>;
     }
 
     return (

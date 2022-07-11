@@ -1,6 +1,6 @@
 import React from 'react';
-
 import Navbar from 'react-bootstrap/Navbar';
+
 
 export default function Dashboard() {
   return (
@@ -8,7 +8,7 @@ export default function Dashboard() {
       <Navbar bg="light" variant="light">
           <Navbar.Brand href="/">
             <img 
-              src="/logo.png" 
+              src="/geoitbi_admin/logo.png" 
               alt="Logo PMSJR"
               width="32"
               height="42"

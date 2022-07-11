@@ -1,8 +1,8 @@
 import React from 'react';
-import {Modal, Button}  from "react-bootstrap";
-import './style.css'
+import { Button, Modal } from "react-bootstrap";
 import { Redirect } from "react-router-dom";
 import Config from '../../config';
+import './style.css';
 
 class Sair extends React.Component {
 
@@ -49,7 +49,7 @@ class Sair extends React.Component {
 
         if(!this.state.logged){
             return (
-              <Redirect push to="/" />
+              <Redirect push to="/geoitbi_admin" />
             )
         }else{
     

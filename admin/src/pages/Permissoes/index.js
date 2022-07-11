@@ -1,15 +1,15 @@
 import React from 'react';
-import { Redirect  } from "react-router-dom";
-import {Form, Button, Col, Alert, OverlayTrigger, Tooltip}  from "react-bootstrap";
-import ClipLoader from "react-spinners/BarLoader";
+import { Alert, Button, Col, Form, OverlayTrigger, Tooltip } from "react-bootstrap";
+import DataTable from 'react-data-table-component';
 import ReactHtmlParser from 'react-html-parser';
+import { MdInfoOutline, MdRemoveCircleOutline } from 'react-icons/md';
+import { Redirect } from "react-router-dom";
+import ClipLoader from "react-spinners/BarLoader";
 import PageLoading from '../../components/PageLoading';
 import WidgetLoading from '../../components/WidgetLoading';
 import Config from '../../config';
-
-import DataTable from 'react-data-table-component';
-import {MdRemoveCircleOutline, MdInfoOutline} from 'react-icons/md';
 import './style.css';
+
 
 class Permissoes extends React.Component {
 
@@ -362,7 +362,7 @@ class Permissoes extends React.Component {
     }else if(this.state.logged === "loading"){
       content = <PageLoading />;
     }else{
-      content = <Redirect push to="/"/>;
+      content = <Redirect push to="/geoitbi_admin"/>;
     }
 
     return (

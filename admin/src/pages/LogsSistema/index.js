@@ -1,17 +1,17 @@
 import React from 'react';
-import { Redirect  } from "react-router-dom";
-import {Button,  Modal, Badge}  from "react-bootstrap";
+import { Badge, Button, Modal } from "react-bootstrap";
+import DataTable from 'react-data-table-component';
+import { Redirect } from "react-router-dom";
+import Breadcrumbs from '../../components/Breadcrumbs';
+import Header from '../../components/Header';
+import PageLoading from '../../components/PageLoading';
 import Perfil from '../../components/Perfil';
 import Sair from '../../components/Sair';
 import Sobre from '../../components/Sobre';
-import Header from '../../components/Header';
-import Breadcrumbs from '../../components/Breadcrumbs';
-import PageLoading from '../../components/PageLoading';
 import WidgetLoading from '../../components/WidgetLoading';
-import Permissoes from '../Permissoes';
-import DataTable from 'react-data-table-component';
-import './style.css';
 import Config from '../../config';
+import Permissoes from '../Permissoes';
+import './style.css';
 
 class LogsSistema extends React.Component {
 
@@ -242,7 +242,7 @@ class LogsSistema extends React.Component {
     }else if(this.state.logged === "loading"){
       content = <PageLoading />;
     }else{
-      content = <Redirect push to="/"/>;
+      content = <Redirect push to="/geoitbi_admin"/>;
     }
 
     return (

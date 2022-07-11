@@ -1,20 +1,20 @@
 import React from 'react';
-import { Redirect  } from "react-router-dom";
-import {Navbar, Nav, Form, Button, Col, Modal, Alert, Badge}  from "react-bootstrap";
-import ClipLoader from "react-spinners/BarLoader";
+import { Alert, Badge, Button, Col, Form, Modal, Nav, Navbar } from "react-bootstrap";
+import DataTable from 'react-data-table-component';
 import ReactHtmlParser from 'react-html-parser';
-import Perfil from '../../components/Perfil';
-import Sobre from '../../components/Sobre';
-import Sair from '../../components/Sair';
-import Header from '../../components/Header';
+import { MdEdit, MdPersonAdd, MdRemoveCircleOutline } from 'react-icons/md';
+import { Redirect } from "react-router-dom";
+import ClipLoader from "react-spinners/BarLoader";
 import Breadcrumbs from '../../components/Breadcrumbs';
+import Header from '../../components/Header';
 import PageLoading from '../../components/PageLoading';
+import Perfil from '../../components/Perfil';
+import Sair from '../../components/Sair';
+import Sobre from '../../components/Sobre';
 import WidgetLoading from '../../components/WidgetLoading';
 import Config from '../../config';
-
-import DataTable from 'react-data-table-component';
-import {MdPersonAdd, MdEdit, MdRemoveCircleOutline} from 'react-icons/md';
 import './style.css';
+
 
 class Usuarios extends React.Component {
 
@@ -616,7 +616,7 @@ class Usuarios extends React.Component {
     }else if(this.state.logged === "loading"){
       content = <PageLoading />;
     }else{
-      content = <Redirect push to="/"/>;
+      content = <Redirect push to="/geoitbi_admin"/>;
     }
 
     return (

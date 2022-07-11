@@ -1,12 +1,12 @@
 import React from 'react';
-import { Redirect, Link } from "react-router-dom";
-import {CardDeck, Card}  from "react-bootstrap";
+import { Card, CardDeck } from "react-bootstrap";
+import { Link, Redirect } from "react-router-dom";
+import Breadcrumbs from '../../components/Breadcrumbs';
+import Header from '../../components/Header';
+import PageLoading from '../../components/PageLoading';
 import Perfil from '../../components/Perfil';
 import Sair from '../../components/Sair';
 import Sobre from '../../components/Sobre';
-import Header from '../../components/Header';
-import Breadcrumbs from '../../components/Breadcrumbs';
-import PageLoading from '../../components/PageLoading';
 import Config from '../../config';
 import './style.css';
 
@@ -125,7 +125,7 @@ class Dashboard extends React.Component {
               <div className="col-12 mt-5">
               <CardDeck>
                 <Card>
-                  <Card.Img variant="top" src="/service01.png" />
+                  <Card.Img variant="top" src="/geoitbi_admin/service01.png" />
                   <Card.Body>
                     <Card.Title>Gerenciamento de Usuários e Grupos</Card.Title>
                     <Card.Text>
@@ -136,14 +136,14 @@ class Dashboard extends React.Component {
                   </Card.Body>
                   <Card.Footer>
                     <small className="text-muted">
-                      <Link to="/usuarios">Ver Usuários</Link>
+                      <Link to="/geoitbi_admin/usuarios">Ver Usuários</Link>
                       {" / "}
-                      <Link to="/grupos">Ver Grupos</Link>
+                      <Link to="/geoitbi_admin/grupos">Ver Grupos</Link>
                     </small>
                   </Card.Footer>
                 </Card>
                 <Card>
-                  <Card.Img variant="top" src="/service03.png" />
+                  <Card.Img variant="top" src="/geoitbi_admin/service03.png" />
                   <Card.Body>
                     <Card.Title>Configurações do Geoportal</Card.Title>
                     <Card.Text>
@@ -153,16 +153,16 @@ class Dashboard extends React.Component {
                   </Card.Body>
                   <Card.Footer>
                     <small className="text-muted">
-                      <Link to="/servidoremail">Servidor de Email</Link>
+                      <Link to="/geoitbi_admin/servidoremail">Servidor de Email</Link>
                       {" / "}
-                      <Link to="/urls">URLs</Link>
+                      <Link to="/geoitbi_admin/urls">URLs</Link>
                       {" / "}
-                      <Link to="/cub">CUB</Link>
+                      <Link to="/geoitbi_admin/cub">CUB</Link>
                     </small>
                   </Card.Footer>
                 </Card>
                 <Card>
-                  <Card.Img variant="top" src="/service02.png" />
+                  <Card.Img variant="top" src="/geoitbi_admin/service02.png" />
                   <Card.Body>
                     <Card.Title>Integração e Logs</Card.Title>
                     <Card.Text>
@@ -173,9 +173,9 @@ class Dashboard extends React.Component {
                   </Card.Body>
                   <Card.Footer>
                     <small className="text-muted">
-                      <Link to="/integracoes">Integração</Link>
+                      <Link to="/geoitbi_admin/integracoes">Integração</Link>
                       {" / "}
-                      <Link to="/logs">Logs do Sistema</Link>
+                      <Link to="/geoitbi_admin/logs">Logs do Sistema</Link>
                     </small>
                   </Card.Footer>
                 </Card>
@@ -189,7 +189,7 @@ class Dashboard extends React.Component {
     }else if(this.state.logged === "loading"){
       content = <PageLoading />;
     }else{
-      content = <Redirect push to="/"/>;
+      content = <Redirect push to="/geoitbi_admin/geoitbi_admin"/>;
     }
 
     return (

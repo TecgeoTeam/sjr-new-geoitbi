@@ -1,19 +1,19 @@
 import React from 'react';
-import { Redirect  } from "react-router-dom";
-import {Navbar, Nav, Form, Button, Col, Modal, Alert, Badge}  from "react-bootstrap";
-import ClipLoader from "react-spinners/BarLoader";
+import { Alert, Badge, Button, Col, Form, Modal, Nav, Navbar } from "react-bootstrap";
+import DataTable from 'react-data-table-component';
 import ReactHtmlParser from 'react-html-parser';
+import { MdEdit, MdGroupAdd, MdRemoveCircleOutline } from 'react-icons/md';
+import { Redirect } from "react-router-dom";
+import ClipLoader from "react-spinners/BarLoader";
+import Breadcrumbs from '../../components/Breadcrumbs';
+import Header from '../../components/Header';
+import PageLoading from '../../components/PageLoading';
 import Perfil from '../../components/Perfil';
 import Sair from '../../components/Sair';
 import Sobre from '../../components/Sobre';
-import Header from '../../components/Header';
-import Breadcrumbs from '../../components/Breadcrumbs';
-import PageLoading from '../../components/PageLoading';
 import WidgetLoading from '../../components/WidgetLoading';
-import Permissoes from '../Permissoes';
 import Config from '../../config';
-import DataTable from 'react-data-table-component';
-import {MdGroupAdd, MdEdit, MdRemoveCircleOutline} from 'react-icons/md';
+import Permissoes from '../Permissoes';
 import './style.css';
 
 class Grupos extends React.Component {
@@ -572,7 +572,7 @@ class Grupos extends React.Component {
     }else if(this.state.logged === "loading"){
       content = <PageLoading />;
     }else{
-      content = <Redirect push to="/"/>;
+      content = <Redirect push to="/geoitbi_admin"/>;
     }
 
     return (

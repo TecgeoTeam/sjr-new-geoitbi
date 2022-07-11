@@ -3,7 +3,7 @@ class AppConf{
     configs(){
         const variables = {
             //"appurl":"http://localhost:6050/"
-            "appurl":"http://107.180.106.82:6010/"
+            "appurl":"https://sigribamar.com.br/geoitbi_login/"
         }
         return variables;
     }

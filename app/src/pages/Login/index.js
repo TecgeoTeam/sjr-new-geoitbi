@@ -1,11 +1,11 @@
-import React from 'react';
-import {Form, Button, Col, Modal, Alert, Toast}  from "react-bootstrap";
-import ClipLoader from "react-spinners/BarLoader";
-import BackgroundSlider from 'react-background-slider';
-import {Redirect} from "react-router-dom";
+import enc2 from "crypto-js/sha256";
 import randomstring from "randomstring";
-import enc2 from "crypto-js/sha256"
+import React from 'react';
+import BackgroundSlider from 'react-background-slider';
+import { Alert, Button, Col, Form, Modal, Toast } from "react-bootstrap";
 import ReactHtmlParser from 'react-html-parser';
+import { Redirect } from "react-router-dom";
+import ClipLoader from "react-spinners/BarLoader";
 import Config from '../../config';
 import './style.css';
 
@@ -215,7 +215,7 @@ class Login extends React.Component {
     
     if(this.state.logged){
       return (
-        <Redirect push to="/app" />
+        <Redirect push to="/geoitbi/app" />
       )
     }else{
      
@@ -228,12 +228,12 @@ class Login extends React.Component {
             <Toast.Body><strong>{this.state.messageToast} </strong></Toast.Body>
           </Toast>
           
-          <BackgroundSlider images={["/sjr3.jpg", "/sjr1.jpg"]} duration={5} transition={2} />
+          <BackgroundSlider images={["/geoitbi/sjr3.jpg", "/geoitbi/sjr1.jpg"]} duration={5} transition={2} />
   
           <section className="container-fluid p-2">
             <form onSubmit={this.handleSubmit} noValidate className={this.state.setValidated ? 'form-signin text-center is-invalid was-validated form-control:invalid' : 'form-signin text-center'}>
               <img 
-                src="/logo.png" 
+                src="/geoitbi/logo.png" 
                 alt="Logo SJR"
                 width="111"
                 height="164"

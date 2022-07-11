@@ -6,9 +6,9 @@ export default function Dashboard() {
   return (
     <>
       <Navbar bg="light" variant="light">
-          <Navbar.Brand href="/">
+          <Navbar.Brand href="/geoitbi/">
             <img 
-              src="/logo.png" 
+              src="/geoitbi/logo.png" 
               alt="Logo PMSJR"
               width="32"
               height="42"

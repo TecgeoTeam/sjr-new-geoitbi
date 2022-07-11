@@ -9,8 +9,8 @@ const Routes = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route component={LoginPage} exact path="/" />
-        <Route component={DashboardPage} exact path="/app" />
+        <Route component={LoginPage} exact path="/geoitbi/" />
+        <Route component={DashboardPage} exact path="/geoitbi/app" />
         <Route component={NotFoundPage} exact={true} path="*" />
       </Switch>
     </BrowserRouter>

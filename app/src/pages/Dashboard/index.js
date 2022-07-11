@@ -1,8 +1,8 @@
 import React from 'react';
-import { Redirect  } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import PageLoading from '../../components/PageLoading';
-import './style.css';
 import Config from '../../config';
+import './style.css';
 
 class Dashboard extends React.Component {
 
@@ -74,12 +74,12 @@ class Dashboard extends React.Component {
 
     if(this.state.logged === "yes"){
       
-      content = <iframe title="GeoITBI" frameBorder="0" allowtransparency="yes" scrolling="no" src="/webapp/index.html" width="100%" height="100%"></iframe>;
+      content = <iframe title="GeoITBI" frameBorder="0" allowtransparency="yes" scrolling="no" src="https://sigribamar.com.br/webapp/index.html" width="100%" height="100%"></iframe>;
 
     }else if(this.state.logged === "loading"){
       content = <PageLoading />;
     }else{
-      content = <Redirect push to="/" />;
+      content = <Redirect push to="/geoitbi" />;
     }
 
     return (

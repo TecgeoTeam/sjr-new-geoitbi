@@ -2,6 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://sigribamar.com.br/geoitbi/",
   "dependencies": {
     "@arcgis/webpack-plugin": "^4.17.4",
     "@testing-library/jest-dom": "^4.2.4",
@@ -26,9 +27,11 @@
   },
   "scripts": {
     "start": "set PORT=3006 && react-scripts start",
-    "build": "react-scripts build",
+    "buildwin": "react-scripts build",
+    "build": "yarn certificate && react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "certificate": "HTTPS=true SSL_CRT_FILE='../.cert/cert.pem' SSL_KEY_FILE='../.cert/key.pem'"
   },
   "eslintConfig": {
     "extends": "react-app"

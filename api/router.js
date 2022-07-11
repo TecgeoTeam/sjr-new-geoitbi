@@ -21,6 +21,11 @@ const geoportal = require('./geoportal/app');
 app.use(express.json());
 app.use(cors());
 
+app.all('/*', function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    next();
+});
 //Rotas Dashboard/Geoportal/Login
 app.post('/geoportal/dologin', geoportal.DoLogin);
 app.post('/geoportal/logged', geoportal.Logged);

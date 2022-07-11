@@ -44,54 +44,54 @@ exports.Transmissoes = async function (req, res) {
 
                     switch(req.body.whereUnidade[i].column){
                         case 'DE_GEOCODE_LOTE':
-                            filterExpression += ` AND sde.TB_UNIDADES_PROP.` + 
+                            filterExpression += ` AND gis.TB_UNIDADES_PROP.` + 
                             req.body.whereUnidade[i].column + ' ' + 
                             req.body.whereUnidade[i].operator + ' ' +
                             "'" + req.body.whereUnidade[i].value + "'";
                         break;
                         case 'ID':
-                            filterExpression += ` AND sde.TB_TRANSMISSOES.` + 
+                            filterExpression += ` AND gis.TB_TRANSMISSOES.` + 
                             req.body.whereUnidade[i].column + ' ' +
                             req.body.whereUnidade[i].operator + ' ' +
                             "'" + req.body.whereUnidade[i].value + "'";
                         break;
                         case 'DE_USO':
-                            filterExpression += ` AND sde.TB_UNIDADES_PROP.` + 
+                            filterExpression += ` AND gis.TB_UNIDADES_PROP.` + 
                             req.body.whereUnidade[i].column + ' ' + 
                             req.body.whereUnidade[i].operator + ' ' + 
                             "'" + req.body.whereUnidade[i].value + "'";
                         break;
                         case 'DE_TIPO_IMOVEL':
-                            filterExpression += ` AND sde.TB_UNIDADES_PROP.` + 
+                            filterExpression += ` AND gis.TB_UNIDADES_PROP.` + 
                             req.body.whereUnidade[i].column + ' ' + 
                             req.body.whereUnidade[i].operator + ' ' + 
                             "'" + req.body.whereUnidade[i].value + "'";
                         break;
                         case 'DE_PADRAO_CONSTRUCAO':
-                            filterExpression += ` AND sde.TB_UNIDADES_PROP.` + 
+                            filterExpression += ` AND gis.TB_UNIDADES_PROP.` + 
                             req.body.whereUnidade[i].column + ' ' +
                             req.body.whereUnidade[i].operator + ' ' + 
                             "'" + req.body.whereUnidade[i].value + "'";
                         break;
                         case 'DE_IDADE':
-                            filterExpression += ` AND DATEDIFF(year, sde.TB_UNIDADES_PROP.DE_IDADE, GETDATE())` + 
+                            filterExpression += ` AND DATEDIFF(year, gis.TB_UNIDADES_PROP.DE_IDADE, GETDATE())` + 
                             req.body.whereUnidade[i].operator + ' ' +
                             req.body.whereUnidade[i].value;
                         break;
                         case 'NU_AREA_CONSTRUIDA':
-                            filterExpression += ` AND sde.TB_UNIDADES_PROP.` + 
+                            filterExpression += ` AND gis.TB_UNIDADES_PROP.` + 
                             req.body.whereUnidade[i].column + ' ' + 
                             req.body.whereUnidade[i].operator + ' ' + 
                             req.body.whereUnidade[i].value;
                         break;
                         case 'DE_CONSERVACAO':
-                            filterExpression += ` AND sde.TB_UNIDADES_PROP.` + 
+                            filterExpression += ` AND gis.TB_UNIDADES_PROP.` + 
                             req.body.whereUnidade[i].column + ' ' + 
                             req.body.whereUnidade[i].operator + ' ' + 
                             "'" + req.body.whereUnidade[i].value + "'";
                         break;
                         case 'DE_PAVIMENTOS':
-                            filterExpression += ` AND sde.TB_UNIDADES_PROP.` + 
+                            filterExpression += ` AND gis.TB_UNIDADES_PROP.` + 
                             req.body.whereUnidade[i].column + ' ' + 
                             req.body.whereUnidade[i].operator + ' ' + 
                             "'" + req.body.whereUnidade[i].value + "'";
@@ -108,9 +108,11 @@ exports.Transmissoes = async function (req, res) {
             .input('dateTo', dateTo)
             .query(
                 `
-                    select * from sde.TB_TRANSMISSOES
-                    INNER JOIN sde.TB_UNIDADES_PROP ON sde.TB_TRANSMISSOES.stg_geocode = sde.TB_UNIDADES_PROP.DE_GEOCODE_LOTE
-                    where CONVERT(date, sde.TB_TRANSMISSOES.DT_DATA_AVALIACAO, 103) between @dateFrom and @dateTo
+                    SELECT *
+                    FROM sjr_cadastro.gis.TB_TRANSMISSOES tt
+                    INNER JOIN sjr_cadastro.gis.TB_UNIDADES_PROP
+                    ON tt.stg_geocode = sjr_cadastro.gis.TB_UNIDADES_PROP.DE_GEOCODE_LOTE
+                    WHERE CONVERT(date, tt.DT_DATA_AVALIACAO, 103) BETWEEN @dateFrom and @dateTo
                     `+filterExpression+`
                 ;`
             )

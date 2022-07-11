@@ -7,7 +7,7 @@ module.exports = {
        
         const pool = new Pool({
             user: 'postgres',
-            host: '107.180.106.82',
+            host: '177.66.195.29',
             database: 'geoitbi_sjr_admin',
             password: 'C0d#%4f3075c0d#KUpg15v$nu5TejBv073@xzS84L&svcGM!goLTecGv12$asK',
             port: 52120
@@ -18,10 +18,10 @@ module.exports = {
 
     async connectionSenografia(){
         const pool = new sql.ConnectionPool({
-            server: 'www.senocwb.com',
+            server: '177.66.195.29',
             database: 'sjr_cadastro',
-            port: 54000,
-            authentication: { type: 'default', options: { userName: 'sa', password: '%pandora1414%' } },
+            port: 1433,
+            authentication: { type: 'default', options: { userName: 'sa', password: 'SigSjrSA22#' } },
             options: {
                 enableArithAbort: true,
                 encrypt: false
@@ -29,7 +29,7 @@ module.exports = {
         });
 
 
-        return await pool.connect();;
+        return await pool.connect();
     }
     
 }

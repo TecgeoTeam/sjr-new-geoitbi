@@ -16,20 +16,21 @@
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.4.2.RELEASE</version>
 	</parent>
-
+	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
+		
 		<version.compiler.plugin>2.3.1</version.compiler.plugin>
 		<version.maven-bundle-plugin>2.3.7</version.maven-bundle-plugin>
-
-
-
+		
+		
+		
 		<spring-version>4.0.6.RELEASE</spring-version>
 		<spring-boot-version>1.4.2.RELEASE</spring-boot-version>
-
+		
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>
+		<!-- <maven.test.skip>true</maven.test.skip> -->
 
 	</properties>
 

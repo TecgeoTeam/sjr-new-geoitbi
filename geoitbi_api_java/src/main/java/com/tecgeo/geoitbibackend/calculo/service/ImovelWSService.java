@@ -20,8 +20,8 @@ import okhttp3.Request;
 @Service
 public class ImovelWSService {
 	
-	private String urlWebService = "http://www.senocwb.com/senoportal/rest/services/sjr_desenvolvimento/SJR_infraestrutura_Geo/MapServer/14";
-	private String urlWebServiceUnidade = "http://www.senocwb.com/senoportal/rest/services/sjr_desenvolvimento/SJR_infraestrutura_Geo/MapServer/27";
+	private String urlWebService = "https://sigribamar.com.br/server/rest/services/Webgis/SJR_infraestrutura_Geo/MapServer/14";
+	private String urlWebServiceUnidade = "https://sigribamar.com.br/server/rest/services/Webgis/SJR_infraestrutura_Geo/MapServer/27";
 	
 	@SuppressWarnings("unchecked")
 	public Object getImovelWS(String inscricao) {

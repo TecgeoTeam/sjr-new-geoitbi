@@ -1,0 +1,44 @@
+{
+  "name": "geoitbi",
+  "version": "0.1.0",
+  "scripts": {
+    "start": "live-server --port=2704 --ignore=/c/desenvolvimento/workspace/SL/geoitbi_builder/foto",
+    "lint": "eslint . --ext .js --fix"
+  },
+  "dependencies": {
+    "angular": "1.5.8",
+    "angular-animate": "1.5.8",
+    "angular-aria": "1.5.8",
+    "angular-growl": "^0.1.0",
+    "angular-messages": "1.5.8",
+    "angular-mocks": "1.5.8",
+    "angular-password": "1.0.3",
+    "angular-route": "1.5.8",
+    "angular-sanitize": "1.5.8",
+    "angular-ui-notification": "^0.2.0",
+    "async": "^2.5.0",
+    "chartjs-plugin-zoom": "^0.5.0",
+    "jsonwebtoken": "5.0.0",
+    "material-design-icons": "^2.2.3",
+    "moment": "^2.18.1",
+    "ng-idle": "^1.2.2",
+    "ngstorage": "^0.3.10",
+    "pdfmake": "^0.1.32",
+    "rcolor": "^1.0.1",
+    "regression": "^2.0.0",
+    "toastr": "^2.1.2",
+    "underscore": "^1.8.3"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "devDependencies": {
+    "angular-translate": "^2.11.0",
+    "angular-translate-loader-partial": "^2.11.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.2.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1"
+  }
+}

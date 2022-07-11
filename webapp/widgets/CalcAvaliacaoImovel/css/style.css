@@ -1,0 +1,226 @@
+.td-gray{
+	background-color: #f5f5f5;
+}
+
+.td-gray-dark{
+  background-color: #5566;
+}
+.td-blue{
+  background-color: #337ab7;
+  color: white;
+}
+.tbody-blue{
+  color: white !important;
+  background-color: #ba0001 !important;
+}
+
+.widget-tecgeo{
+	height: 465px;
+}
+
+.calcite-nav-top .calcite-panels, .calcite-nav-top-fixed .calcite-panels {
+    top: 47px;
+}
+
+.panel-body .calcite-panels{
+	max-height: 500px;
+	width: 50px;
+}
+
+#myWidgetDialogCalculo{
+	top: 19%;
+  left: 73%;
+  border: 1px solid;
+  border-color: white !important;
+  width: 339px;
+  z-index: 999;
+  box-shadow: 0px 0px 5px grey;
+  height: 500px;
+  overflow-y: scroll;
+}
+.circleAmarelo {
+  display: block;
+  background: rgba(255,235,0,1);
+  height: 20px;
+  width: 20px;
+  margin: 0;
+  margin-top: 15px;
+  margin-bottom: 1px;
+}
+.circleBranco {
+  display: block;
+  background: rgba(255,255,255,0.5);
+  border: 2px solid;
+  border-radius: 100%;
+  border-color: rgb(150,0,0);
+  height: 20px;
+  width: 20px;
+  margin: 0;
+  margin-top: 15px;
+  margin-bottom: 1px;
+}
+.circleAzul {
+  display: block;
+  background: rgba(0,255,255,0.3);
+  height: 20px;
+  width: 20px;
+  margin: 0;
+  margin-top: 15px;
+  margin-bottom: 1px;
+  border: 2px solid rgb(0,255,255);
+}
+.circlePreto {
+  display: block;
+  background: rgba(0,0,0,0);
+  border: 2px dotted;
+  border-color: rgba(0,0,0,0.5);
+  height: 20px;
+  width: 20px;
+  margin: 0;
+  margin-top: 15px;
+  margin-bottom: 1px;
+}
+.barAzul{
+  background-color: #ba0001;
+  margin-top: -12px;
+  padding-top: 5px;
+  margin-left: -12px;
+  margin-right: -12px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.labelBar{
+  color: white;
+}
+.btn-info-calc{
+    padding-bottom: 4px !important;
+    padding-top: 8px !important;
+}
+/* The snackbar - position it at the bottom and in the middle of the screen */
+#snackbar-calculo {
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; /* Set a default minimum width */
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    background-color: #333; /* Black background color */
+    color: #fff; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 2px; /* Rounded borders */
+    padding: 16px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index if needed */
+    left: 50%; /* Center the snackbar */
+    bottom: 30px; /* 30px from the bottom */
+}
+
+#snackbar-error-calculo{
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; /* Set a default minimum width */
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    background-color: red; /* Black background color */
+    color: #fff; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 2px; /* Rounded borders */
+    padding: 16px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index if needed */
+    left: 50%; /* Center the snackbar */
+    bottom: 80px; /* 30px from the bottom */
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar-error-calculo.show {
+    visibility: visible; /* Show the snackbar */
+
+/* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein-error 0.5s, fadeout-error 0.5s 2.5s;
+    animation: fadein-error 0.5s, fadeout-error 0.5s 2.5s;
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar-calculo.show {
+    visibility: visible; /* Show the snackbar */
+
+/* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein-error {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 80px; opacity: 1;}
+}
+
+@keyframes fadein-error {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 80px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout-error {
+    from {bottom: 80px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout-error {
+    from {bottom: 80px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+}
+::-webkit-scrollbar-track {
+      background-color: rgba(189, 189, 189, 0.33);
+} /* the new scrollbar will have a flat appearance with the set background color */
+
+::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.2);
+} /* this will style the thumb, ignoring the track */
+
+::-webkit-scrollbar-button {
+      background-color: #cccccc;
+      height: 22px;
+} /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
+
+::-webkit-scrollbar-corner {
+      background-color: #a5a5a5;
+}
+
+#terceiraAvaliacaoButton{
+    margin-right: 0vh;
+    height: 68px;
+}
+
+.input-group{
+    width: 100% !important;
+}
+.exportarcalculo {
+  font-size: 12px;
+  padding: 3px;
+  margin-top: -36px !important;
+  margin-left: 70px !important;
+  margin-right: -60px;
+}

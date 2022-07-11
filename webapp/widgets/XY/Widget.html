@@ -1,0 +1,47 @@
+<div>
+	
+	<!--<div>${nls.label2}.[${config.configText}]</div>
+	<div data-dojo-attach-point="mapIdNode"></div> -->
+	<div data-dojo-attach-point="tabLocation">
+	<br></br>
+	<div class="identify-tab-node" data-dojo-attach-point="tabNode1">
+    
+	Latitude:&nbsp;&nbsp;&nbsp;&nbsp;	<input id="LatTextBox" class="coord" data-dojo-type="dijit/form/TextBox" value="-8.146222617213912" placeHolder="-8.146222617213912" data-dojo-attach-point="LatTextBox" data-dojo-props="intermediateChanges:true, placeHolder:'28.2952617'" style="width: 12em;"></input>
+	<br></br>
+	Longitude:	<input id="LongTextBox" class="coord" data-dojo-type="dijit/form/TextBox" value="-35.042929895018794" placeHolder="-35.042929895018794" data-dojo-attach-point="LongTextBox" data-dojo-props="intermediateChanges:true, placeHolder:'-80.7352016'" style="width: 12em;"></input>
+	<br></br>
+	<button id="latlong" class="jimu-btn" data-dojo-type="dijit/form/Button" type="button" data-dojo-attach-point="latlong">Ir para o ponto</button> 
+	<hr>
+	<br></br>
+	Latitude:<br>
+	<input  id="LatDegTextBox" class="coord" data-dojo-type="dijit/form/TextBox" value="" placeHolder="Graus" data-dojo-attach-point="LatDegTextBox" data-dojo-props="intermediateChanges:true" style="width: 5em;"></input>°
+	<input id="LatMinTextBox" class="coord" data-dojo-type="dijit/form/TextBox" value="" placeHolder="Minutos" data-dojo-attach-point="LatMinTextBox" data-dojo-props="intermediateChanges:true" style="width: 5em;"></input>′
+	<input id="LatSecTextBox" class="coord" data-dojo-type="dijit/form/TextBox" value="" placeHolder="Segundos" data-dojo-attach-point="LatSecTextBox" data-dojo-props="intermediateChanges:true" style="width: 8em;"></input>″S
+	<br><br>
+	Longitude:<br>
+	<input id="LongDegTextBox" class="coord" data-dojo-type="dijit/form/TextBox" value="" placeHolder="Graus" data-dojo-attach-point="LongDegTextBox" data-dojo-props="intermediateChanges:true" style="width: 5em;"></input>°
+	<input id="LongMinTextBox" class="coord" data-dojo-type="dijit/form/TextBox" value="" placeHolder="Minutos" data-dojo-attach-point="LongMinTextBox" data-dojo-props="intermediateChanges:true" style="width: 5em;"></input>′
+	<input id="LongSecTextBox" class="coord" data-dojo-type="dijit/form/TextBox" value="" placeHolder="Segundos" data-dojo-attach-point="LongSecTextBox" data-dojo-props="intermediateChanges:true" style="width: 8em;"></input>″W
+	<br></br>
+	<button id="dms" data-dojo-type="dijit/form/Button" type="button" data-dojo-attach-point="dms" class="jimu-btn">Ir para o ponto</button> 
+	<br></br>
+	<button id="clear" data-dojo-type="dijit/form/Button" type="button" data-dojo-attach-point="clear" class="jimu-btn">Limpar tudo</button> 
+	<br></br>
+	</div>
+	
+	<div class="identify-tab-node" data-dojo-attach-point="tabNode3">
+	Coodernada projetada X:	<input class="coord" id="ProjXBox" data-dojo-type="dijit/form/TextBox" value="277039.758" placeHolder="277039.758" data-dojo-attach-point="ProjXBox" data-dojo-props="intermediateChanges:true, placeHolder:'-80.7352016'" style="width: 10em;"></input>
+	<br></br>
+	Coodernada projetada Y:	<input class="coord" id="ProjYBox" data-dojo-type="dijit/form/TextBox" value="9096008.906" placeHolder="9096008.906" data-dojo-attach-point="ProjYBox" data-dojo-props="intermediateChanges:true, placeHolder:'-80.7352016'" style="width: 10em;"></input>
+	<br></br>
+	Sistema de referência: <input class="coord" id="wkidDiv" data-dojo-type="dijit/form/TextBox" value="31985" placeHolder="wkid" data-dojo-attach-point="wkidDiv" data-dojo-props="intermediateChanges:true" style="width: 5em;"></input>
+	<br><br>
+	<a href="http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#/Projected_coordinate_systems/02r3000000vt000000/" target="_blank">Lista de sistemas de referência</a>
+	<br></br>
+	<button id="proj" data-dojo-type="dijit/form/Button" type="button" data-dojo-attach-point="proj" class="jimu-btn">Ir para o ponto</button> 
+	</div>	
+	</div>
+	
+	
+
+</div>

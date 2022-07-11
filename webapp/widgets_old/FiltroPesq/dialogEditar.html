@@ -1,0 +1,129 @@
+	<div>
+	<div class="my-title barAzul" ><label class="labelBar">Cadastrar Pesquisa</label></div>
+	<button class="btn btn-danger font-btns voltarCadastrar" data-dojo-attach-event="click:fecharEditar" onclick="fecharEditar()"><span class="glyphicon glyphicon-circle-arrow-left"></span> Voltar</button>
+	<!-- conteudo -->
+	<div style="margin-top: 3px;" class="div-filtro" align="center">
+	<label style="margin-top: 3px;" id='editTitleLabel'>ID: 01020130201302</label>
+	</div>
+	<div class="row row-editar">
+
+		<div class="col-xs-12">
+		<table class="table table-condensed table-hover table-cadastrar">
+			<tr>
+				<td class="td-middle"><span>Tipo do Ímovel</span></td>
+				<td><select class="form-control input-height" id="edit-tipoImovel" onchange="hideByTipoImovelEdit()">
+					<option></option>
+					<option>Predial</option>
+					<option>Territorial</option>
+					</select></td>
+			</tr>
+			<tr  id="trTipologiaEdit">
+				<td class="td-middle"><span>Tipologia</span></td>
+				<td><select class="form-control input-height" id="edit-tipologia">
+					<option></option>
+					<option>Apartamento</option>
+					<option>Casa</option>
+					<option>Comercial com Residencial</option>
+					<option>Edificio Comercial</option>
+					<option>Galpao</option>
+					<option>Loja_Sala_Conjunto</option>
+					<option>Sobrado</option>
+					<option>Sobrado Colonial</option>
+					</select></td>
+			</tr>
+			<tr  id="trPadraoEdit">
+				<td class="td-middle"><span>Padrão</span></td>
+				<td><select class="form-control input-height" id="edit-padrao">
+					<option></option>
+					<option>Baixo</option>
+					<option>Médio</option>
+					<option>Alto</option>
+					</select></td>
+			</tr>
+			<tr  id="trIdadeEdit">
+				<td class="td-middle"><span>Idade</span></td>
+				<td><input type="number" min="0" oninput="validity.valid||(value='');" class="form-control input-height" name="" id="edit-idade"></td>
+			</tr>
+			<tr  id="trAreaUtilEdit">
+				<td><span>Área Útil (m²)</span></td>
+				<td><input oninput="validity.valid||(value='');" class="form-control input-height " name="" id="edit-areaUtil"></td>
+			</tr>
+			<tr  id="trConservacaoEdit">
+				<td class="td-middle"><span>Conservação</span></td>
+				<td><select class="form-control input-height" id="edit-conservacao">
+					<option></option>
+					<option>Precária</option>
+					<option>Regular</option>
+					<option>Boa</option>
+					<option>Ótima</option>
+					</select></td>
+			</tr>
+			<tr  id="trQuartoEdit">
+				<td class="td-middle"><span>Quartos</span></td>
+				<td><input type="number" min="0" oninput="validity.valid||(value='');" class="form-control input-height" name="" id="edit-quarto"></td>
+			</tr>
+			<tr >
+				<td class="td-middle"><span>Fonte da Pesquisa</span></td>
+				<td><select class="form-control input-height" id="edit-fontePesquisa">
+					<option></option>
+					<option>Campo</option>
+					<option>Site</option>
+					</select></td>
+			</tr>
+			<tr  id="trBanheiroEdit">
+				<td class="td-middle"><span>Banheiros</span></td>
+				<td><input type="number" min="0" oninput="validity.valid||(value='');" class="form-control input-height" name="" id="edit-banheiro"></td>
+			</tr>
+			<tr  id="trGaragemEdit">
+				<td class="td-middle"><span>Garagem</span></td>
+				<td><input type="number" min="0" oninput="validity.valid||(value='');" class="form-control input-height" name="" id="edit-garagem"></td>
+			</tr>
+			<tr  id="trPavimentoEdit">
+				<td class="td-middle"><span>Pavimento</span></td>
+				<td><input type="number" min="0" oninput="validity.valid||(value='');" class="form-control input-height" name="" id="edit-pavimento"></td>
+			</tr>
+			<tr  id="trTipoPavimentoEdit">
+				<td class="td-middle"><span>Tipo do Pavimento</span></td>
+				<td><select class="form-control input-height" id="edit-tipoPavimento">
+					<option></option>
+					<option>Antepo</option>
+					<option>Asfalto</option>
+					<option>Paralelepipedo</option>
+					</select></td>
+			</tr>
+			<tr>
+				<td class="td-middle"><span>Valor de Mercado</span></td>
+				<td><input oninput="validity.valid||(value='');" type="number" min="0" class="form-control input-height" name="" id="edit-valorMercado"></td>
+			</tr>
+			<tr>
+				<td class="td-middle"><span>Tipo do Lote</span></td>
+				<td><select class="form-control input-height" id="edit-tipoLote">
+					<option></option>
+					<option>Lote</option>
+					<option>Gleba</option>
+					</select></td>
+			</tr>
+			<tr>
+				<td class="td-middle"><span>Área do Terreno (m²)</span></td>
+				<td><input oninput="validity.valid||(value='');" class="form-control input-height" name="" id="edit-areaTerreno"></td>
+			</tr>
+			<tr class="success">
+				<td colspan="2"><input type="file" name="arquivos" onchange="previewFileEdit()"  accept="image/png, image/jpeg" id="edit-Photo" /></td>
+			</tr>
+		</table>
+		</div>
+
+		<div class="row row-cadastrar-obs">
+			<div class="col-xs-12 div-col-cadastrar">
+			<span>Observação</span>
+			<textarea class="form-control" cols="48" rows="2" id="edit-observacao"></textarea>
+			</div>
+		</div>
+	</div>
+	<div style="margin-top: 10px;">
+		<button class="btn btn-danger btn-block" onclick="novaEdicao()"><span class="glyphicon glyphicon-ok"></span> Salvar</button>
+		<button class="btn btn-danger btn-block" onclick="excluirCadastro()"><span class="glyphicon glyphicon-trash"></span> Excluir</button>
+	</div>
+	<!-- fim do conteudo -->
+	</div>
+		<script src="widgets/FiltroPesq/dialogEditar.js"></script>

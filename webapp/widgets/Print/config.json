@@ -1,0 +1,8 @@
+{
+  "serviceURL": "https://sigribamar.com.br/server/rest/services/geoprocessamento/ImpressaoSJR/GPServer/Export%20Web%20Map",
+  "defaultTitle": "Mapa - GeoITBI",
+  "defaultAuthor": "Prefeitura Municipal de São Luís",
+  "defaultCopyright": "",
+  "defaultFormat": "PDF",
+  "defaultLayout": "Letter ANSI A Landscape"
+}

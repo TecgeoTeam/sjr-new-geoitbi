@@ -1,0 +1,181 @@
+{
+  "allPlaceholder": "",
+  "showInfoWindowOnSelect": true,
+  "sources": [
+    {
+      "layerId": null,
+      "url": "https://sigribamar.com.br/server/rest/services/Webgis/SJR_infraestrutura_Geo/MapServer/18",
+      "name": "CPF/CNPJ",
+      "placeholder": "Digite o CPF/CNPJ",
+      "searchFields": [
+        "sjr_cadastro.SDE.TB_UNIDADES_PROP.DE_PROP_CPF"
+      ],
+      "displayField": "sjr_cadastro.SDE.TB_UNIDADES_PROP.DE_PROP_CPF",
+      "exactMatch": false,
+      "searchInCurrentMapExtent": false,
+      "zoomScale": 50000,
+      "maxSuggestions": 6,
+      "maxResults": 6,
+      "type": "query"
+    },
+    {
+      "layerId": null,
+      "url": "https://sigribamar.com.br/server/rest/services/Webgis/SJR_infraestrutura_Geo/MapServer/14",
+      "name": "Lotes - Recadastrados",
+      "placeholder": "Digite o Geocódigo do Lote",
+      "searchFields": [
+        "sjr_cadastro.SDE.Lote.stg_geocode"
+      ],
+      "displayField": "sjr_cadastro.SDE.Lote.stg_geocode",
+      "exactMatch": false,
+      "searchInCurrentMapExtent": false,
+      "zoomScale": 50000,
+      "maxSuggestions": 6,
+      "maxResults": 6,
+      "type": "query"
+    },    
+    {
+      "layerId": null,
+      "url": "https://sigribamar.com.br/server/rest/services/Webgis/SJR_infraestrutura_Geo/MapServer/14",
+      "name": "Lotes - Recadastrados (Insc. Anterior)",
+      "placeholder": "Digite o Geocódigo do Lote",
+      "searchFields": [
+        "sl_cadastro.SDE.TB_LOTES.DE_INSCRICAO_ANTERIOR"
+      ],
+      "displayField": "sl_cadastro.SDE.TB_LOTES.DE_INSCRICAO_ANTERIOR",
+      "exactMatch": false,
+      "searchInCurrentMapExtent": false,
+      "zoomScale": 50000,
+      "maxSuggestions": 6,
+      "maxResults": 6,
+      "type": "query"
+    },
+        {
+      "layerId": null,
+      "url": "https://sigribamar.com.br/server/rest/services/Webgis/SJR_infraestrutura_Geo/MapServer/15",
+      "name": "Lotes - Não Recadastrados",
+      "placeholder": "Digite o Geocódigo do Lote",
+      "searchFields": [
+        "sjr_cadastro.SDE.Lote_Nao_Prioritario_v04.GEOCODE"
+      ],
+      "displayField": "sjr_cadastro.SDE.Lote_Nao_Prioritario_v04.GEOCODE",
+      "exactMatch": false,
+      "searchInCurrentMapExtent": false,
+      "zoomScale": 50000,
+      "maxSuggestions": 6,
+      "maxResults": 6,
+      "type": "query"
+    },
+    {
+      "layerId": null,
+      "url": "https://sigribamar.com.br/server/rest/services/Webgis/SJR_infraestrutura_Geo/MapServer/15",
+      "name": "Lotes - Não Recadastrados (Insc. Anterior)",
+      "placeholder": "Digite o Geocódigo do Lote",
+      "searchFields": [
+        "sjr_cadastro.SDE.Lote_Nao_Prioritario_v04.INS_ANT"
+      ],
+      "displayField": "sjr_cadastro.SDE.Lote_Nao_Prioritario_v04.INS_ANT",
+      "exactMatch": false,
+      "searchInCurrentMapExtent": false,
+      "zoomScale": 50000,
+      "maxSuggestions": 6,
+      "maxResults": 6,
+      "type": "query"
+    },
+     {
+      "layerId": null,
+      "url": "https://sigribamar.com.br/server/rest/services/Webgis/SJR_infraestrutura_Geo/MapServer/24",
+      "name": "Inscrição do Condomínio",
+      "placeholder": "Digite a Inscrição Imob. do Cond.",
+      "searchFields": [
+        "sjr_cadastro.SDE.Condominios_.GEOC_RENU"
+      ],
+      "displayField": "sjr_cadastro.SDE.Condominios_.GEOC_RENU",
+      "exactMatch": false,
+      "searchInCurrentMapExtent": false,
+      "zoomScale": 50000,
+      "maxSuggestions": 6,
+      "maxResults": 6,
+      "type": "query"
+    },
+     {
+      "layerId": null,
+      "url": "https://sigribamar.com.br/server/rest/services/Webgis/SJR_infraestrutura_Geo/MapServer/21",
+      "name": "Quadra",
+      "placeholder": "Digite o Geocódigo do Quadra",
+      "searchFields": [
+        "ID_QDR_NOV"
+      ],
+      "displayField": "ID_QDR_NOV",
+      "exactMatch": false,
+      "searchInCurrentMapExtent": false,
+      "zoomScale": 50000,
+      "maxSuggestions": 6,
+      "maxResults": 6,
+      "type": "query"
+    },
+    {
+      "layerId": null,
+      "url": "https://sigribamar.com.br/server/rest/services/Webgis/SJR_infraestrutura_Geo/MapServer/11",
+      "name": "Setor",
+      "placeholder": "Digite o código do Setor",
+      "searchFields": [
+        "Setores"
+      ],
+      "displayField": "Setores",
+      "exactMatch": false,
+      "searchInCurrentMapExtent": false,
+      "zoomScale": 50000,
+      "maxSuggestions": 6,
+      "maxResults": 6,
+      "type": "query"
+    },
+    {
+      "layerId": null,
+      "url": "https://sigribamar.com.br/server/rest/services/Webgis/SJR_infraestrutura_Geo/MapServer/12",
+      "name": "Bairro",
+      "placeholder": "Digite o nome do Bairro",
+      "searchFields": [
+        "sjr_cadastro.SDE.Bairro.BAIRRO"
+      ],
+      "displayField": "sjr_cadastro.SDE.Bairro.BAIRRO",
+      "exactMatch": false,
+      "searchInCurrentMapExtent": false,
+      "zoomScale": 50000,
+      "maxSuggestions": 6,
+      "maxResults": 6,
+      "type": "query"
+    },
+    {
+      "layerId": null,
+      "url": "https://sigribamar.com.br/server/rest/services/Webgis/SJR_infraestrutura_Geo/MapServer/23",
+      "name": "Logradouro",
+      "placeholder": "Digite o nome do Logradouro",
+      "searchFields": [
+        "sjr_cadastro.SDE.TB_LOGRADOURO.de_nomelogradouro"
+      ],
+      "displayField": "sjr_cadastro.SDE.TB_LOGRADOURO.de_nomelogradouro",
+      "exactMatch": false,
+      "searchInCurrentMapExtent": false,
+      "zoomScale": 50000,
+      "maxSuggestions": 6,
+      "maxResults": 6,
+      "type": "query"
+    },
+    {
+      "url": "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer",
+      "name": "World Geocoder",
+      "singleLineFieldName": "SingleLine",
+      "placeholder": "World Geocoder",
+      "countryCode": "",
+      "zoomScale": 50000,
+      "maxSuggestions": 6,
+      "maxResults": 6,
+      "searchInCurrentMapExtent": false,
+      "enableLocalSearch": true,
+      "localSearchMinScale": 300000,
+      "localSearchDistance": 50000,
+      "type": "locator"
+    }
+  ]
+}

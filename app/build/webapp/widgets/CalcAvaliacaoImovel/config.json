@@ -1,0 +1,581 @@
+{
+    "stmServiceUrl": "http://107.180.106.82:4030/calculo/simplificado/",
+    "unidadeServiceUrl": "http://www.senocwb.com/senoportal/rest/services/sjr_desenvolvimento/SJR_infraestrutura_Geo/MapServer/27",
+    "loteServiceUrl": "http://www.senocwb.com/senoportal/rest/services/sjr_desenvolvimento/SJR_infraestrutura_Geo/MapServer/14",
+    "tableLoteServiceUrl": "http://www.senocwb.com/senoportal/rest/services/sjr_desenvolvimento/SJR_infraestrutura_Geo/MapServer/26",
+    "loteNPServiceUrl":"http://www.senocwb.com/senoportal/rest/services/sjr_desenvolvimento/SJR_infraestrutura_Geo/MapServer/15",
+    "transmissaoServiceUrl": "http://www.senocwb.com/senoportal/rest/services/SJR_ITBI/Mapas_Tematicos_de_Transmissao/MapServer/1",
+    "pesquisaServiceUrl": "http://www.senocwb.com/senoportal/rest/services/SJR_ITBI/Mapas_Tematicos_das_Pesquisas/MapServer/0",
+    "plantaQuadraServiceUrl": "http://www.senocwb.com/senoportal/rest/services/SJR_ITBI/Mapas_Tematicos_da_Planta_de_Valores/MapServer/0",
+    "geometryServerServiceUrl": "https://utility.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer",
+    "pesquisaUnidade": {
+        "tipologia": {
+            "Apartamento de Frente": "Apartamento",
+            "Apartamento de Fundo": "Apartamento",
+            "Apartamento Térreo": "Apartamento",
+            "Casa": "Casa",
+            "Comercial com Residência": "Comercial com Residencial",
+
+            "Galpão": "Galpao",
+            "Loja/Sala/Conjunto": "Loja_Sala_Conjunto",
+            "Sobrado": "Sobrado",
+            "Sobrado Colonial": "Sobrado Colonial"
+        },
+        "tipo": {
+            "t": "Predial",
+            "f": "Territorial"
+        },
+        "conservacao": {
+            "1-ÓTIMO": "Otimo",
+            "1-OTIMA": "Otimo",
+            "2-BOA": "Boa",
+            "2-BOM": "Boa",
+            "3-REGULAR": "Regular",
+            "4-PRECARIA": "Precaria",
+            "4-PRECARIO": "Precaria"
+        }
+    },
+    "imovelLabels": {
+      "imovel_id": "Código do Imóvel",
+      "imovel_inscricao": "Inscrição do Imóvel",
+      "imovel_inscricao_anterior": "Inscrição Anterior",
+      "imovel_ref_cadastral": "Referência Cadastral do Imóvel",
+      "imovel_distrito": "Distrito do Imóvel",
+      "imovel_setor": "Setor do Imóvel",
+      "imovel_quadra_fiscal": "Quadra Fiscal do Imóvel",
+      "imovel_lote_fiscal": "Lote Fiscal do Imóvel",
+      "imovel_unidade": "Unidade do Imóvel",
+      "imovel_zona_referencia": "Zona Referência do Imóvel",
+      "imovel_zona_fiscal": "Zona Fiscal do Imóvel",
+      "imovel_edificacacoes": "Quantidade de Edificações",
+      "imovel_idade": "Idade do Imóvel",
+      "isento": "Isento",
+      "imovel_logradouro": "Logradouro do Imóvel",
+      "imovel_numero": "Número do Imóvel",
+      "imovel_complemento": "Complemento do Imóvel",
+      "imovel_bairro": "Bairro do Imóvel",
+      "imovel_cep": "CEP do Imóvel",
+      "imovel_condominio": "Imóvel Condominio",
+      "imovel_valor_territorio": "Valor Territorial",
+      "imovel_valor_predial": "Valor Predial",
+      "imovel_valor_venal": "Valor Venal",
+      "imovel_valor_iptu": "Valor IPTU",
+      "imovel_uso": "Uso do Imóvel",
+      "imovel_codigo_logradouro": "Código do Logradouro",
+      "imovel_tipo_condominio": "Tipo Condomínio",
+      "imovel_fracao_ideal": "Fração Ideal",
+      "imovel_pavimentos": "Quantidade de Pavimentos",
+      "imovel_logradouro_anterior": "Código Anterior do Logradouro",
+      "imovel_sequencial_anterior": "Sequencial Anterior do Imóvel",
+      "imovel_geoFace": "Código da Face de Quadra",
+      "bci_aviso": "Aviso do BCI",
+      "estrutura ": "Estrutura",
+      "padraoconstrucao": "Padrão da Construção",
+      "usoimovel": "Uso do Imóvel",
+      "topografia": "Topografia",
+      "drenagem": "Drenagem",
+      "situa��oquadra": "Posição na Quadra",
+      "tipoimovel": "Tipo do Imóvel",
+      "conservacao": "Conservação",
+      "pedologia": "Pedologia",
+      "tipologia": "Tipologia",
+      "esgoto": "Esgoto"
+    },
+    "proprietarioLabels": {
+      "proprietario_nome": "Nome do Proprietário",
+      "proprietario_cpf": "Cpf do Proprietário",
+      "proprietario_endereco": "Endereço do Proprietário",
+      "proprietario_numero": "Número do Proprietário",
+      "proprietario_complemento": "Complemento do Proprietário",
+      "proprietario_quadra": "Quadra do Proprietário",
+      "proprietario_cidade": "Cidade do Proprietário",
+      "proprietario_bairro": "Bairro do Proprietário",
+      "proprietario_uf": "UF do Proprietário",
+      "proprietario_cep": "CEP do Proprietário",
+      "proprietario_fone": "Telefone do Proprietário",
+      "proprietario_fax": "Fax do Proprietário",
+      "proprietario_email": "E-mail do Proprietário",
+      "proprietario_aquisicao": "Ano de Aquisição do Proprietário"
+    },
+    "bciLabels": {
+      "testada": "Testada",
+      "componente_tipo": "Tipo",
+      "componente_ano": "Ano",
+      "componente_valor": "Valor",
+      "componente_pavimentos": "Pavimentos",
+      "componente_area": "Área"
+    },
+    "caracteristicaComponentesLabels": {
+        "TIPOLOGIA": "Tipologia",
+        "OCUPACAODOLOTE": "Ocupação do Lote",
+        "SITUACAO": "Situação",
+        "COBRANCA": "Cobrança",
+        "TIPOVIA": "Tipovia",
+        "CONSERVACAOVIA": "Conservação da Via",
+        "SENTIDOLOGRADOURO": "Sentido do Logradouro",
+        "PAVIMENTACAO": "Pavimentação",
+        "LIMITE": "Limite",
+        "PEDOLOGIA": "Pedologia",
+        "TRANSPORTECOLETIVO": "Transporte Coletivo",
+        "AGUA": "Água",
+        "ESTACIONAMENTO": "Estacionamento",
+        "ARBORIZACAO": "Arborização",
+        "LIMPEZAPUBLICA": "Limpeza Pública",
+        "COLETALIXO": "Coleta de Lixo",
+        "ILUMINACAO": "Iluminação",
+        "DRENAGEM": "Drenagem",
+        "REDEELETRICA": "Rede Elétrica",
+        "CODIGOMENSAGEM": "Código da Mensagem",
+        "REDETELEFONICA": "Rede Telefônica",
+        "HIDRANTE": "Hidrante",
+        "TOPOGRAFIA": "Topografia",
+        "PATRIMONIO": "Patrimônio",
+        "PONTOSERVICO": "Ponto do Serviço",
+        "ESGOTO": "Esgoto",
+        "CALCADA": "Calçada",
+        "MEIOFIO": "Meio-fio",
+        "CONSERVACAO": "Conservação",
+        "USOIMOVEL": "Uso do Imóvel",
+        "DESTINACAO": "Destinação",
+        "PADRAOCONSTRUCAO": "Padrão da Construção",
+        "SENTIDO": "Sentido",
+        "ELEVADOR": "Elevador",
+        "ESTRUTURA": "Estrutura",
+        "SITUACAOPREFEITURA": "Situação com a Prefeitura",
+        "ESQUADRIA": "Esquadria",
+        "FACHADA PRINCIPAL": "Fachada Principal",
+        "POSICAO CONSTRUCAO": "Posição da Construção",
+        "CALCADA PEDESTRE": "Calçada Pedestre",
+        "COBERTURA": "Cobertura",
+        "IRREGULARIDADE": "Irregularidade"
+    },
+    "fieldAliases": {
+    "OBJECTID": "ID do Objeto",
+    "ID_IMOVEL": "Imóvel – ID do Imóvel",
+    "DE_INSCRICAO": "Imóvel – Inscrição",
+    "DE_REF_CADASTRAL": "Imóvel – Ref. Cadastral",
+    "DE_DISTRITO": "Imóvel - Distrito",
+    "DE_SETOR": "Imóvel - Setor",
+    "DE_QUADRA_FISCAL": "Imóvel - Quadra",
+    "DE_LOTE_FISCAL": "Imóvel - Lote",
+    "DE_UNIDADE": "Imóvel - Unidade",
+    "NU_COD_LOGRADOURO": "Imóvel - Cód. do Logradouro",
+    "DE_LOGRADOURO": "Imóvel - Logradouro",
+    "DE_NUMERO": "Imóvel - Número",
+    "DE_COMPLEMENTO": "Imóvel - Complemento",
+    "DE_CEP": "Imóvel - CEP",
+    "DE_BAIRRO": "Imóvel - Bairro",
+    "DE_IDADE": "Imóvel - Idade",
+    "NU_EDIFICACACOES": "Imóvel – Edificações",
+    "DE_TIPO_CONDOMINIO": "Imóvel – Tipo de Condomínio",
+    "DE_CONDOMINIO": "Imóvel – Condomínio",
+    "DE_USO": "Imóvel – Uso",
+    "DE_ZONA_REFERENCIA": "Imóvel – Zona Referência",
+    "DE_ZONA_FISCAL": "Imóvel – Zona Fiscal",
+    "NU_TESTADA_T1": "Testada - Tamanho",
+    "NU_AREA_TERRENO": "Lote - Área",
+    "DE_TIPO_TERRENO": "Lote - Tipo",
+    "DE_ANO_TERRENO": "Lote - Ano",
+    "NU_VALOR_TERRENO": "Lote - Valor",
+    "DE_AGUA": "Lote - Água",
+    "DE_ESTACIONAMENTO": "Lote - Estacionamento",
+    "DE_TRANSPORTE_COLETIVO": "Lote – Transp. Coletivo",
+    "DE_CONSERVACAO_VIA": "Lote – Cons. da Via",
+    "DE_LIMPEZA_PUBLICA": "Lote – Limp. Pública",
+    "DE_OCUPACAO_DO_LOTE": "Lote – Ocupação do Lote",
+    "DE_PEDOLOGIA": "Lote – Pedologia",
+    "DE_DRENAGEM": "Lote – Drenagem",
+    "DE_REDE_ELETRICA": "Lote – Rede Elétr.",
+    "DE_COLETA_LIXO": "Lote – Coleta de Lixo",
+    "DE_SITUACAO": "Lote – Situação",
+    "DE_ILUMINACAO": "Lote – Iluminação",
+    "DE_TIPO_VIA": "Lote – Tipo da Via",
+    "DE_SENTIDO_LOGRADOURO": "Lote – Sentido do Logr.",
+    "DE_PAVIMENTACAO": "Lote – Pavimentação",
+    "DE_CODIGO_MENSAGEM": "Lote – Mensagem",
+    "DE_COBRANCA": "Lote – Cobrança",
+    "DE_LIMITE": "Lote – Limite",
+    "DE_REDE_TELEFONICA": "Lote – Rede Telefônica",
+    "DE_HIDRANTE": "Lote – Hidrante",
+    "DE_TOPOGRAFIA": "Lote – Topografia",
+    "DE_PATRIMONIO": "Lote – Patrimônio",
+    "DE_ARBORIZACAO": "Lote – Arborização",
+    "DE_PONTO_SERVICO": "Lote – Ponto Serviço",
+    "DE_ESGOTO": "Lote – Esgoto",
+    "DE_CALCADA": "Lote – Calçada",
+    "DE_MEIOFIO": "Lote – Meio Fio",
+    "NU_AREA_CONSTRUIDA": "Unidade - Área",
+    "DE_TIPO_IMOVEL": "Unidade – Tipo",
+    "DE_ANO_PREDIAL": "Unidade – Ano",
+    "NU_CARAC_VALOR_PREDIAL": "Unidade – Valor Predial",
+    "DE_PAVIMENTOS": "Unidade - Pavimentos",
+    "DE_CONSERVACAO": "Unidade – Conservação",
+    "DE_USO_IMOVEL": "Unidade – Uso",
+    "DE_DESTINACAO": "Unidade – Destinação",
+    "DE_TIPOLOGIA": "Unidade – Tipologia",
+    "DE_PADRAO_CONSTRUCAO": "Unidade – Padrão",
+    "DE_SENTIDO": "Unidade - Sentido",
+    "DE_ELEVADOR": "Unidade – Elevador",
+    "DE_ESTRUTURA": "Unidade – Estrutura",
+    "DE_SITUACAO_PREFEITURA": "Unidade - Situação",
+    "DE_PAR": "P.A.R",
+    "DE_POSICAO_CONSTRUCAO": "Unidade - Posição da Construção",
+    "DE_IRREGULARIDADE": "Lote - Irregularidade",
+    "DE_CALCADA_PEDESTRE": "Lote - Calçada Pedestre",
+    "DE_ESQUADRIA": "Unidade - Esquadria",
+    "DE_AREA_VERDE": "Unidade - Área Verde",
+    "DE_IMOVEL_NA_PLANTA": "Imóvel - Planta",
+    "DE_FACHADA_PRINCIPAL": "Unidade - Fachada Principal",
+    "DE_COBERTURA": "Unidade - Cobertura",
+    "NU_IMO_VALOR_TERRITORIO": "Imóvel – Valor Território",
+    "NU_IMO_VALOR_PREDIAL": "Imóvel – Valor Predial",
+    "NU_IMO_VALOR_VENAL": "Imóvel – Valor Venal",
+    "NU_IMO_VALOR_IPTU": "Imóvel – Valor IPTU",
+    "NU_FRACAO_IDEAL": "Imóvel - Fração Ideal",
+    "DT_DATA_MIGRACAO": "Data de Migração",
+    "DE_GEOCODE_STM": "Geocódigo Sistema Tributário",
+    "DE_COD_SQCODLOG": "Código do Logradouro",
+    "DE_INSCRICAO_ANTERIOR": "Imóvel – Inscr. Anterior",
+    "DE_ISENTO": "Imóvel - Isento",
+    "GEOCODE_ID": "Geocodigo da Unidade",
+    "DE_PROP_NOME": "Prop. - Nome",
+    "DE_PROP_CPF": "Prop. - CPF",
+    "DE_PROP_CIDADE": "Prop. - Cidade",
+    "DE_PROP_UF": "Prop. - UF",
+    "DE_PROP_AQUISICAO": "Prop. - Aquisição",
+    "DE_PROP_ENDERECO": "Prop. - Endereço",
+    "DE_PROP_NUMERO": "Prop. - Número",
+    "DE_PROP_COMPLEMENTO": "Prop. - Complemento",
+    "DE_PROP_CEP": "Prop. - CEP",
+    "DE_PROP_BAIRRO": "Prop. - Bairro",
+    "DE_PROP_QUADRA": "Prop. - Quadra",
+    "DE_PROP_FONE": "Prop. - Fone",
+    "DE_PROP_EMAIL": "Prop. - E-mail",
+    "DE_GEOCODE_LOTE": "Geocódigo do Lote"
+  },
+    "coeficienteDepreciacao": {
+        "2": {
+            "otima": 0.990000,
+            "boa": 0.965000,
+            "regular": 0.811000,
+            "precaria": 0.469000
+        },
+        "4": {
+            "otima": 0.979000,
+            "boa": 0.955000,
+            "regular": 0.802000,
+            "precaria": 0.464000
+        },
+        "6": {
+            "otima": 0.968000,
+            "boa": 0.944000,
+            "regular": 0.793000,
+            "precaria": 0.459000
+        },
+        "8": {
+            "otima": 0.957000,
+            "boa": 0.933000,
+            "regular": 0.784000,
+            "precaria": 0.454000
+        },
+        "10": {
+            "otima": 0.945000,
+            "boa": 0.921000,
+            "regular": 0.774000,
+            "precaria": 0.448000
+        },
+        "12": {
+            "otima": 0.933000,
+            "boa": 0.909000,
+            "regular": 0.764000,
+            "precaria": 0.442000
+        },
+        "14": {
+            "otima": 0.920000,
+            "boa": 0.897000,
+            "regular": 0.754000,
+            "precaria": 0.436000
+        },
+        "16": {
+            "otima": 0.907000,
+            "boa": 0.884000,
+            "regular": 0.743000,
+            "precaria": 0.430000
+        },
+        "18": {
+            "otima": 0.894000,
+            "boa": 0.871000,
+            "regular": 0.732000,
+            "precaria": 0.424000
+        },
+        "20": {
+            "otima": 0.880000,
+            "boa": 0.858000,
+            "regular": 0.721000,
+            "precaria": 0.417000
+        },
+        "22": {
+            "otima": 0.866000,
+            "boa": 0.844000,
+            "regular": 0.709000,
+            "precaria": 0.410000
+        },
+        "24": {
+            "otima": 0.851000,
+            "boa": 0.830000,
+            "regular": 0.697000,
+            "precaria": 0.403000
+        },
+        "26": {
+            "otima": 0.836000,
+            "boa": 0.815000,
+            "regular": 0.685000,
+            "precaria": 0.396000
+        },
+        "28": {
+            "otima": 0.821000,
+            "boa": 0.800000,
+            "regular": 0.672000,
+            "precaria": 0.389000
+        },
+        "30": {
+            "otima": 0.805000,
+            "boa": 0.785000,
+            "regular": 0.659000,
+            "precaria": 0.382000
+        },
+        "32": {
+            "otima": 0.789000,
+            "boa": 0.769000,
+            "regular": 0.646000,
+            "precaria": 0.374000
+        },
+        "34": {
+            "otima": 0.772000,
+            "boa": 0.753000,
+            "regular": 0.632000,
+            "precaria": 0.366000
+        },
+        "36": {
+            "otima": 0.755000,
+            "boa": 0.736000,
+            "regular": 0.619000,
+            "precaria": 0.358000
+        },
+        "38": {
+            "otima": 0.738000,
+            "boa": 0.719000,
+            "regular": 0.604000,
+            "precaria": 0.350000
+        },
+        "40": {
+            "otima": 0.720000,
+            "boa": 0.702000,
+            "regular": 0.590000,
+            "precaria": 0.341000
+        },
+        "42": {
+            "otima": 0.702000,
+            "boa": 0.684000,
+            "regular": 0.575000,
+            "precaria": 0.333000
+        },
+        "44": {
+            "otima": 0.683000,
+            "boa": 0.666000,
+            "regular": 0.560000,
+            "precaria": 0.324000
+        },
+        "46": {
+            "otima": 0.664000,
+            "boa": 0.647000,
+            "regular": 0.544000,
+            "precaria": 0.315000
+        },
+        "48": {
+            "otima": 0.645000,
+            "boa": 0.629000,
+            "regular": 0.528000,
+            "precaria": 0.306000
+        },
+        "50": {
+            "otima": 0.625000,
+            "boa": 0.609000,
+            "regular": 0.512000,
+            "precaria": 0.296000
+        },
+        "52": {
+            "otima": 0.605000,
+            "boa": 0.590000,
+            "regular": 0.495000,
+            "precaria": 0.287000
+        },
+        "54": {
+            "otima": 0.584000,
+            "boa": 0.569000,
+            "regular": 0.478000,
+            "precaria": 0.277000
+        },
+        "56": {
+            "otima": 0.563000,
+            "boa": 0.549000,
+            "regular": 0.461000,
+            "precaria": 0.267000
+        },
+        "58": {
+            "otima": 0.542000,
+            "boa": 0.528000,
+            "regular": 0.444000,
+            "precaria": 0.257000
+        },
+        "60": {
+            "otima": 0.520000,
+            "boa": 0.507000,
+            "regular": 0.426000,
+            "precaria": 0.246000
+        },
+        "62": {
+            "otima": 0.498000,
+            "boa": 0.485000,
+            "regular": 0.408000,
+            "precaria": 0.236000
+        },
+        "64": {
+            "otima": 0.475000,
+            "boa": 0.463000,
+            "regular": 0.389000,
+            "precaria": 0.225000
+        },
+        "66": {
+            "otima": 0.452000,
+            "boa": 0.441000,
+            "regular": 0.370000,
+            "precaria": 0.214000
+        },
+        "68": {
+            "otima": 0.429000,
+            "boa": 0.418000,
+            "regular": 0.351000,
+            "precaria": 0.203000
+        },
+        "70": {
+            "otima": 0.405000,
+            "boa": 0.395000,
+            "regular": 0.332000,
+            "precaria": 0.192000
+        },
+        "72": {
+            "otima": 0.381000,
+            "boa": 0.371000,
+            "regular": 0.312000,
+            "precaria": 0.180000
+        },
+        "74": {
+            "otima": 0.356000,
+            "boa": 0.347000,
+            "regular": 0.292000,
+            "precaria": 0.169000
+        },
+        "76": {
+            "otima": 0.331000,
+            "boa": 0.323000,
+            "regular": 0.271000,
+            "precaria": 0.157000
+        },
+        "78": {
+            "otima": 0.306000,
+            "boa": 0.298000,
+            "regular": 0.250000,
+            "precaria": 0.145000
+        },
+        "80": {
+            "otima": 0.280000,
+            "boa": 0.273000,
+            "regular": 0.229000,
+            "precaria": 0.133000
+        },
+        "82": {
+            "otima": 0.254000,
+            "boa": 0.247000,
+            "regular": 0.208000,
+            "precaria": 0.120000
+        },
+        "84": {
+            "otima": 0.227000,
+            "boa": 0.221000,
+            "regular": 0.186000,
+            "precaria": 0.108000
+        },
+        "86": {
+            "otima": 0.200000,
+            "boa": 0.195000,
+            "regular": 0.164000,
+            "precaria": 0.095000
+        },
+        "88": {
+            "otima": 0.173000,
+            "boa": 0.168000,
+            "regular": 0.142000,
+            "precaria": 0.082000
+        },
+        "90": {
+            "otima": 0.145000,
+            "boa": 0.141000,
+            "regular": 0.119000,
+            "precaria": 0.069000
+        },
+        "92": {
+            "otima": 0.117000,
+            "boa": 0.114000,
+            "regular": 0.096000,
+            "precaria": 0.055000
+        },
+        "94": {
+            "otima": 0.088000,
+            "boa": 0.086000,
+            "regular": 0.072000,
+            "precaria": 0.042000
+        },
+        "96": {
+            "otima": 0.059000,
+            "boa": 0.058000,
+            "regular": 0.048000,
+            "precaria": 0.028000
+        },
+        "98": {
+            "otima": 0.030000,
+            "boa": 0.029000,
+            "regular": 0.024000,
+            "precaria": 0.014000
+        },
+        "100": {
+            "otima": 0,
+            "boa": 0,
+            "regular": 0,
+            "precaria": 0
+        }
+    },
+    "cub": {
+        "casa": {
+            "baixo": 1.10,
+            "medio": 1.23,
+            "alto": 1.54
+        },
+        "comercio com residencia": {
+            "baixo": 1.04,
+            "medio": 1.16,
+            "alto": 1.26
+        },
+        "loja/sala/conjunto": {
+            "baixo": 1.17,
+            "medio": 1.31,
+            "alto": 1.44
+        },
+        "apartamento": {
+            "baixo": 0.96,
+            "medio": 1,
+            "alto": 1.28
+        }
+    }
+
+}

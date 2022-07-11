@@ -1,0 +1,292 @@
+<div class="widget-tecgeo">
+
+    <!-- lightbox -->
+    <div id="lightbox-panel">
+        <p align="right"><a id="close-panel" href="#">&#10005;</a></p>
+        <div id="myCarousel3" class="carousel slide carousel-sync" data-ride="carousel">
+            <!-- Wrapper for slides -->
+            <div id="lightbox-panel_inner" class="carousel-inner" role="listbox" style="text-align: center;">
+
+            </div>
+            <!-- Left and right controls -->
+            <a class="left carousel-control arrow-table" href="#myCarousel3" role="button" data-slide="prev" style="top: 80px; left: -20px">
+                <i class="fa arrows fa-chevron-left" aria-hidden="true"></i>
+            </a>
+            <a class="right carousel-control arrow-table" href="#myCarousel3" role="button" data-slide="next" style="top: 80px; right:-20px ">
+                <i class="fa arrows fa-chevron-right" aria-hidden="true"></i>
+            </a>
+        </div>
+    </div>
+    <!-- /lightbox-panel -->
+
+  <div id="messagesRecorteDiv" style="position:fixed;left: 30%;"></div>
+  <div class="spinner-tec" id="spinner-recorte" style="display: none">
+    <div class="loading-container">
+      <div data-dojo-attach-point="imgDiv" class="img-div">
+        <img data-dojo-attach-point="loadingImg" src="jimu.js/images/loading2.gif">
+      </div>
+      <p data-dojo-attach-point="textNode"></p>
+    </div>
+  </div>
+
+  <div class="div-recorte">
+    <div class="row row-padding">
+      <form class="form-inline">
+        <div class="col-xs-4 div-padding-recorte">
+          <span>De</span>
+          <div class="input-date-recorte">
+            <div class="input-group date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2">
+              <input class="form-control input-tipo-valor-recortar input-height-recorte disabled-white" type="text" id="filtroInputDeRecorte" disabled="">
+              <!-- <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span> -->
+              <span class="input-group-addon input-group-addon-calendar"><span class="glyphicon glyphicon-calendar"></span></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-4 div-padding-recorte">
+          <span>Até</span>
+          <div class="input-date-recorte">
+            <div class="input-group date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2">
+              <input class="form-control input-tipo-valor-recortar input-height-recorte disabled-white" type="text" id="filtroInputAteRecorte" disabled="">
+              <!-- <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span> -->
+              <span class="input-group-addon input-group-addon-calendar"><span class="glyphicon glyphicon-calendar"></span></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-4 div-btn-recortar">
+          <div class="btn-group dropdown">
+            <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Cortar
+            <span class="caret"></span>
+          </button>
+          <button type="button"  id="limparRecorte" data-dojo-attach-event="click:clearRecorte" class="btn btn-default" disabled="false"><i class="fa fa-trash-o"></i></button>
+            <ul class="dropdown-menu dropdown-menu-right background-drop" aria-labelledby="dropdownMenu1">
+              <li id="circleButton" data-dojo-attach-event="click:activateRecorteCircleTool"><a href="#"><span class="icon-cortar-circulo"></span> Círculo</a></li>
+              <li id="polygonButton" data-dojo-attach-event="click:activateRecortePolygonTool"><a href="#"><span class="icon-cortar-poligono"></span> Polígono</a></li>
+            </ul>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <div id="btnGroupPesquisa" class="input-group">
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pesquisa por <span class="caret"></span></button>
+            <ul class="dropdown-menu" id="ulRecorteOptions" data-placement="left">
+              <li id="setorButton" data-dojo-attach-event="click:setOptionSetor"><a href="#">Setor</a></li>
+              <li id="bairroButton" data-dojo-attach-event="click:setOptionBairro"><a href="#">Bairro</a></li>
+              <li id="quadraButton" data-dojo-attach-event="click:setOptionQuadra"><a href="#">Quadra</a></li>
+              <li id="loteButton" data-dojo-attach-event="click:setOptionLote"><a href="#">Lote</a></li>
+              <li id="unidadeButton" data-dojo-attach-event="click:setOptionUnidade"><a href="#">Unidade</a></li>
+            </ul>
+          </div>
+          <span data-dojo-attach-event="click:activateRecortePointTool" class="input-group-btn">
+            <button class="btn btn-default" data-toggle="tooltip" title="Selecione o pin para ativar a seleção no mapa." type="button" id="searchByClickButton" disabled="true"><i class="fa fa-map-marker"></i></button>
+          </span>
+          <!-- TODO COLOCAR MASCARA PARA O GEOCÓDIGO -->
+          <input id="searchGeometryInput" type="text" class="form-control" placeholder="Digite o Geocódigo..." disabled="true">
+          <span data-dojo-attach-event="click:searchGeometry" class="input-group-btn">
+            <button class="btn btn-default" type="button" id="searchGeometryButton" disabled="true"><i class="fa fa-search"></i></button>
+          </span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="div-recorte" id="divTransmissoes" style="display: none;">
+    <div class="row">
+      <div class="col-xs-4 align-tp">
+        <span class="label-medium-title">Transmissões</span>
+      </div>
+      <div class="col-xs-4 align-tp">
+        <span class="label-medium-title">Pesquisas</span>
+      </div>
+      <div class="col-xs-4 div-btn-exportar">
+        <div class="dropdown">
+          <button class="btn btn-danger dropdown-toggle" data-dojo-attach-event="click:exportRecorte" type="button" id="exportarRecorte" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" disabled="">
+            Exportar <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+            <!-- <span class="caret"></span>-->
+          </button>
+<!--           <ul class="dropdown-menu dropdown-menu-right background-drop" aria-labelledby="exportarRecorte">
+            <li id="pdfexport" data-dojo-attach-event="click:exportRecorte"><a href="#"><i class="fa fa-file-powerpoint-o" aria-hidden="true"></i> PDF</a></li>
+            <li id='csvexport' data-dojo-attach-event="click:exportRecorteCSV"><a href="#"><i class="fa fa-file-excel-o" aria-hidden="true"></i> XLS</a></li>
+          </ul> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-4">
+        <label class="label-big" id="qtd_transmissao_label">0</label>
+      </div>
+      <div class="col-xs-4">
+        <label class="label-big" id="qtd_pesquisa_label">0</label>
+      </div>
+      <div class="col-xs-4 div-btn-limpar-recortar">
+      </div>
+    </div>
+
+    <div class="div-recorte-inside">
+      <div class="row">
+        <div class="col-xs-12">
+          <label class="label-medium">Transmissões</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-4"><span class="label-medium">Territoriais</span></div>
+        <div class="col-xs-2"><label class="label-medium" id="qtd_transmissao_territorial_label">0</label></div>
+        <div class="col-xs-6"><span class="label-medium" id="valor_transmissao_territorial_label">R$ 0,00</span></div>
+      </div>
+      <div class="row">
+        <div class="col-xs-4"><span class="label-medium">Prediais</span></div>
+        <div class="col-xs-2"><label class="label-medium" id="qtd_transmissao_predial_label">0</label></div>
+        <div class="col-xs-6"><span class="label-medium" id="valor_transmissao_predial_label">R$ 0,00</span></div>
+      </div>
+      <div class="row">
+        <div class="col-xs-4"><label class="label-medium">Total</label></div>
+        <div class="col-xs-2"><label class="label-medium" id="qtd_transmissao_total_label">0</label></div>
+        <div class="col-xs-6"><label class="label-medium" id="valor_transmissao_total_label">R$ 0,00</label></div>
+      </div>
+    </div>
+
+    <div class="div-recorte-inside">
+      <div class="row">
+        <div class="col-xs-12">
+          <label class="label-medium">Pesquisas</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-4"><span class="label-medium">Territoriais</span></div>
+        <div class="col-xs-2"><label class="label-medium" id="qtd_pesquisa_territorial_label">0</label></div>
+        <div class="col-xs-6"><span class="label-medium" id="valor_pesquisa_territorial_label">R$ 0,00</span></div>
+      </div>
+      <div class="row">
+        <div class="col-xs-4"><span class="label-medium">Prediais</span></div>
+        <div class="col-xs-2"><label class="label-medium" id="qtd_pesquisa_predial_label">0</label></div>
+        <div class="col-xs-6"><span class="label-medium" id="valor_pesquisa_predial_label">R$ 0,00</span></div>
+      </div>
+      <div class="row">
+        <div class="col-xs-4"><label class="label-medium">Total</label></div>
+        <div class="col-xs-2"><label class="label-medium" id="qtd_pesquisa_total_label">0</label></div>
+        <div class="col-xs-6"><label class="label-medium" id="valor_pesquisa_total_label">R$ 0,00</label></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="toshowMax">
+  <div class="row">
+    <div class="col-xs-9">
+    </div>
+    <div class="col-xs-3">
+      <button class="btn btn-default btn-maximize" id="maximizarGrafico" style="display: none;"><span class="glyphicon glyphicon-resize-full"></span></button>
+    </div>
+  </div>
+  <div id="myCarousel" class="carousel slide carousel-sync" data-ride="carousel" style="display: none;">
+
+      <!-- Indicators -->
+      <ol id="carousel-indicators" class="carousel-indicators">
+        
+      </ol>
+
+    <!-- Wrapper for slides -->
+    <div id="carousel_inner" class="carousel-inner" role="listbox" style="text-align: center;">
+
+    </div>
+    <!-- Left and right controls -->
+    <a id="arrowleft" class="left carousel-control arrow-table" href="#myCarousel" role="button" data-slide="prev" style="top: 20px; left: -13px; display: none;">
+      <i class="fa arrows fa-chevron-left" aria-hidden="true"></i>
+    </a>
+    <a id="arrowright" class="right carousel-control arrow-table" href="#myCarousel" role="button" data-slide="next" style="top: 20px; right:-22px; display: none; ">
+      <i class="fa arrows fa-chevron-right" aria-hidden="true"></i>
+    </a>
+  </div>
+  </div>
+
+  <!-- lightbox-table -->
+  <div id="lightbox-table">
+    <p align="right"><a id="close-table" href="#">&#10005;</a></p>
+      <div id="myCarousel4" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel4" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel4" data-slide-to="1"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <div class="panel-heading"><label class="label-medium table-titles">Transmissões</label></div>
+          <div class="table-recort-lightbox">
+            <table class="table table-bordered" id="recorte_datatable_transmissao_lightbox">
+              <tr>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="panel-heading"><label class="label-medium table-titles">Pesquisas</label></div>
+          <div class="table-recort-lightbox">
+            <table class="table table-bordered" id="recorte_datatable_pesquisa_lightbox">
+              <tr>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- lightbox-table -->
+
+  <div id="divTablesRecorte" class="div-recorte" style="padding-bottom: 33px; display: none">
+    <div align="right">
+    <button class="btn btn-default" id="maximizarTable" style="visibility: hidden"><span class="glyphicon glyphicon-resize-full"></span></button>
+    </div>
+    <div id="myCarousel2" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel2" data-slide-to="1"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <div class="panel-heading"><label class="label-medium table-titles">Transmissões</label></div>
+          <div class="table-recort">
+            <table class="table table-bordered" id="recorte_datatable_transmissao">
+              <tr>
+                <th class="th-gray">ID</th>
+                <th class="th-gray">Proprietário</th>
+                <th class="th-gray">Valor Negociado</th>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="panel-heading"><label class="label-medium table-titles">Pesquisas</label></div>
+          <div class="table-recort">
+            <table class="table table-bordered" id="recorte_datatable_pesquisa">
+              <tr>
+                <th class="th-gray">ID</th>
+                <th class="th-gray">Cadastrador</th>
+                <th class="th-gray">Valor de Mercado</th>
+              </tr>
+
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <canvas id="canvasOver" style="display: none"></canvas>
+
+  <div id="chartsToPDF"></div>
+
+</div>

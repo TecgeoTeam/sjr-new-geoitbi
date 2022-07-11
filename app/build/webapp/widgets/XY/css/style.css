@@ -1,0 +1,61 @@
+/* jimu-widget-coordinate-setting */
+.jimu-widget-location-setting{
+  margin:0;
+  padding:0;
+  font-size:15px;
+}
+
+ /* .clearIcon {
+  background-image: url(../images/clear.png);
+  color: transparent;
+  text-indent: 99999;
+  background-repeat: no-repeat;
+}
+
+.goIcon {
+  background-image: url(../images/go.png);
+  color: transparent;
+  width: 16px;
+  height: 16px;
+  text-indent: 99999;
+  background-repeat: no-repeat;
+} */
+
+.jimu-widget-print-setting .dijitArrowButtonContainer{
+  width: 17px;
+}
+
+.coord{
+  padding: 8px;
+  width: 100%;
+  font-size: 14px;
+  color:#333;
+  border-radius: 2px;
+  border: 1px solid #ddd;
+}
+
+.coord:hover{
+  border: 1px solid #3b8fc4;
+}
+
+.coord:focus{
+  border: 1px solid #3b8fc4;
+}
+
+.jimu-widget-location-setting .setting-table > thead > tr > th,
+.jimu-widget-location-setting .setting-table > tbody > tr > td{
+  height:40px;
+  line-height:40px;
+  vertical-align:middle;
+}
+
+.jimu-widget-location-setting .input-table > tbody > tr > .first{
+  width:auto;
+  text-align: right;
+  padding-right:15px;
+  min-width: 250px;
+}
+
+.jimu-widget-location-setting .input-table > tbody > tr > .second{
+  width:650px;
+}

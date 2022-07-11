@@ -1,0 +1,921 @@
+{
+  "basemapGallery": {
+    "mode": 2,
+    "basemaps": [
+      {
+        "thumbnailUrl": "${appPath}/configs/BasemapGallery/thumbnailUrl.png",
+        "title": "OpenStreetMap",
+        "layers": [
+          {
+            "type": "OpenStreetMap",
+            "layerType": "OpenStreetMap",
+            "opacity": 1,
+            "visibility": true,
+            "id": "OpenStreetMap"
+          }
+        ],
+        "spatialReference": {
+          "wkid": "102100"
+        }
+      },
+      {
+        "thumbnailUrl": "${appPath}/configs/BasemapGallery/thumbnailUrl_1.png",
+        "title": "Ruas",
+        "layers": [
+          {
+            "id": "World_Street_Map_8421",
+            "layerType": "ArcGISTiledMapServiceLayer",
+            "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer",
+            "visibility": true,
+            "opacity": 1,
+            "title": "Mapa de Ruas Mundial",
+            "serviceInfoResponse": {
+              "currentVersion": 10.3,
+              "serviceDescription": "This worldwide street map presents highway-level data for the world. Street-level data includes the United States; much of Canada; Mexico; Europe; Japan; Australia and New Zealand; India; South America and Central America; Africa; and most of the Middle East. This comprehensive street map includes highways, major roads, minor roads, one-way arrow indicators, railways, water features, administrative boundaries, cities, parks, and landmarks, overlaid on shaded relief imagery for added context. The map also includes building footprints for selected areas. Coverage is provided down to ~1:4k with ~1:1k and ~1:2k data available in select urban areas. The street map was developed by Esri using Esri basemap data, DeLorme basemap layers, U.S. Geological Survey (USGS) elevation data, Intact Forest Landscape (IFL) data for the world; HERE data for Europe, Australia and New Zealand, North America, South America and Central America, Africa, and most of the Middle East; OpenStreetMap contributors for select countries in Africa and Pacific Islands; MapmyIndia data in India; NGCC data for China; and select data from the GIS user community. For more information on this map, including the terms of use, visit us <a href=\"http://goto.arcgisonline.com/maps/World_Street_Map \" target=\"_new\" >online</a>.",
+              "mapName": "Layers",
+              "description": "This worldwide street map presents highway-level data for the world. Street-level data includes the United States; much of Canada; Mexico; Europe; Japan; Australia and New Zealand; India; South America and Central America; Africa; and most of the Middle East. This comprehensive street map includes highways, major roads, minor roads, one-way arrow indicators, railways, water features, administrative boundaries, cities, parks, and landmarks, overlaid on shaded relief imagery for added context. The map also includes building footprints for selected areas. Coverage is provided down to ~1:4k with ~1:1k and ~1:2k data available in select urban areas. The street map was developed by Esri using Esri basemap data, DeLorme basemap layers, U.S. Geological Survey (USGS) elevation data, Intact Forest Landscape (IFL) data for the world; HERE data for Europe, Australia and New Zealand, North America, South America and Central America, Africa, and most of the Middle East; OpenStreetMap contributors for select countries in Africa and Pacific Islands; MapmyIndia data in India; NGCC data for China; and select data from the GIS user community. For more information on this map, including the terms of use, visit us online at http://goto.arcgisonline.com/maps/World_Street_Map",
+              "copyrightText": "Sources: Esri, HERE, DeLorme, USGS, Intermap, INCREMENT P, NRCan, Esri Japan, METI, Esri China (Hong Kong), Esri Korea, Esri (Thailand), MapmyIndia, NGCC, © OpenStreetMap contributors, and the GIS User Community",
+              "supportsDynamicLayers": false,
+              "layers": [
+                {
+                  "id": 0,
+                  "name": "World Street Map",
+                  "parentLayerId": -1,
+                  "defaultVisibility": true,
+                  "subLayerIds": null,
+                  "minScale": 0,
+                  "maxScale": 0
+                }
+              ],
+              "tables": [],
+              "spatialReference": {
+                "wkid": 102100,
+                "latestWkid": 3857
+              },
+              "singleFusedMapCache": true,
+              "tileInfo": {
+                "rows": 256,
+                "cols": 256,
+                "dpi": 96,
+                "format": "JPEG",
+                "compressionQuality": 90,
+                "origin": {
+                  "x": -20037508.342787,
+                  "y": 20037508.342787
+                },
+                "spatialReference": {
+                  "wkid": 102100,
+                  "latestWkid": 3857
+                },
+                "lods": [
+                  {
+                    "level": 0,
+                    "resolution": 156543.03392800014,
+                    "scale": 591657527.591555
+                  },
+                  {
+                    "level": 1,
+                    "resolution": 78271.51696399994,
+                    "scale": 295828763.795777
+                  },
+                  {
+                    "level": 2,
+                    "resolution": 39135.75848200009,
+                    "scale": 147914381.897889
+                  },
+                  {
+                    "level": 3,
+                    "resolution": 19567.87924099992,
+                    "scale": 73957190.948944
+                  },
+                  {
+                    "level": 4,
+                    "resolution": 9783.93962049996,
+                    "scale": 36978595.474472
+                  },
+                  {
+                    "level": 5,
+                    "resolution": 4891.96981024998,
+                    "scale": 18489297.737236
+                  },
+                  {
+                    "level": 6,
+                    "resolution": 2445.98490512499,
+                    "scale": 9244648.868618
+                  },
+                  {
+                    "level": 7,
+                    "resolution": 1222.992452562495,
+                    "scale": 4622324.434309
+                  },
+                  {
+                    "level": 8,
+                    "resolution": 611.4962262813797,
+                    "scale": 2311162.217155
+                  },
+                  {
+                    "level": 9,
+                    "resolution": 305.74811314055756,
+                    "scale": 1155581.108577
+                  },
+                  {
+                    "level": 10,
+                    "resolution": 152.87405657041106,
+                    "scale": 577790.554289
+                  },
+                  {
+                    "level": 11,
+                    "resolution": 76.43702828507324,
+                    "scale": 288895.277144
+                  },
+                  {
+                    "level": 12,
+                    "resolution": 38.21851414253662,
+                    "scale": 144447.638572
+                  },
+                  {
+                    "level": 13,
+                    "resolution": 19.10925707126831,
+                    "scale": 72223.819286
+                  },
+                  {
+                    "level": 14,
+                    "resolution": 9.554628535634155,
+                    "scale": 36111.909643
+                  },
+                  {
+                    "level": 15,
+                    "resolution": 4.77731426794937,
+                    "scale": 18055.954822
+                  },
+                  {
+                    "level": 16,
+                    "resolution": 2.388657133974685,
+                    "scale": 9027.977411
+                  },
+                  {
+                    "level": 17,
+                    "resolution": 1.1943285668550503,
+                    "scale": 4513.988705
+                  },
+                  {
+                    "level": 18,
+                    "resolution": 0.5971642835598172,
+                    "scale": 2256.994353
+                  },
+                  {
+                    "level": 19,
+                    "resolution": 0.29858214164761665,
+                    "scale": 1128.497176
+                  },
+                  {
+                    "level": 20,
+                    "resolution": 0.14929107082380833,
+                    "scale": 564.248588
+                  },
+                  {
+                    "level": 21,
+                    "resolution": 0.07464553541190416,
+                    "scale": 282.124294
+                  },
+                  {
+                    "level": 22,
+                    "resolution": 0.03732276770595208,
+                    "scale": 141.062147
+                  },
+                  {
+                    "level": 23,
+                    "resolution": 0.01866138385297604,
+                    "scale": 70.5310735
+                  }
+                ]
+              },
+              "initialExtent": {
+                "xmin": -23442841.954796802,
+                "ymin": -165284.4321137704,
+                "xmax": 23442841.954796802,
+                "ymax": 16914106.88630458,
+                "spatialReference": {
+                  "wkid": 102100,
+                  "latestWkid": 3857
+                }
+              },
+              "fullExtent": {
+                "xmin": -20037507.067161843,
+                "ymin": -19971868.880408604,
+                "xmax": 20037507.067161843,
+                "ymax": 19971868.8804085,
+                "spatialReference": {
+                  "wkid": 102100,
+                  "latestWkid": 3857
+                }
+              },
+              "minScale": 591657527.591555,
+              "maxScale": 70.5310735,
+              "units": "esriMeters",
+              "supportedImageFormatTypes": "PNG32,PNG24,PNG,JPG,DIB,TIFF,EMF,PS,PDF,GIF,SVG,SVGZ,BMP",
+              "documentInfo": {
+                "Title": "World Street Map",
+                "Author": "Esri",
+                "Comments": "",
+                "Subject": "streets, highways, major roads, railways, water features, administrative boundaries, cities, parks, protected areas, landmarks ",
+                "Category": "transportation(Transportation Networks) ",
+                "AntialiasingMode": "None",
+                "TextAntialiasingMode": "Force",
+                "Keywords": "World,Global,Europe,Japan,Hong Kong,North America,United States,Canada,Mexico,Southern Africa,Asia,South America,Australia,New Zealand,India,Argentina,Brazil,Chile,Venezuela,Andorra,Austria,Belgium,Czech Republic,Denmark,France,Germany,Great Britain,Greece,Hungary,Ireland,Italy,Luxembourg,Netherlands,Norway,Poland,Portugal,San Marino,Slovakia,Spain,Sweden,Switzerland,Russia,Thailand,Turkey"
+              },
+              "capabilities": "Map,Tilemap",
+              "supportedQueryFormats": "JSON, AMF",
+              "exportTilesAllowed": false,
+              "maxRecordCount": 100,
+              "maxImageHeight": 4096,
+              "maxImageWidth": 4096,
+              "supportedExtensions": "KmlServer"
+            }
+          }
+        ],
+        "spatialReference": {
+          "wkid": "102100"
+        }
+      },
+      {
+        "thumbnailUrl": "${appPath}/configs/BasemapGallery/thumbnailUrl_2.png",
+        "title": "Tela Cinza Claro",
+        "layers": [
+          {
+            "id": "defaultBasemap",
+            "layerType": "ArcGISTiledMapServiceLayer",
+            "url": "https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer",
+            "visibility": true,
+            "opacity": 1,
+            "title": "Base Tela Cinza Claro Mundial",
+            "serviceInfoResponse": {
+              "currentVersion": 10.3,
+              "serviceDescription": "This map draws attention to your thematic content by providing a neutral background with minimal colors, labels, and features. Only key information is represented to provide geographic context, allowing your data to come to the foreground. This light gray map supports any strong colors, creating a visually compelling map graphic which helps your reader see the patterns intended. This map was developed by Esri using HERE data, DeLorme basemap layers, OpenStreetMap contributors, Esri basemap data, and select data from the GIS user community. Worldwide coverage is provided from Level 0 (1:591M scale) through Level 13 (1:72k scale). In North America (Canada, Mexico, United States), Europe, India, South America and Central America, Africa, most of the Middle east, and Australia & New Zealand coverage is provided from Level 14 (1:36k scale) through Level 16 (1:9k scale). For more information on this map, including the terms of use, visit us <a href=\"http://goto.arcgisonline.com/maps/World_Light_Gray_Base \" target=\"_new\" >online</a>.",
+              "mapName": "Layers",
+              "description": "This map draws attention to your thematic content by providing a neutral background with minimal colors, labels, and features. Only key information is represented to provide geographic context, allowing your data to come to the foreground. This light gray map supports any strong colors, creating a visually compelling map graphic which helps your reader see the patterns intended. This map was developed by Esri using HERE data, DeLorme basemap layers, OpenStreetMap contributors, Esri basemap data, and select data from the GIS user community. Worldwide coverage is provided from Level 0 (1:591M scale) through Level 13 (1:72k scale). In North America (Canada, Mexico, United States), Europe, India, South America and Central America, Africa, most of the Middle east, and Australia & New Zealand coverage is provided from Level 14 (1:36k scale) through Level 16 (1:9k scale). For more information on this map, including our terms of use, visit us online at http://goto.arcgisonline.com/maps/World_Light_Gray_Base",
+              "copyrightText": "Esri, HERE, DeLorme, MapmyIndia, © OpenStreetMap contributors, and the GIS user community",
+              "supportsDynamicLayers": false,
+              "layers": [
+                {
+                  "id": 0,
+                  "name": "Light Gray Canvas Base",
+                  "parentLayerId": -1,
+                  "defaultVisibility": true,
+                  "subLayerIds": null,
+                  "minScale": 0,
+                  "maxScale": 0
+                }
+              ],
+              "tables": [],
+              "spatialReference": {
+                "wkid": 102100,
+                "latestWkid": 3857
+              },
+              "singleFusedMapCache": true,
+              "tileInfo": {
+                "rows": 256,
+                "cols": 256,
+                "dpi": 96,
+                "format": "Mixed",
+                "compressionQuality": 90,
+                "origin": {
+                  "x": -20037508.342787,
+                  "y": 20037508.342787
+                },
+                "spatialReference": {
+                  "wkid": 102100,
+                  "latestWkid": 3857
+                },
+                "lods": [
+                  {
+                    "level": 0,
+                    "resolution": 156543.03392800014,
+                    "scale": 591657527.591555
+                  },
+                  {
+                    "level": 1,
+                    "resolution": 78271.51696399994,
+                    "scale": 295828763.795777
+                  },
+                  {
+                    "level": 2,
+                    "resolution": 39135.75848200009,
+                    "scale": 147914381.897889
+                  },
+                  {
+                    "level": 3,
+                    "resolution": 19567.87924099992,
+                    "scale": 73957190.948944
+                  },
+                  {
+                    "level": 4,
+                    "resolution": 9783.93962049996,
+                    "scale": 36978595.474472
+                  },
+                  {
+                    "level": 5,
+                    "resolution": 4891.96981024998,
+                    "scale": 18489297.737236
+                  },
+                  {
+                    "level": 6,
+                    "resolution": 2445.98490512499,
+                    "scale": 9244648.868618
+                  },
+                  {
+                    "level": 7,
+                    "resolution": 1222.992452562495,
+                    "scale": 4622324.434309
+                  },
+                  {
+                    "level": 8,
+                    "resolution": 611.4962262813797,
+                    "scale": 2311162.217155
+                  },
+                  {
+                    "level": 9,
+                    "resolution": 305.74811314055756,
+                    "scale": 1155581.108577
+                  },
+                  {
+                    "level": 10,
+                    "resolution": 152.87405657041106,
+                    "scale": 577790.554289
+                  },
+                  {
+                    "level": 11,
+                    "resolution": 76.43702828507324,
+                    "scale": 288895.277144
+                  },
+                  {
+                    "level": 12,
+                    "resolution": 38.21851414253662,
+                    "scale": 144447.638572
+                  },
+                  {
+                    "level": 13,
+                    "resolution": 19.10925707126831,
+                    "scale": 72223.819286
+                  },
+                  {
+                    "level": 14,
+                    "resolution": 9.554628535634155,
+                    "scale": 36111.909643
+                  },
+                  {
+                    "level": 15,
+                    "resolution": 4.77731426794937,
+                    "scale": 18055.954822
+                  },
+                  {
+                    "level": 16,
+                    "resolution": 2.388657133974685,
+                    "scale": 9027.977411
+                  },
+                  {
+                    "level": 17,
+                    "resolution": 1.1943285668550503,
+                    "scale": 4513.988705
+                  },
+                  {
+                    "level": 18,
+                    "resolution": 0.5971642835598172,
+                    "scale": 2256.994353
+                  },
+                  {
+                    "level": 19,
+                    "resolution": 0.29858214164761665,
+                    "scale": 1128.497176
+                  },
+                  {
+                    "level": 20,
+                    "resolution": 0.14929107082380833,
+                    "scale": 564.248588
+                  },
+                  {
+                    "level": 21,
+                    "resolution": 0.07464553541190416,
+                    "scale": 282.124294
+                  },
+                  {
+                    "level": 22,
+                    "resolution": 0.03732276770595208,
+                    "scale": 141.062147
+                  },
+                  {
+                    "level": 23,
+                    "resolution": 0.01866138385297604,
+                    "scale": 70.5310735
+                  }
+                ]
+              },
+              "initialExtent": {
+                "xmin": -22175661.30859157,
+                "ymin": -275474.05352292303,
+                "xmax": 22175661.30859157,
+                "ymax": 17024296.50771373,
+                "spatialReference": {
+                  "wkid": 102100,
+                  "latestWkid": 3857
+                }
+              },
+              "fullExtent": {
+                "xmin": -20037507.067161843,
+                "ymin": -19971868.880408604,
+                "xmax": 20037507.067161843,
+                "ymax": 19971868.8804085,
+                "spatialReference": {
+                  "wkid": 102100,
+                  "latestWkid": 3857
+                }
+              },
+              "minScale": 591657527.591555,
+              "maxScale": 70.5310735,
+              "units": "esriMeters",
+              "supportedImageFormatTypes": "PNG32,PNG24,PNG,JPG,DIB,TIFF,EMF,PS,PDF,GIF,SVG,SVGZ,BMP",
+              "documentInfo": {
+                "Title": "Canvas Base",
+                "Author": "Esri",
+                "Comments": "",
+                "Subject": "political boundaries, populated places, water, roads, urban areas, building footprints, parks",
+                "Category": "transportation(Transportation Networks) ",
+                "AntialiasingMode": "None",
+                "TextAntialiasingMode": "Force",
+                "Keywords": "thematic basemap,thematic map,choropleth,dot map,dot density,flow map,heat map,graphs,infographic,graduated symbols,proportional symbols,neutral,subdued,canvas,shaded,hot spot,color coded,colorful,World,Global,Europe,Andorra,Austria,Belgium,Czech Republic,Denmark,France,Germany,Great Britain,Greece,Hungary,Ireland,Italy,Luxembourg,Netherlands,Norway,Poland,Portugal,San Marino,Slovakia,Spain,Sweden,Switzerland,North America,United States,Canada,Mexico,Southern Africa,Botswana,Lesotho,Namibia,South Africa and Swaziland,Asia,India,South America,Central America,Argentina,Bolivia,Brazil,Chile,Colombia,Peru,Uruguay,Venezuela,Australia,New Zealand"
+              },
+              "capabilities": "Map,Tilemap",
+              "supportedQueryFormats": "JSON, AMF",
+              "exportTilesAllowed": false,
+              "maxRecordCount": 1000,
+              "maxImageHeight": 4096,
+              "maxImageWidth": 4096,
+              "supportedExtensions": "KmlServer"
+            }
+          },
+          {
+            "id": "World_Light_Gray_Reference_8656",
+            "layerType": "ArcGISTiledMapServiceLayer",
+            "url": "https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Reference/MapServer",
+            "visibility": true,
+            "opacity": 1,
+            "title": "Referência Cinza Claro Mundial",
+            "isReference": true
+          }
+        ],
+        "spatialReference": {
+          "wkid": "102100"
+        }
+      },
+      {
+        "thumbnailUrl": "${appPath}/configs/BasemapGallery/thumbnailUrl_3.png",
+        "title": "Tela Cinza Escura",
+        "layers": [
+          {
+            "id": "layer0",
+            "layerType": "ArcGISTiledMapServiceLayer",
+            "url": "https://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Dark_Gray_Base/MapServer",
+            "visibility": true,
+            "opacity": 1,
+            "title": "Base Tela Cinza Escuro Mundial",
+            "serviceInfoResponse": {
+              "currentVersion": 10.3,
+              "serviceDescription": "This map draws attention to your thematic content by providing a neutral background with minimal colors, labels, and features. Only key information is represented to provide geographic context, allowing your data to come to the foreground. This dark gray map supports bright colors, creating a visually compelling map graphic which helps your reader see the patterns intended. This map was developed by Esri using HERE data, DeLorme basemap layers, OpenStreetMap contributors, Esri basemap data, and select data from the GIS user community. Worldwide coverage is provided from Level 0 (1:591M scale) through Level 10 (1:577k scale). In North America, Central and South America, Africa, India, Australia & New Zealand, Pacific Islands, and select countries in the Middle East from Level 11 (1:288k scale) through Level 16 (1:9k scale). For more information on this map, visit us <a href=\"http://goto.arcgisonline.com/maps/World_Dark_Gray_Base \" target=\"_new\" >online</a>.",
+              "mapName": "Layers",
+              "description": "This map draws attention to your thematic content by providing a neutral background with minimal colors, labels, and features. Only key information is represented to provide geographic context, allowing your data to come to the foreground. This dark gray map supports bright colors, creating a visually compelling map graphic which helps your reader see the patterns intended. \n\nThis map was developed by Esri using HERE data, DeLorme basemap layers, OpenStreetMap contributors, Esri basemap data, and select data from the GIS user community. Worldwide coverage is provided from Level 0 (1:591M scale) through Level 10 (1:577k scale). In North America, Central and South America, Africa, India, Australia & New Zealand, Pacific Islands, and select countries in the Middle East from Level 11 (1:288k scale) through Level 16 (1:9k scale).\n\nFor more information on this map, visit us online at http://goto.arcgisonline.com/maps/World_Dark_Gray_Base",
+              "copyrightText": "Esri, HERE, DeLorme, MapmyIndia, © OpenStreetMap contributors, and the GIS user community",
+              "supportsDynamicLayers": false,
+              "layers": [
+                {
+                  "id": 0,
+                  "name": "Dark Gray Canvas Base",
+                  "parentLayerId": -1,
+                  "defaultVisibility": true,
+                  "subLayerIds": null,
+                  "minScale": 0,
+                  "maxScale": 0
+                }
+              ],
+              "tables": [],
+              "spatialReference": {
+                "wkid": 102100,
+                "latestWkid": 3857
+              },
+              "singleFusedMapCache": true,
+              "tileInfo": {
+                "rows": 256,
+                "cols": 256,
+                "dpi": 96,
+                "format": "MIXED",
+                "compressionQuality": 90,
+                "origin": {
+                  "x": -20037508.342787,
+                  "y": 20037508.342787
+                },
+                "spatialReference": {
+                  "wkid": 102100,
+                  "latestWkid": 3857
+                },
+                "lods": [
+                  {
+                    "level": 0,
+                    "resolution": 156543.03392800014,
+                    "scale": 591657527.591555
+                  },
+                  {
+                    "level": 1,
+                    "resolution": 78271.51696399994,
+                    "scale": 295828763.795777
+                  },
+                  {
+                    "level": 2,
+                    "resolution": 39135.75848200009,
+                    "scale": 147914381.897889
+                  },
+                  {
+                    "level": 3,
+                    "resolution": 19567.87924099992,
+                    "scale": 73957190.948944
+                  },
+                  {
+                    "level": 4,
+                    "resolution": 9783.93962049996,
+                    "scale": 36978595.474472
+                  },
+                  {
+                    "level": 5,
+                    "resolution": 4891.96981024998,
+                    "scale": 18489297.737236
+                  },
+                  {
+                    "level": 6,
+                    "resolution": 2445.98490512499,
+                    "scale": 9244648.868618
+                  },
+                  {
+                    "level": 7,
+                    "resolution": 1222.992452562495,
+                    "scale": 4622324.434309
+                  },
+                  {
+                    "level": 8,
+                    "resolution": 611.4962262813797,
+                    "scale": 2311162.217155
+                  },
+                  {
+                    "level": 9,
+                    "resolution": 305.74811314055756,
+                    "scale": 1155581.108577
+                  },
+                  {
+                    "level": 10,
+                    "resolution": 152.87405657041106,
+                    "scale": 577790.554289
+                  },
+                  {
+                    "level": 11,
+                    "resolution": 76.43702828507324,
+                    "scale": 288895.277144
+                  },
+                  {
+                    "level": 12,
+                    "resolution": 38.21851414253662,
+                    "scale": 144447.638572
+                  },
+                  {
+                    "level": 13,
+                    "resolution": 19.10925707126831,
+                    "scale": 72223.819286
+                  },
+                  {
+                    "level": 14,
+                    "resolution": 9.554628535634155,
+                    "scale": 36111.909643
+                  },
+                  {
+                    "level": 15,
+                    "resolution": 4.77731426794937,
+                    "scale": 18055.954822
+                  },
+                  {
+                    "level": 16,
+                    "resolution": 2.388657133974685,
+                    "scale": 9027.977411
+                  },
+                  {
+                    "level": 17,
+                    "resolution": 1.1943285668550503,
+                    "scale": 4513.988705
+                  },
+                  {
+                    "level": 18,
+                    "resolution": 0.5971642835598172,
+                    "scale": 2256.994353
+                  },
+                  {
+                    "level": 19,
+                    "resolution": 0.29858214164761665,
+                    "scale": 1128.497176
+                  },
+                  {
+                    "level": 20,
+                    "resolution": 0.14929107082380833,
+                    "scale": 564.248588
+                  },
+                  {
+                    "level": 21,
+                    "resolution": 0.07464553541190416,
+                    "scale": 282.124294
+                  },
+                  {
+                    "level": 22,
+                    "resolution": 0.03732276770595208,
+                    "scale": 141.062147
+                  },
+                  {
+                    "level": 23,
+                    "resolution": 0.01866138385297604,
+                    "scale": 70.5310735
+                  }
+                ]
+              },
+              "initialExtent": {
+                "xmin": -20274890.339283723,
+                "ymin": -3057761.9941039803,
+                "xmax": 20274890.339283723,
+                "ymax": 19806584.44829479,
+                "spatialReference": {
+                  "wkid": 102100,
+                  "latestWkid": 3857
+                }
+              },
+              "fullExtent": {
+                "xmin": -20037507.067161843,
+                "ymin": -19971868.880408604,
+                "xmax": 20037507.067161843,
+                "ymax": 19971868.8804085,
+                "spatialReference": {
+                  "wkid": 102100,
+                  "latestWkid": 3857
+                }
+              },
+              "minScale": 591657527.591555,
+              "maxScale": 70.5310735,
+              "units": "esriMeters",
+              "supportedImageFormatTypes": "PNG32,PNG24,PNG,JPG,DIB,TIFF,EMF,PS,PDF,GIF,SVG,SVGZ,BMP",
+              "documentInfo": {
+                "Title": "Canvas Base",
+                "Author": "Esri",
+                "Comments": "",
+                "Subject": "political boundaries, populated places, water, roads, urban areas, building footprints, parks",
+                "Category": "transportation(Transportation Networks) ",
+                "AntialiasingMode": "Best",
+                "TextAntialiasingMode": "Force",
+                "Keywords": "thematic basemap,thematic map,choropleth,dot map,dot density,flow map,heat map,graphs,infographic,graduated symbols,proportional symbols,neutral,subdued,canvas,shaded,hot spot,color coded,colorful,World,Global,Europe,Andorra,Austria,Belgium,Czech Republic,Denmark,France,Germany,Great Britain,Greece,Hungary,Ireland,Italy,Luxembourg,Netherlands,Norway,Poland,Portugal,San Marino,Slovakia,Spain,Sweden,Switzerland,North America,United States,Canada,Mexico,Southern Africa,Botswana,Lesotho,Namibia,South Africa and Swaziland,Asia,India,South America,Central America,Argentina,Bolivia,Brazil,Chile,Colombia,Peru,Uruguay,Venezuela,Australia,New Zealand"
+              },
+              "capabilities": "Map,Tilemap",
+              "supportedQueryFormats": "JSON, AMF",
+              "exportTilesAllowed": false,
+              "maxRecordCount": 1000,
+              "maxImageHeight": 4096,
+              "maxImageWidth": 4096,
+              "supportedExtensions": "KmlServer"
+            }
+          },
+          {
+            "id": "World_Dark_Gray_Reference_8618",
+            "layerType": "ArcGISTiledMapServiceLayer",
+            "url": "https://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Dark_Gray_Reference/MapServer",
+            "visibility": true,
+            "opacity": 1,
+            "title": "Referência Cinza Escuro Mundial",
+            "isReference": true
+          }
+        ],
+        "spatialReference": {
+          "wkid": "102100"
+        }
+      },
+      {
+        "thumbnailUrl": "${appPath}/configs/BasemapGallery/thumbnailUrl_4.png",
+        "title": "Topográfico",
+        "layers": [
+          {
+            "id": "layer1",
+            "layerType": "ArcGISTiledMapServiceLayer",
+            "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer",
+            "visibility": true,
+            "opacity": 1,
+            "title": "Mapa Topográfico Mundial",
+            "serviceInfoResponse": {
+              "currentVersion": 10.3,
+              "serviceDescription": "This map is designed to be used as a basemap by GIS professionals and as a reference map by anyone. The map includes administrative boundaries, cities, water features, physiographic features, parks, landmarks, highways, roads, railways, and airports overlaid on land cover and shaded relief imagery for added context. The map provides coverage for the world down to a scale of ~1:72k. Coverage is provided down to ~1:4k for the following areas: Australia and New Zealand; India; Europe; Canada; Mexico; the continental United States and Hawaii; South America and Central America; Africa; and most of the Middle East. Coverage down to ~1:1k and ~1:2k is available in select urban areas. This basemap was compiled from a variety of best available sources from several data providers, including the U.S. Geological Survey (USGS), U.S. Environmental Protection Agency (EPA), U.S. National Park Service (NPS), Food and Agriculture Organization of the United Nations (FAO), Department of Natural Resources Canada (NRCAN), GeoBase, Agriculture and Agri-Food Canada, DeLorme, HERE, Esri, OpenStreetMap contributors, and the GIS User Community. For more information on this map, including the terms of use, visit us <a href=\"http://goto.arcgisonline.com/maps/World_Topo_Map \" target=\"_new\" >online</a>.",
+              "mapName": "Layers",
+              "description": "This map is designed to be used as a basemap by GIS professionals and as a reference map by anyone. The map includes administrative boundaries, cities, water features, physiographic features, parks, landmarks, highways, roads, railways, and airports overlaid on land cover and shaded relief imagery for added context. The map provides coverage for the world down to a scale of ~1:72k. Coverage is provided down to ~1:4k for the following areas: Australia and New Zealand; India; Europe; Canada; Mexico; the continental United States and Hawaii; South America and Central America; Africa; and most of the Middle East. Coverage down to ~1:1k and ~1:2k is available in select urban areas. This basemap was compiled from a variety of best available sources from several data providers, including the U.S. Geological Survey (USGS), U.S. Environmental Protection Agency (EPA), U.S. National Park Service (NPS), Food and Agriculture Organization of the United Nations (FAO), Department of Natural Resources Canada (NRCAN), GeoBase, Agriculture and Agri-Food Canada, DeLorme, HERE, Esri, OpenStreetMap contributors, and the GIS User Community. For more information on this map, including our terms of use, visit us online at http://goto.arcgisonline.com/maps/World_Topo_Map",
+              "copyrightText": "Sources: Esri, HERE, DeLorme, Intermap, increment P Corp., GEBCO, USGS, FAO, NPS, NRCAN, GeoBase, IGN, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), swisstopo, MapmyIndia, © OpenStreetMap contributors, and the GIS User Community",
+              "supportsDynamicLayers": false,
+              "layers": [
+                {
+                  "id": 0,
+                  "name": "Citations",
+                  "parentLayerId": -1,
+                  "defaultVisibility": false,
+                  "subLayerIds": null,
+                  "minScale": 0,
+                  "maxScale": 0
+                }
+              ],
+              "tables": [],
+              "spatialReference": {
+                "wkid": 102100,
+                "latestWkid": 3857
+              },
+              "singleFusedMapCache": true,
+              "tileInfo": {
+                "rows": 256,
+                "cols": 256,
+                "dpi": 96,
+                "format": "JPEG",
+                "compressionQuality": 90,
+                "origin": {
+                  "x": -20037508.342787,
+                  "y": 20037508.342787
+                },
+                "spatialReference": {
+                  "wkid": 102100,
+                  "latestWkid": 3857
+                },
+                "lods": [
+                  {
+                    "level": 0,
+                    "resolution": 156543.03392800014,
+                    "scale": 591657527.591555
+                  },
+                  {
+                    "level": 1,
+                    "resolution": 78271.51696399994,
+                    "scale": 295828763.795777
+                  },
+                  {
+                    "level": 2,
+                    "resolution": 39135.75848200009,
+                    "scale": 147914381.897889
+                  },
+                  {
+                    "level": 3,
+                    "resolution": 19567.87924099992,
+                    "scale": 73957190.948944
+                  },
+                  {
+                    "level": 4,
+                    "resolution": 9783.93962049996,
+                    "scale": 36978595.474472
+                  },
+                  {
+                    "level": 5,
+                    "resolution": 4891.96981024998,
+                    "scale": 18489297.737236
+                  },
+                  {
+                    "level": 6,
+                    "resolution": 2445.98490512499,
+                    "scale": 9244648.868618
+                  },
+                  {
+                    "level": 7,
+                    "resolution": 1222.992452562495,
+                    "scale": 4622324.434309
+                  },
+                  {
+                    "level": 8,
+                    "resolution": 611.4962262813797,
+                    "scale": 2311162.217155
+                  },
+                  {
+                    "level": 9,
+                    "resolution": 305.74811314055756,
+                    "scale": 1155581.108577
+                  },
+                  {
+                    "level": 10,
+                    "resolution": 152.87405657041106,
+                    "scale": 577790.554289
+                  },
+                  {
+                    "level": 11,
+                    "resolution": 76.43702828507324,
+                    "scale": 288895.277144
+                  },
+                  {
+                    "level": 12,
+                    "resolution": 38.21851414253662,
+                    "scale": 144447.638572
+                  },
+                  {
+                    "level": 13,
+                    "resolution": 19.10925707126831,
+                    "scale": 72223.819286
+                  },
+                  {
+                    "level": 14,
+                    "resolution": 9.554628535634155,
+                    "scale": 36111.909643
+                  },
+                  {
+                    "level": 15,
+                    "resolution": 4.77731426794937,
+                    "scale": 18055.954822
+                  },
+                  {
+                    "level": 16,
+                    "resolution": 2.388657133974685,
+                    "scale": 9027.977411
+                  },
+                  {
+                    "level": 17,
+                    "resolution": 1.1943285668550503,
+                    "scale": 4513.988705
+                  },
+                  {
+                    "level": 18,
+                    "resolution": 0.5971642835598172,
+                    "scale": 2256.994353
+                  },
+                  {
+                    "level": 19,
+                    "resolution": 0.29858214164761665,
+                    "scale": 1128.497176
+                  },
+                  {
+                    "level": 20,
+                    "resolution": 0.14929107082380833,
+                    "scale": 564.248588
+                  },
+                  {
+                    "level": 21,
+                    "resolution": 0.07464553541190416,
+                    "scale": 282.124294
+                  },
+                  {
+                    "level": 22,
+                    "resolution": 0.03732276770595208,
+                    "scale": 141.062147
+                  },
+                  {
+                    "level": 23,
+                    "resolution": 0.01866138385297604,
+                    "scale": 70.5310735
+                  }
+                ]
+              },
+              "initialExtent": {
+                "xmin": -28848255.049479112,
+                "ymin": -2077452.082122866,
+                "xmax": 28848255.049479112,
+                "ymax": 16430757.376790084,
+                "spatialReference": {
+                  "wkid": 102100,
+                  "latestWkid": 3857
+                }
+              },
+              "fullExtent": {
+                "xmin": -20037507.067161843,
+                "ymin": -19971868.880408604,
+                "xmax": 20037507.067161843,
+                "ymax": 19971868.88040863,
+                "spatialReference": {
+                  "wkid": 102100,
+                  "latestWkid": 3857
+                }
+              },
+              "minScale": 591657527.591555,
+              "maxScale": 70.5310735,
+              "units": "esriMeters",
+              "supportedImageFormatTypes": "PNG32,PNG24,PNG,JPG,DIB,TIFF,EMF,PS,PDF,GIF,SVG,SVGZ,BMP",
+              "documentInfo": {
+                "Title": "World Topographic Map",
+                "Author": "Esri",
+                "Comments": "",
+                "Subject": "topographic, topography, administrative boundaries, cities, water features, physiographic features, parks, landmarks, highways, roads, railways, airports, land cover, shaded relief imagery",
+                "Category": "imageryBaseMapsEarthCover (Imagery, basemaps, and land cover)",
+                "AntialiasingMode": "None",
+                "TextAntialiasingMode": "Force",
+                "Keywords": "World,Global,Europe,North America,South America,Southern Africa,Australia,New Zealand,India"
+              },
+              "capabilities": "Map,Tilemap,Query,Data",
+              "supportedQueryFormats": "JSON, AMF",
+              "exportTilesAllowed": false,
+              "maxRecordCount": 100,
+              "maxImageHeight": 4096,
+              "maxImageWidth": 4096,
+              "supportedExtensions": "KmlServer"
+            }
+          }
+        ],
+        "spatialReference": {
+          "wkid": "102100"
+        }
+      }
+    ]
+  }
+}

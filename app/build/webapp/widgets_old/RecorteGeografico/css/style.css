@@ -1,0 +1,322 @@
+/* Lightbox background */
+#lightbox {
+  display:none;
+  background: rgba(0,0,0,0.8);
+  position:absolute;
+  top:0px;
+  left:0px;
+  min-width:100%;
+  min-height:100%;
+  z-index:1000;
+}
+/* Lightbox panel with some content */
+#lightbox-panel {
+  display:none;
+  position:fixed;
+  top:150px;
+  left:28%;
+  width:45%;
+  background:#FFFFFF;
+  padding:10px 15px 10px 15px;
+  border:2px solid #CCCCCC;
+  z-index:1001;
+}
+/* Lightbox table with some content */
+#lightbox-table {
+  display:none;
+  position:fixed;
+  top:40%;
+  left:28%;
+  width:45%;
+  background:#FFFFFF;
+  padding:10px 15px 10px 15px;
+  border:2px solid #CCCCCC;
+  z-index:1001;
+  padding-bottom: 40px;
+}
+.widget-tecgeo{
+	height: 465px;
+}
+.div-recorte{
+  background: rgb(238,238,238);
+  border: 1px solid;
+  border-color: rgb(206,206,206);
+  padding: 5px;
+  margin-bottom: 10px;
+  width: 100%;
+  margin-left: 0;
+}
+.div-recorte-inside{
+  border: 1px solid;
+  border-color: rgb(206,206,206);
+  padding: 2px;
+  margin-top: 5px;
+}
+/*.div-recorte-inside:hover{
+  background-color: #ccc;
+  transition: 0.2s;
+}*/
+.row-padding{
+  margin-left: -12px;
+  padding-bottom: 10px;
+}
+.btn-maximize{
+  margin-left: 19px;
+  margin-top: -8px;
+  position: absolute;
+  z-index: 5;
+}
+.calcite-nav-top .calcite-panels, .calcite-nav-top-fixed .calcite-panels {
+    top: 15px;
+}
+
+.input-date{
+	width: 100%;
+}
+
+.div-padding-recorte{
+	padding-right: 0px;
+  margin-left: -3px;
+}
+
+.label-big{
+	font-size: 28px;
+}
+
+.label-medium{
+	font-size: 13px;
+}
+.label-medium-title{
+  font-size: 15px;
+}
+.dropdown-menu{
+	min-width: 0;
+}
+.disabled-white{
+  background: #fff !important;
+  cursor: default !important;
+}
+
+/*Caso queira deixar a altura do carousel fixa*/
+/*#myCarousel,
+.carousel-inner {
+  height: 300px;
+}*/
+
+.th-gray{
+	padding: 3px !important;
+  background-color: white;
+  font-weight: bold;
+}
+
+.td-gray-recorte{
+	padding: 3px !important;
+  background-color: white;
+  cursor: pointer;
+}
+
+.arrow-table{
+	top:120px;
+}
+
+.table-recort{
+	display:block;
+	height: 200px;
+	overflow-y: scroll;
+	font-size: 11px;
+}
+.table-recort-lightbox{
+  display:block;
+  height: 250px;
+  overflow-y: scroll;
+  font-size: 11px;
+}
+
+.hr-itbi{
+	margin-top: 3px;
+	margin-bottom: 3px;
+}
+
+.input-date-recorte{
+  width: 135px;
+  display: table-cell;
+}
+.input-tipo-valor-recortar{
+	width: 103.5px;
+	padding-left: 2px;
+    padding-right: 1px;
+}
+.input-height-recorte{
+	height: 30px;
+	font-size: 13px;
+}
+.input-group-addon-calendar{
+    padding: 6px 2px !important;
+    font-size: 13px !important;
+}
+.div-btn-recortar{
+	bottom: -11px;
+  padding-right: 0px;
+}
+.div-btn-exportar{
+  margin-left: -9px;
+}
+.div-btn-limpar-recortar{
+  padding-top: 3px;
+  position: absolute;
+  left: 82.5%;
+}
+.carousel-control.right{
+	background-image: none !important;
+	/*background-color: darkgrey; */
+}
+.carousel-control.left{
+	background-image: none !important;
+	/*background-color: darkgrey; */
+}
+.carousel-control{
+	width: 8% !important;
+}
+.arrows{
+	margin-top: 130px;
+	font-size: 35px;
+}
+#myCarousel{
+  margin-bottom: 35px;
+  width: 314px;
+}
+#maximizarGrafico{
+  border: none;
+  padding-bottom: 3px;
+  margin-top: 0px;
+}
+#maximizarGrafico:hover{
+  background-color: white;
+}
+#maximizarTable{
+  border: none;
+  padding-bottom: 3px;
+  position: absolute;
+  right: 5px;
+  z-index: 10;
+  background-color: #eee;
+}
+#maximizarTable:hover{
+  background-color: #eee;
+}
+.disabled-white{
+  background: #fff !important;
+  cursor: default !important;
+}
+::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+}
+::-webkit-scrollbar-track {
+      background-color: rgba(189, 189, 189, 0.33);
+} /* the new scrollbar will have a flat appearance with the set background color */
+
+::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.2);
+} /* this will style the thumb, ignoring the track */
+
+::-webkit-scrollbar-button {
+      background-color: #cccccc;
+      height: 22px;
+} /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
+
+::-webkit-scrollbar-corner {
+      background-color: #a5a5a5;;
+}
+.carousel-indicators {
+    bottom: -39px;
+}
+.carousel-indicators li {
+  border: 1px solid #999;
+}
+.carousel-indicators .active {
+    background-color: #b5bcc7;
+}
+#carousel_inner{
+  margin-left: 4px;
+}
+#toShowMax{
+  height: 330px;
+  width: 329px;
+}
+#dropdownMenu1{
+  padding-left: 4.5px;
+  padding-right: 4.5px;
+  border-radius: 4px 0 0 4px;
+}
+#limparRecorte{
+  padding-left: 8.5px;
+  padding-right: 8.5px;
+  border-radius: 0 4px 4px 0;
+}
+#searchByClickButton{
+  border-radius: 0;
+}
+.icon-cortar-circulo{
+  content: url('../images/pesq_circulo.png');
+  width: 14px;
+}
+.icon-cortar-poligono{
+  content: url('../images/pesq_poligono.png');
+  width: 14px;
+}
+.table-recort th{
+  white-space: nowrap;
+}
+.table-recort-lightbox th{
+  white-space: nowrap;
+}
+.tooltip {
+    position: fixed !important;
+    padding-left: 0 !important;
+    padding-top: 0 !important;
+    padding-right: 0 !important;
+    border: none !important;
+}
+.align-tp{
+  margin-top: 6px;
+}
+.table-titles{
+  margin-left: -13px;
+}
+.fa-chevron-left:before{
+  content: url('../images/leftarrowsmall.png') !important;
+}
+.fa-chevron-right:before{
+  content: url('../images/rightarrowsmall.png') !important;
+}
+#close-panel{
+  position: absolute;
+  font-size: 20px;
+  color: black;
+  text-decoration: none;
+  margin-top: -6px;
+  right: 8px;
+  z-index: 100;
+}
+#close-panel:hover{
+  color: gray;
+}
+#close-table{
+  position: absolute;
+  font-size: 20px;
+  color: black;
+  text-decoration: none;
+  margin-top: -6px;
+  right: 8px;
+  z-index: 100;
+}
+#close-table:hover{
+  color: gray;
+}
+.tr-click:hover td{
+  background-color: #ccc;
+}
+tr.highlighted td {
+    background: cyan;
+}

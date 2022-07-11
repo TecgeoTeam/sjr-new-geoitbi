@@ -1,0 +1,562 @@
+.zc-ref {
+  display: none;
+}
+
+.message-alert {
+    padding: 20px;
+		/*position: fixed;*/
+		z-index: 100000;
+		width: 500px;
+		/*overflow-y: auto;*/
+    background-color: #f44336;
+    color: white;
+    opacity: 1;
+    transition: opacity 0.6s;
+    margin-bottom: 15px;
+    top: 45px;
+}
+
+.text-box {
+		overflow-y: auto;
+}
+
+.message-alert.success {
+  color: #444;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0px 0px 10px gray;
+}
+.message-alert.info {
+  color: #444;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0px 0px 10px gray;
+}
+.message-alert.warning {
+  color: #444;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0px 0px 10px gray;
+  min-height: 125px;
+}
+
+.title-message-warning{
+  font-size: 18px;
+  display: flex;
+  margin-left: 70px;
+}
+
+.closebtn {
+    margin-right: -10px;
+    margin-top: -5px;
+    color: #444;
+    font-weight: bold;
+    float: right;
+    font-size: 20px;
+    line-height: 0px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
+}
+
+.logo-sl-message{
+  width: 70px;
+  display: inline;
+  padding-right: 20px;
+  margin-top: -40%;
+}
+.div-footer-message{
+  text-align: right;
+  padding-top: 18px;
+}
+.footer-sl-message {
+    color: #ddd;
+}
+
+#calculoSucesso .footer-sl-message {
+    color: #ddd;
+    top: 26px;
+    position: relative;
+}
+
+.text-box{
+  display: block;
+  font-size: 15px;
+}
+.div-logo-message{
+  float: left;
+}
+
+
+/*spinner on screen*/
+.spinner-tec {
+    position: fixed;
+    right: 50%;
+    top: 50%;
+    z-index: 1000;
+    font-size: 7em;
+
+
+    background: no-repeat center center;
+    opacity: 1;
+    filter: alpha(opacity=60);
+    line-height: 20px;
+}
+
+.spinner-tec .loading-container{
+  position:absolute;
+  width:250px;
+  height:48px;
+  top:50%;
+  left:50%;
+  margin-left:-24px;
+  margin-top:-24px;
+  color:#000000;
+  font-weight:bold;
+}
+.spinner-tec .loading-container .img-div{
+  position:absolute;
+  left:0;
+  top: 0;
+  width: 48px;
+  height: 48px;
+  background-color: #f4f4f4;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  -o-box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+.spinner-tec .loading-container img{
+  width: 24px;
+  height: 24px;
+  margin: 12px;
+}
+.spinner-tec .loading-container p{
+  position:absolute;
+  left:68px;
+  top:0;
+  display:inline-block;
+  height: 48px;
+  line-height:48px;
+  white-space:nowrap;
+  margin:0;
+}
+.jimu-rtl .spinner-tec .loading-container{
+  left: auto;
+  right: 50%;
+  margin-left:auto;
+  margin-right:-24px;
+}
+.jimu-rtl .spinner-tec .loading-container .img-div{
+  left:auto;
+  right: 0;
+}
+.jimu-rtl .spinner-tec .loading-container p{
+  left: auto;
+  right: 68px;
+}
+
+/*zoom slider*/
+#widgets_ZoomSlider_Widget_32{
+    left: 1vh !important;
+    top: 4em !important;
+}
+.jimu-widget-zoomslider {
+    font-size: 4vh !important;
+    line-height: 4vh !important;
+}
+.jimu-corner-all {
+    -moz-border-radius: 1vh !important;
+    -webkit-border-radius: 1vh !important;
+    border-radius: 1vh !important;
+}
+.jimu-widget-zoomslider.vertical .zoom-in {
+    border-bottom: 0.1vh solid #57585A !important;
+}
+.jimu-widget-zoomslider .zoom {
+    width: 5vh !important;
+    height: 5vh !important;
+}
+
+/*home button*/
+#widgets_HomeButton_Widget_28{
+    left: 1vh !important;
+    top: 4em !important;
+}
+.HomeButton .home {
+    padding: 2vh !important;
+    width: 5vh !important;
+    height: 5vh !important;
+    -webkit-border-radius: 1vh !important;
+    -moz-border-radius: 1vh !important;
+    -o-border-radius: 1vh !important;
+    border-radius: 1vh !important;
+}
+.jimu-widget-homebutton {
+    border-radius: 1vh !important;
+}
+
+@media (max-width: 1000px) {
+    #widgets_HomeButton_Widget_28 {
+        top: 4em !important;
+    }
+}
+@media (max-height: 800px){
+    #widgets_HomeButton_Widget_28 {
+        top: 4em !important;
+    }
+}
+
+/*painel de camadas operacionais*/
+#_19_panel{
+    /*left: 0vh !important;*/
+    top: 3.5em !important;
+    bottom: 0vh !important;
+    /*width: 45vh !important;*/
+    z-index: 1 !important;
+    /*TODO: ao final do periodo de testes/correção de responsividade remover esse display none*/
+    /*display: none;*/
+}
+.jimu-widget-frame.jimu-container {
+    padding: 1vh 1vh 1vh 1vh !important;
+}
+.jimu-ldockable-panel>.bar {
+    right: -3vh !important;
+    width: 4vh !important;
+    height: 9vh !important;
+    top: 22em !important;
+}
+.jimu-widget-layerList .layers-section .layer-list-title {
+    height: 3vh !important;
+    /*font-size: 2.2vh !important;*/ 
+    margin-bottom: 2vh !important;
+    margin-left: 5vh !important;
+    margin-right: 5vh !important;
+}
+@media (max-width: 1500px) {
+    .jimu-widget-layerList .layers-section .layer-list-title {
+        font-size: 2.2vh !important;
+    }
+}
+.feature-action {
+    /*font-size: 2.5vh !important;*/
+}
+@media (max-width: 1500px) {
+    .feature-action {
+        font-size: 2.5vh !important;
+    }
+}
+.jimu-widget-layerList .layer-row {
+    height: 7vh !important;
+}
+.jimu-widget-layerList .showLegend-div {
+    width: 1vh !important;
+    height: 2vh !important;
+    margin-left: 1vh !important;
+    margin-top: 0.5vh !important;
+}
+.jimu-widget-layerList .div-select {
+    /*font-size: 1vh !important;*/
+}
+@media (max-width: 1500px) {
+    .jimu-widget-layerList .div-select {
+        font-size: 1vh !important;
+    }
+}
+/*.jimu-checkbox .checkbox {
+    width: 2.5vh !important;
+    height: 2.5vh !important;
+    border-radius: 0vh !important;
+    margin-top: 0vh !important;
+}*/
+/*@media (max-width: 1200px){
+    .jimu-checkbox .checkbox {
+        width: 2.2vh !important;
+        height: 2.2vh !important;
+    }
+}*/
+/*
+@media (max-height: 800){
+    .jimu-checkbox .checkbox {
+        width: 2.4vh !important;
+        height: 2.4vh !important;
+    }
+}*/
+.jimu-widget-layerList .div-content {
+    /*font-size: 2.5vh !important;*/
+}
+@media (max-width: 700px) {
+    .jimu-widget-layerList .div-content {
+        font-size: 2.5vh !important;
+    }
+}
+.jimu-widget-layerList .col3 {
+    width: 4vh !important;
+}
+.jimu-widget-layerList .layers-list-popupMenu-div {
+    width: 7.5vh !important;
+    height: 5.5vh !important;
+    border-radius: 0vh !important;
+    padding-top: 1vh !important;
+}
+.jimu-widget-layerList .jimu-dropmenu .popup-menu-button {
+    width: 4vh !important;
+    height: 4vh !important;
+}
+.jimu-widget-layerList .jimu-dropmenu .drop-menu {
+    min-width: 20vh !important;
+    max-width: 50vh !important;
+    outline-width: 0vh !important;
+    /*font-size: 2.5vh !important;*/
+    box-shadow: 0px 0px 0.5vh 0.5vh rgba(177, 177, 177, 0.5) !important;
+}
+@media (max-width: 1500px) {
+    .jimu-widget-layerList .jimu-dropmenu .drop-menu {
+        font-size: 2.5vh !important;
+    }
+}
+.jimu-dropmenu>.drop-menu {
+    border: 0vh solid #d7dbde !important;
+}
+.jimu-widget-layerList .jimu-dropmenu .menu-item {
+    height: 7vh !important;
+    line-height: 7vh !important;
+    padding: 0px 5vh !important;
+}
+.jimu-widget-layerList .layer-list-operations {
+    right: 4vh !important;
+}
+.jimu-widget-layerList .begin-blank-div {
+    width: 1vh !important;
+    height: 1vh !important;
+}
+.claro .dijitRuleLabelsContainerH {
+    padding: 0.5vh 0 !important;
+}
+.jimu-widget-layerList .layer-list-operations .drop-menu .menu-item {
+    /*font-size: 2.5vh !important;*/
+}
+@media (max-width: 1500px) {
+    .jimu-widget-layerList .layer-list-operations .drop-menu .menu-item {
+        font-size: 2.5vh !important;
+    }
+}
+.jimu-widget-layerList .layer-list-operations .drop-menu {
+    top: 3vh !important;
+}
+.jimu-widget-layerList .layer-list-operations .drop-menu hr {
+    border-bottom: 0.1vh solid #d7dbde !important;
+}
+.jimu-widget-layerList .popup-menu-transparency-body {
+    box-shadow: 0px 0px 0.5vh 0.5vh rgba(177, 177, 177, 0.5) !important;
+    outline-width: 1vh !important;
+    width: 37vh !important;
+    height: 10vh !important;
+    padding-right: 9% !important;
+    /*font-size: 2.5vh !important;*/
+}
+@media (max-width: 1500px) {
+    .jimu-widget-layerList .popup-menu-transparency-body {
+        font-size: 2.5vh !important;
+    }
+}
+.claro .dijitSliderButtonContainerH {
+    padding: 0.5vh 0.5vh 0.5vh 0.5vh !important;
+}
+.claro .dijitSliderDecrementIconH {
+    background-position: -5.4em 50% !important;
+}
+.claro .dijitSliderDecrementIconH, .claro .dijitSliderIncrementIconH {
+    height: 2vh !important;
+    width: 2vh !important;
+}
+.claro .dijitSliderDecrementIconH, .claro .dijitSliderIncrementIconH, .claro .dijitSliderDecrementIconV, .claro .dijitSliderIncrementIconV {
+    -moz-border-radius: 0.5vh !important;
+    border-radius: 0.5vh !important;
+    border: solid 0.1vh #b5bcc7 !important;
+}
+claro .dijitSliderLeftBumper {
+    border-left: solid 0vh #b5bcc7 !important;
+}
+.dijitSliderBumperH {
+    width: 1vh !important;
+    height: 1vh !important;
+    border-width: 0.1vh 0 !important;
+}
+.claro .dijitSliderImageHandleH {
+    border: 0 !important;
+    width: 2.59vh !important;
+    height: 3vh !important;
+}
+.dijitSliderImageHandleH {
+    top: -1vh !important;
+}
+.claro .dijitSliderRightBumper {
+    border-right: solid 0.1vh #b5bcc7 !important;
+}
+.claro .dijitSliderIncrementIconH {
+    background-position: -4.7em 50% !important;
+}
+.map .load-container .loader {
+    /*font-size: 3vh !important;*/
+}
+@media (max-width: 1500px) {
+    .map .load-container .loader {
+        font-size: 3vh !important;
+    }
+}
+
+
+/*mapa*/
+#map{
+    /*TODO: ao final do periodo de correções de responsividade retornar o valor de left para 45vh*/
+    /*left: 45vh !important;*/
+    width: 100% !important;
+    top: 3.5em !important;
+    right: 0vh !important;
+    bottom: 0vh !important;
+    padding: 0vh !important;
+}
+
+/*search city*/
+#widgets_Search_Widget_3{
+    left: 1vh !important;
+    top: 1vh !important;
+}
+
+
+/*Scalebar*/
+#widgets_Scalebar_Widget_21{
+    left: 1vh !important;
+    bottom: 5vh !important;
+}
+.esriScalebarEnglishLine {
+    top: -0.5vh !important;
+}
+.esriScalebarLine {
+    height: 1.5vh !important;
+    border: -0.3vh solid #444444 !important;
+}
+.esriScaleLabelDiv {
+    top: -0.5vh !important;
+    padding: 0.5vh !important; 
+}
+
+
+/*Coordinate*/
+#widgets_Coordinate_Widget_23{
+    left: 1vh !important;
+    bottom: 1vh !important;
+    width: 23vh !important
+}
+.jimu-widget-coordinate .coordinate-background {
+    line-height: 3vh !important;
+    width: max-content !important;
+}
+.jimu-widget-coordinate .coordinate-locate-container {
+    width: 3vh !important;
+    height: 3vh !important;
+    border-right: 0.1vh solid rgba(255,255,255,0.4) !important;
+    display: block !important;
+}
+.jimu-widget-coordinate .coordinate-info {
+    margin: 0vh 1vh !important;
+    font-size: 1.5vh !important;
+}
+.jimu-widget-coordinate .coordinate-locate {
+    width: 3vh !important;
+    height: 3vh !important;
+}
+
+
+/*Esri control*/
+.esriControlsBR {
+    right: 3vh !important;
+    bottom: 1vh !important;
+}
+.esriAttribution {
+    font-size: 2.2vh !important;
+    line-height: 2vh !important;
+    padding: 0 0vh !important;
+    margin: 0px 1vh 0 0 !important;
+}
+.map .logo-med {
+    width: 5.5em !important;
+    height: 2.7em !important;
+}
+
+/* Controller */
+.jimu-widget-header-controller .container-section{
+    width: 90vh !important;
+    position: absolute !important;
+    right: 0 !important;
+}
+@media (max-width: 450px){
+    .jimu-widget-header-controller .container-section {
+        width: 50vh !important;
+    }
+}
+@media (max-width: 500px) {
+    .jimu-widget-header-controller .container-section {
+        width: 70vh !important;
+    }
+}
+.jimu-widget-header-controller .titles {
+    left: 8vh !important;
+}
+
+.jimu-foldable-panel{
+    /*top: unset !important;
+    bottom: 0% !important;
+    left: unset !important;
+    right: 0.5% !important;
+    width: 62vh !important;*/
+    overflow-y: auto !important;
+    height: 93vh !important;
+    top: 7vh !important;
+    position: fixed !important;
+    z-index: 998 !important;
+}
+
+.jimu-panel-content{
+	padding-top: 1vh !important;
+}
+
+.esriControlsBR{
+	position: fixed !important;
+}
+
+#widgets_OverviewMap_Widget_27{
+	position: fixed !important;
+    bottom: 1vh !important;
+    top: unset !important;
+    left: unset !important;
+    right: 1vh !important;
+}
+
+.filtroPesq{
+	margin:0vh !important;
+}
+
+#widgets_FiltroPesq_Widget_41_panel > .jimu-panel-content{
+	padding-top: 0.4vh !important;
+}
+
+.panel panel-default{
+	height: 17vh !important;
+}
+
+.table-pesquisa-div {
+    width: 100% !important;
+}
+
+.table-condicao-div-transmissao {
+    width: 100% !important;
+}

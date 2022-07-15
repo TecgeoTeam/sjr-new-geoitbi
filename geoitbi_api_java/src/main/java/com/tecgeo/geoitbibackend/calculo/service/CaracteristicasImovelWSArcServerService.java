@@ -43,6 +43,7 @@ public class CaracteristicasImovelWSArcServerService {
 				caracteristicas.put("idade", 1.0);
 				caracteristicas.put("pedologia", imovel.get("DE_PEDOLOGIA"));
 				caracteristicas.put("area_terreno", (Double) imovel.get("NU_AREA_TERRENO"));
+				caracteristicas.put("testada", (Double) imovel.get("NU_TESTADA_T1"));
 				
 				if(uso.equals("territorial")) {
 					//TODO TESTAR IMÓVEL TERRITORIAL
@@ -53,6 +54,7 @@ public class CaracteristicasImovelWSArcServerService {
 					caracteristicas.put("padraoconstrucao", "baixo");
 					caracteristicas.put("idade", 0.0);
 					caracteristicas.put("pavimentos", 1.0);
+					caracteristicas.put("padraoconstrucao", "2C");
 				}
 
 				return caracteristicas;

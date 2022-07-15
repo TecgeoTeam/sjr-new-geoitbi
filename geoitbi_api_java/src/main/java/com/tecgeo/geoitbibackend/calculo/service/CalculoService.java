@@ -54,8 +54,8 @@ public class CalculoService {
 		Object imovelWebService = imovelWSService.getImovelWS(inscricao);
 		this.map.put("imovelWS", imovelWebService);
 		
-		Object imovelWebServiceTINUS = imovelWSService.getImovelWSTinus(inscricao);
-		this.map.put("imovelWSTINUS", imovelWebServiceTINUS);
+		// Object imovelWebServiceTINUS = imovelWSService.getImovelWSTinus(inscricao);
+		// this.map.put("imovelWSTINUS", imovelWebServiceTINUS);
 	
 		//Object builtCaracImovel = caracteristicasImovelService.buildCaracteristicasImovel(this.map);
 		Object builtCaracImovel = caracteristicasImovelArcServerService.buildCaracteristicasImovelArcServer(this.map);
@@ -66,19 +66,27 @@ public class CalculoService {
 				
 		Object builtParametros = parametersService.buildParameters();
 		this.map.put("parametros", builtParametros);
+
+		Object builtFatorCorrecao = parametersService.buildFatorCorrecao();
+		this.map.put("fatorCorrecao", builtFatorCorrecao);
 		
 		Object builtZona = parametersService.buildZona();
 		this.map.put("zona", builtZona);
 
-		//ESPERANDO O ALINHAMENTO DO PADRÃO E TIPOLOGIA, ITEM 2.2 DA LEI
-		Object depreciacao = depreciacaoFisicaService.getDepreciacaoFisica(this.map);
-		this.map.put("depreciacao", depreciacao);
-		
-		Object custoUnitarioBasico = custoUnitarioBasicoService.getCustoUnitarioBasico(this.map);
-		this.map.put("cub", custoUnitarioBasico);
-		
-		Object valorEdificacao = valorDaEdificacaoService.getValorDaEdificacao(this.map);
-		this.map.put("valor_edificacao", valorEdificacao);
+		if (((Map<String, Object>) this.map.get("caracteristicas")).get("predial").equals(true)) {
+				
+			Object depreciacao = depreciacaoFisicaService.getDepreciacaoFisica(this.map);
+			this.map.put("depreciacao", depreciacao);
+			
+			Object custoUnitarioBasico = custoUnitarioBasicoService.getCustoUnitarioBasico(this.map);
+			this.map.put("cub", custoUnitarioBasico);
+			
+			Object valorEdificacao = valorDaEdificacaoService.getValorDaEdificacao(this.map);
+			this.map.put("valor_edificacao", valorEdificacao);
+			
+		} else {
+			this.map.put("valor_edificacao", 0.0);
+		}
 		
 		Object valorMetroQuadrado = valorMetroQuadradoService.calcularValorMetroQuadrado(this.map);
 		this.map.put("valor_metro_quadrado", valorMetroQuadrado);

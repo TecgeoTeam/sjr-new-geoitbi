@@ -13,7 +13,7 @@ public class ValorMetroQuadradoService {
 	private Double coodX;
 	private Double areaPadrao;
 	private String pavimentacao;
-	private String testadaMedia;
+	private Double testadaMedia;
 	private Double rendaSetor;
 	private Double areaConst;
 	private Double idade;
@@ -36,7 +36,7 @@ public class ValorMetroQuadradoService {
 	    //this.idade = (Double) ((Map<String,Object>) objectMap.get("caracteristicas")).get("idade");
 	    this.areaConst = 0.0;
 	    this.idade = 0.0;
-	    this.testadaMedia = (String)  ((Map<String,Object>) ((ArrayList) ((Map<String,Object>) objectMap.get("imovelWSTINUS")).get("bci_componentes")).get(0)).get("componente_testada");
+	    this.testadaMedia = (Double) ((Map<String,Object>) objectMap.get("caracteristicas")).get("testada");
 	    this.drenagem = (String) ((Map<String,Object>) objectMap.get("dadosPlanta")).get("de_drenagem");
 	    //this.bloco = (String) ((Map<String,Object>) objectMap.get("dadosPlanta")).get("sjr_cadastro.SDE.ln_face_de_quadra.nu_bloco");
 	    this.bloco = (String) ((Map<String, Object>) objectMap.get("dadosPlanta")).get("de_zona_calculo");
@@ -55,7 +55,7 @@ public class ValorMetroQuadradoService {
 		//Double dblIdade = Double.parseDouble(this.idade);
 		
 	    System.out.println(this.testadaMedia);
-	    dblTestada = Double.parseDouble(this.testadaMedia.replace(",", "."));
+	    dblTestada = this.testadaMedia;
 	   
 
 	    if (pavimentacao.equals("SEM PAVIMENTAÇÃO")) {

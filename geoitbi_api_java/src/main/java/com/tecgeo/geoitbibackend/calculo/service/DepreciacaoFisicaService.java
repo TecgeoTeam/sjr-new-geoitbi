@@ -43,7 +43,7 @@ public class DepreciacaoFisicaService {
 	    
 	    Integer vidaRefInt = vidaReferencial.intValue();
 	    
-		return ((Map<String,Object>) coef.get(vidaRefInt.toString())).get(conservacao);
+		return ((Map<String,Object>) coef.get(vidaRefInt.toString())).get(conservacao.toLowerCase());
 	}
 
 }

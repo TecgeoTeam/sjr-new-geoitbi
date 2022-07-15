@@ -13,11 +13,13 @@ public class ValorDaEdificacaoService {
 	@SuppressWarnings({"unchecked", "rawtypes"})
 	public Object getValorDaEdificacao(Map<String, Object> objectMap) {
 		
-		String areaConstruidaString = (String)  ((Map<String,Object>) ((ArrayList) ((Map<String,Object>) objectMap.get("imovelWSTINUS")).get("bci_componentes")).get(0)).get("componente_area_construida");
-		this.areaConstruida = Double.parseDouble(areaConstruidaString.replace(".", "").replace(",","."));
+		//String areaConstruidaString = (String) ((Map<String, Object>) objectMap.get("caracteristicas")).get("area_construida");
+		this.areaConstruida = (double) ((Map<String, Object>) objectMap.get("caracteristicas")).get("area_construida");;
 		
 		// ITEM 2.2 DA LEI COMPLEMENTAR DE SJR
 		Double valorEdif;
+
+		System.out.println(objectMap);
 
 		valorEdif = areaConstruida * (double) objectMap.get("cub") * (0.2 + 0.8 * (double) objectMap.get("depreciacao"));
 

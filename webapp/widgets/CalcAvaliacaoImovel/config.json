@@ -1,5 +1,5 @@
 {
-    "stmServiceUrl": "https://sigribamar.com.br/geoitbi_api_java/calculo/simplificado/",
+    "stmServiceUrl": "https://sigribamar.com.br/geoitbi_api_java/calculo/",
     "unidadeServiceUrl": "https://sigribamar.com.br/server/rest/services/Webgis/SJR_infraestrutura_Geo/MapServer/27",
     "loteServiceUrl": "https://sigribamar.com.br/server/rest/services/Webgis/SJR_infraestrutura_Geo/MapServer/14",
     "tableLoteServiceUrl": "https://sigribamar.com.br/server/rest/services/Webgis/SJR_infraestrutura_Geo/MapServer/26",

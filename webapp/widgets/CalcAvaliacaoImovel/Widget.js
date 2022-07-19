@@ -307,23 +307,23 @@ define(
 
               selfCalculo.randomValues(valorTerreno, numberParaReal(stmData.valor_edificacao), total);
 
-              selfCalculo.idImovel = stmData.imovelWSTINUS.imovel_id;
+              selfCalculo.idImovel = stmData.inscricao;
 
               let coodY = stmData.dadosPlanta.nu_y;
               let coodX = stmData.dadosPlanta.nu_x;
-              let areaPadrao = stmData.imovelWSTINUS.bci_componentes[0].componente_area;
+              let areaPadrao = stmData.caracteristicas.area_terreno;
               let pavimentacao;
               if (stmData.caracteristicas.pavimentacao){
                 pavimentacao = stmData.caracteristicas.pavimentacao;
               } else {
                 pavimentacao = 'Informação não constante';
               }
-              let testadaMedia = stmData.imovelWSTINUS.bci_componentes[0].componente_testada;
+              let testadaMedia = stmData.caracteristicas.testada;
               let rendaSetor = stmData.dadosPlanta.nu_renda_v02;
-              let areaConst = stmData.imovelWSTINUS.bci_componentes[0].componente_area_construida;
+              let areaConst = stmData.caracteristicas.area_construida;
               let padraoConserv = stmData.caracteristicas.conservacao;
               let tipo = stmData.caracteristicas.tipologia;
-              let idade = stmData.imovelWSTINUS.imovel_idade;
+              let idade = stmData.caracteristicas.idade;
               let drenagem = stmData.caracteristicas.drenagem;
               let esgoto = stmData.caracteristicas.esgoto;
               let topografia = stmData.caracteristicas.topografia;
@@ -855,7 +855,7 @@ define(
             // dadosTerreno = resultadosBusca.getDadosTerreno();
             // dadosPredial = resultadosBusca.getDadosPredial();
 
-            dadosImovel = stmData.imovelWSTINUS;
+            dadosImovel = stmData.imovelWS;
             caracteristicas = stmData.caracteristicas;
         }
 

@@ -16,8 +16,8 @@ import com.tecgeo.geoitbibackend.util.JsonUtil;
 @Service
 public class DadosPlantaDeValorService {
 	
-	private String urlPlantaDeValor = "http://www.senocwb.com/senoportal/rest/services/SJR_ITBI/Mapas_Tematicos_da_Planta_de_Valores/MapServer/0";
-	private String urlLotesComFaces = "https://www.senocwb.com/senoportal/rest/services/SJR_ITBI/Lotes_com_Faces/MapServer/1";
+	private String urlPlantaDeValor = "https://sigribamar.com.br/server/rest/services/GeoITBI/Mapas_Tematicos_de_Transmissao/MapServer/0";
+	private String urlLotesComFaces = "https://sigribamar.com.br/server/rest/services/GeoITBI/Lotes_com_Faces/MapServer/1";
 	
 	private String codFace;
 	private String geocodigo;

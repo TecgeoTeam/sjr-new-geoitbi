@@ -24,6 +24,7 @@
 
 ```
     > ./mvnw clean install -Dmaven.test.skip=true
+    > ./mvnw clean install -Dmaven.test.skip=true -Djdk.tls.client.protocols=TLSv1
 ```
 
 2. Executar serviço:

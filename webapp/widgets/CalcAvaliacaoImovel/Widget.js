@@ -38,7 +38,7 @@ define(
     'widgets/CalcAvaliacaoImovel/ResultadosBuscaModel.js',
     'widgets/CalcAvaliacaoImovel/exportsObjectsResultCalculo.js'
   ],
-  function(
+  function (
     declare,
     BaseWidget,
     // query,
@@ -78,7 +78,7 @@ define(
       // Custom widget code goes here
       templateString: template,
       baseClass: 'jimu-widget-CalcAvaliacaoImovel',
-      postCreate: function() {
+      postCreate: function () {
         selfCalculo = this;
         // window.esriMap = this.map;
 
@@ -89,9 +89,9 @@ define(
         dialogDivEditar.setAttribute('class', 'jimu-widget-tecgeo');
         $('#myWidgetDialogCalculo').load('widgets/CalcAvaliacaoImovel/dialog.html');
       },
-      startup: function() {
+      startup: function () {
         activeBuscarCalculo();
-        $(document).ready(function() {
+        $(document).ready(function () {
           $('.money').mask('000.000.000.000.000,00', {
             reverse: true
           });
@@ -99,27 +99,27 @@ define(
             reverse: true
           });
           $('#geocode').focusin(function () {
-              let geo0 = localStorage.getItem('Inscrição 0');
-              let geo1 = localStorage.getItem('Inscrição 1');
-              let geo2 = localStorage.getItem('Inscrição 2');
-              let geo3 = localStorage.getItem('Inscrição 3');
-              let geo4 = localStorage.getItem('Inscrição 4');
-              let geo5 = localStorage.getItem('Inscrição 5');
-              let geo6 = localStorage.getItem('Inscrição 6');
-              let geocodes = [geo0, geo1, geo2, geo3, geo4, geo5, geo6];
-              hinter(event, geocodes);
+            let geo0 = localStorage.getItem('Inscrição 0');
+            let geo1 = localStorage.getItem('Inscrição 1');
+            let geo2 = localStorage.getItem('Inscrição 2');
+            let geo3 = localStorage.getItem('Inscrição 3');
+            let geo4 = localStorage.getItem('Inscrição 4');
+            let geo5 = localStorage.getItem('Inscrição 5');
+            let geo6 = localStorage.getItem('Inscrição 6');
+            let geocodes = [geo0, geo1, geo2, geo3, geo4, geo5, geo6];
+            hinter(event, geocodes);
           });
         });
-        if(localStorage["ngStorage-insc"]){
-          let inscr = localStorage["ngStorage-insc"].replace(/"/g ,'');
+        if (localStorage["ngStorage-insc"]) {
+          let inscr = localStorage["ngStorage-insc"].replace(/"/g, '');
           let input = document.getElementById('geocode')
           input.value = inscr
           input.disabled = true;
-          setTimeout(function() { document.getElementById('searchImovelButton').disabled = true; }, 1000);
+          setTimeout(function () { document.getElementById('searchImovelButton').disabled = true; }, 1000);
           this.searchImovel();
         }
       },
-      buttonAction: function() {
+      buttonAction: function () {
         let element = document.getElementById('myWidgetDialogCalculo');
         if (element.hasAttribute('open')) {
           element.removeAttribute('open');
@@ -127,7 +127,7 @@ define(
           element.setAttribute('open', 'false');
         }
       },
-      randomValues: function(valorTerreno, valorEdificacao, total) {
+      randomValues: function (valorTerreno, valorEdificacao, total) {
         // var valorBase = Math.floor(Math.random() * 100) + 1;
         let tableDiv = document.getElementById('estimativaTable');
         while (tableDiv.hasChildNodes()) {
@@ -239,45 +239,55 @@ define(
         let textTotalMaximo = document.createTextNode(total.maximo);
         tdTotalMaximo.appendChild(textTotalMaximo);
       },
-      searchImovel: function() {
+      searchImovel: function () {
         DocumentUtil.showSpinner(true);
         selfCalculo.clearGraphics(true);
-        selfCalculo.getDataFromStm(function(err, stmData) {
+        selfCalculo.getDataFromStm(function (err, stmData) {
+          console.log('Testando se chegou aqui 1');
           console.log(stmData);
           if (err || !stmData) {
+            console.log('Testando se chegou aqui 1.1');
             if (err) {
               DocumentUtil.showSpinner(false);
               DocumentUtil.showMessage('warning', 'Não foi possível se comunicar com o STM!', true, null, 'comunicacaoStmError');
             }
             if (!stmData) {
               DocumentUtil.showSpinner(false);
-                DocumentUtil.showMessage('warning', 'A inscrição imobiliária informada não foi localizada no Cadastro (STM)!', true, null, 'comunicacaoStmNull');
+              DocumentUtil.showMessage('warning', 'A inscrição imobiliária informada não foi localizada no Cadastro (STM)!', true, null, 'comunicacaoStmNull');
             }
           } else {
+            console.log('Testando se chegou aqui 1.2');
             let geocode = document.getElementById('geocode').value;
             //STRING = GEOCODE  "0" + string[0] + string.slice(3,8) + string.slice(10,14)
             selfCalculo.geocodeSelect = geocode;
 
             //TRATAMENTO DE DADOS
-            if(stmData.caracteristicas.drenagem[0] === "n"){
-              stmData.caracteristicas.drenagem = "Não"
-            } else {
-              stmData.caracteristicas.drenagem = "Sim"
-            }
-            if(stmData.caracteristicas.esgoto[0] === "n"){
-              stmData.caracteristicas.esgoto = "Não"
-            } else {
-              stmData.caracteristicas.esgoto = "Sim"
-            }
-            
+            // if(stmData.caracteristicas.drenagem[0] === "n"){
+            //   stmData.caracteristicas.drenagem = "Não"
+            // } else {
+            //   stmData.caracteristicas.drenagem = "Sim"
+            // }
+            // if(stmData.caracteristicas.esgoto[0] === "n"){
+            //   stmData.caracteristicas.esgoto = "Não"
+            // } else {
+            //   stmData.caracteristicas.esgoto = "Sim"
+            // }
 
+            // temp
+            stmData.caracteristicas.drenagem = "Sim"
+            stmData.caracteristicas.esgoto = "Sim"
+
+            console.log('Testando se chegou aqui 1.3');
             selfCalculo.fillStmData(stmData);
+            console.log('Testando se chegou aqui 1.4');
             saveGeocodeInArray(geocode);
 
+            console.log('Testando se chegou aqui 1.5');
             activeCalculoLimpar();
 
 
-            selfCalculo.searchLote(3857, function(loteFeature) {
+            selfCalculo.searchLote(3857, function (loteFeature) {
+              console.log('Testando se chegou aqui 1.6');
               selfCalculo.map.graphics.clear();
 
               // selfCalculo.map.setExtent(result.features[0].geometry.getExtent(), true);
@@ -290,7 +300,7 @@ define(
 
                 selfCalculo.searchGeocodeUnidade(loteFeature, stmData);
               } else {
-                  DocumentUtil.showMessage('warning', 'AVISO: Não existe um lote na cartografia que represente a localização do imóvel para a inscrição informada. Isso não impede que o cálculo seja efetuado!', true, null, 'buscaGeometriaError');
+                DocumentUtil.showMessage('warning', 'AVISO: Não existe um lote na cartografia que represente a localização do imóvel para a inscrição informada. Isso não impede que o cálculo seja efetuado!', true, null, 'buscaGeometriaError');
               }
 
               let total = {
@@ -313,7 +323,7 @@ define(
               let coodX = stmData.dadosPlanta.nu_x;
               let areaPadrao = stmData.caracteristicas.area_terreno;
               let pavimentacao;
-              if (stmData.caracteristicas.pavimentacao){
+              if (stmData.caracteristicas.pavimentacao) {
                 pavimentacao = stmData.caracteristicas.pavimentacao;
               } else {
                 pavimentacao = 'Informação não constante';
@@ -329,8 +339,8 @@ define(
               let topografia = stmData.caracteristicas.topografia;
               let bloco = stmData.dadosPlanta.de_zona_calculo;
               let zonaUrbana = stmData.dadosPlanta.de_zona;
-              let tipoUso;  
-              if(stmData.caracteristicas.tipoimovel === "predial"){
+              let tipoUso;
+              if (stmData.caracteristicas.tipoimovel === "predial") {
                 tipoUso = "Predial";
               } else {
                 tipoUso = "Territorial";
@@ -338,7 +348,7 @@ define(
               let pedologia = stmData.caracteristicas.pedologia;
               let padraoConstrucao = stmData.caracteristicas.padraoconstrucao;
 
-             let valorEdificacao = numberParaReal(stmData.valor_edificacao);
+              let valorEdificacao = numberParaReal(stmData.valor_edificacao);
 
               selfCalculo.valoresCalculados = {
                 valorTerreno: valorTerreno,
@@ -353,7 +363,7 @@ define(
               };
 
               let dataToExport = {
-                  coodY, coodX, areaPadrao, pavimentacao, testadaMedia, rendaSetor, areaConst, padraoConserv, tipo, idade, drenagem, esgoto, topografia, bloco, zonaUrbana, tipoUso, pedologia, padraoConstrucao
+                coodY, coodX, areaPadrao, pavimentacao, testadaMedia, rendaSetor, areaConst, padraoConserv, tipo, idade, drenagem, esgoto, topografia, bloco, zonaUrbana, tipoUso, pedologia, padraoConstrucao
               }
 
               selfCalculo.valorUnit = stmData.valor_metro_quadrado;
@@ -361,28 +371,28 @@ define(
               selfCalculo.depreciacao = stmData.depreciacao;
 
               console.log(dataToExport);
-              selfCalculo.dataToExport = dataToExport; 
-                
-                let buttons = [
-                  {
-                      label: 'Cálculo Resumido',
-                      attributes: {
-                          class: 'btn btn-danger exportarcalculo',
-                          style: 'margin-top: -26px;',
-                          onclick: 'selfCalculo.exportResultCalculo("Resumido")'
-                      }
-                  },
-                  {
-                      label: 'Cálculo Detalhado',
-                      attributes: {
-                          class: 'btn btn-danger exportarcalculo',
-                          style: 'margin-top: -26px; margin-left: 5px;',
-                          onclick: 'selfCalculo.exportResultCalculo()'
-                      }
-                  }]
-                
-                //DocumentUtil.showMessage('info', 'Cálculo realizado com sucesso!', true, null, 'calculoSucesso');
-                DocumentUtil.showMessageWithButton(buttons, 'info', 'Cálculo realizado com sucesso!', true, null, 'calculoSucesso');
+              selfCalculo.dataToExport = dataToExport;
+
+              let buttons = [
+                {
+                  label: 'Cálculo Resumido',
+                  attributes: {
+                    class: 'btn btn-danger exportarcalculo',
+                    style: 'margin-top: -26px;',
+                    onclick: 'selfCalculo.exportResultCalculo("Resumido")'
+                  }
+                },
+                {
+                  label: 'Cálculo Detalhado',
+                  attributes: {
+                    class: 'btn btn-danger exportarcalculo',
+                    style: 'margin-top: -26px; margin-left: 5px;',
+                    onclick: 'selfCalculo.exportResultCalculo()'
+                  }
+                }]
+
+              //DocumentUtil.showMessage('info', 'Cálculo realizado com sucesso!', true, null, 'calculoSucesso');
+              DocumentUtil.showMessageWithButton(buttons, 'info', 'Cálculo realizado com sucesso!', true, null, 'calculoSucesso');
 
 
               DocumentUtil.showSpinner(false);
@@ -390,22 +400,22 @@ define(
           }
         });
       },
-      searchLote: function(wkid, callback) {
+      searchLote: function (wkid, callback) {
         if (!wkid) {
           wkid = 3857;
         }
 
         let inscricao = document.getElementById('geocode').value;
-         //STRING = GEOCODE  "0" + string[0] + string.slice(3,8) + string.slice(10,14)
-        let geocode =  "0" + inscricao[0] + inscricao.slice(3,8) + inscricao.slice(10,14);
+        //STRING = GEOCODE  "0" + string[0] + string.slice(3,8) + string.slice(10,14)
+        let geocode = "0" + inscricao[0] + inscricao.slice(3, 8) + inscricao.slice(10, 14);
         let setor = geocode.substring(2, 4);
         let serviceUrl;
         let layerFieldName;
         let shapeFieldName;
 
-          serviceUrl = selfCalculo.config.loteServiceUrl;
-          layerFieldName = 'sjr_cadastro.SDE.Lote.stg_geocode';
-          shapeFieldName = 'sjr_cadastro.SDE.Lote.Shape';
+        serviceUrl = selfCalculo.config.loteServiceUrl;
+        layerFieldName = 'sjr_cadastro.gis.Lote.stg_geocode';
+        shapeFieldName = 'sjr_cadastro.gis.Lote.Shape';
 
         //let geocodeLote = geocode.substring(2, 11);
         //console.info("GEOCODE",geocodeLote)
@@ -424,14 +434,14 @@ define(
 
         function showResults(result) {
           console.info("result searchLote", result)
-            if (result.features[0]) {
-                selfCalculo.geometryLote = result.features[0].geometry;
-                selfCalculo.map.setExtent(result.features[0].geometry.getExtent(), true);
+          if (result.features[0]) {
+            selfCalculo.geometryLote = result.features[0].geometry;
+            selfCalculo.map.setExtent(result.features[0].geometry.getExtent(), true);
             callback(result.features[0]);
           } else {
             console.info("Lote sem Geometria na base")
             callback(result)
-              DocumentUtil.showMessage('warning', 'AVISO: Não existe um lote na cartografia que represente a localização do imóvel para a inscrição informada. Isso não impede que o cálculo seja efetuado!', true, null, 'buscaGeometriaError');
+            DocumentUtil.showMessage('warning', 'AVISO: Não existe um lote na cartografia que represente a localização do imóvel para a inscrição informada. Isso não impede que o cálculo seja efetuado!', true, null, 'buscaGeometriaError');
           }
         }
       },
@@ -468,10 +478,10 @@ define(
       //     }
       //   }
       // },
-      searchPlantaDeValores: function(testada, sqcodlog, areaTerreno, valores) {
-        console.info("sqcodlog",sqcodlog);
-        console.info("areaTerreno",areaTerreno)
-        console.info("testada",testada)
+      searchPlantaDeValores: function (testada, sqcodlog, areaTerreno, valores) {
+        console.info("sqcodlog", sqcodlog);
+        console.info("areaTerreno", areaTerreno)
+        console.info("testada", testada)
         if (sqcodlog && areaTerreno) {
           console.info("valores ------------", valores)
           var valoresTerreno = valores.terreno;
@@ -497,19 +507,19 @@ define(
           console.info(query.where);
           queryTask.execute(query, showResults);
         } else {
-            DocumentUtil.showMessage('warning', 'ERRO: Não foi possível encontrar uma relação entre o imóvel informado e uma face de quadra da planta de valores! Verifique se o logradouro do imóvel (código Logr.:' + sqcodlog.substring(6, 12) +') é compatível com as informações da cartografia da planta de valores.', true, null, 'realizarCalculoError');
+          DocumentUtil.showMessage('warning', 'ERRO: Não foi possível encontrar uma relação entre o imóvel informado e uma face de quadra da planta de valores! Verifique se o logradouro do imóvel (código Logr.:' + sqcodlog.substring(6, 12) + ') é compatível com as informações da cartografia da planta de valores.', true, null, 'realizarCalculoError');
         }
         function showResults(result) {
-          if (result.features.length > 0)   {
+          if (result.features.length > 0) {
             console.info("planta de valores result inteiro", result);
-            selfCalculo.searchLote(31983, function(loteResult) {
+            selfCalculo.searchLote(31983, function (loteResult) {
               console.info("loteResult-------", loteResult);
               var plantaDeValor = result.features[0].attributes;
-                console.info('planta de valor----', plantaDeValor);
+              console.info('planta de valor----', plantaDeValor);
               var centroidX;
               var centroidY;
 
-              if(!loteResult.geometry){
+              if (!loteResult.geometry) {
                 centroidX = plantaDeValor["sl_cadastro.SDE.ln_Planta_de_Valores.nu_x"];
                 centroidY = plantaDeValor["sl_cadastro.SDE.ln_Planta_de_Valores.nu_y"];
               } else {
@@ -526,28 +536,28 @@ define(
               var qtdePavimentos;
 
               if (usoImovel === false) {
-            areaConst = 0;
-            padraoConserv = 7;
-            tipolog = 1;
-            idadeImovel = 0;
-            qtdePavimentos = 1;
-          } else {
-            areaConst = valoresPredial.areaConstruida;
-            padraoConserv = valoresPredial.conservacao;
-            tipolog = valoresPredial.tipologia;
-            idadeImovel = valoresPredial.idade;
-            qtdePavimentos = valoresPredial.pavimento;
-          }
-              
+                areaConst = 0;
+                padraoConserv = 7;
+                tipolog = 1;
+                idadeImovel = 0;
+                qtdePavimentos = 1;
+              } else {
+                areaConst = valoresPredial.areaConstruida;
+                padraoConserv = valoresPredial.conservacao;
+                tipolog = valoresPredial.tipologia;
+                idadeImovel = valoresPredial.idade;
+                qtdePavimentos = valoresPredial.pavimento;
+              }
+
               var valorMinimo = plantaDeValor["sl_cadastro.SDE.ln_Planta_de_Valores.nu_Lim_Inf"];
               var valorMedio = plantaDeValor["sl_cadastro.SDE.ln_Planta_de_Valores.nu_Val_Unit2"];
               var valorMaximo = plantaDeValor["sl_cadastro.SDE.ln_Planta_de_Valores.nu_Lim_Sup"];
-                //======================FRAÇÃO IDEAL====================//
-                if (valoresGeral.predial.fracaoIdeal) {
-                    console.log('frcaoideal')
-                    let areater = areaTerreno
-                    areaTerreno = areater * valoresGeral.predial.fracaoIdeal;
-                }
+              //======================FRAÇÃO IDEAL====================//
+              if (valoresGeral.predial.fracaoIdeal) {
+                console.log('frcaoideal')
+                let areater = areaTerreno
+                areaTerreno = areater * valoresGeral.predial.fracaoIdeal;
+              }
 
               var valorTerreno = calcularValorMetroQuadrado(
                 centroidY,
@@ -566,7 +576,7 @@ define(
                 plantaDeValor["sl_cadastro.SDE.ln_Planta_de_Valores.de_grupo"],
                 plantaDeValor["sl_cadastro.SDE.ln_Planta_de_Valores.de_zonas"],
                 usoImovel
-                );
+              );
 
 
 
@@ -575,7 +585,7 @@ define(
               valorTerrenoMinimo = (areaTerreno * valorTerreno) * 0.85;
               valorTerrenoMedio = areaTerreno * valorTerreno;
               valorTerrenoMaximo = (areaTerreno * valorTerreno) * 1.15;
-                console.log(valoresGeral);
+              console.log(valoresGeral);
 
               if (valores.isPredial) {
                 var valorEdificacao = selfCalculo.getValorDaEdificacao(valores.predial.tipologia, valores.predial.padrao, valores.predial.areaConstruida, valores.predial.idade, valores.predial.conservacao, valores.predial.estrutura);
@@ -604,68 +614,68 @@ define(
                 minimo: valorTerrenoMinimo,
                 medio: valorTerrenoMedio,
                 maximo: valorTerrenoMaximo
-                };
+              };
 
               selfCalculo.valoresCalculados = {
                 valorTerreno: valorTerreno,
                 valorEdificacao: valorEdificacao,
                 total: total
+              };
+
+              if (valorTerreno.minimo === 'NaN') {
+                valorTerreno = {
+                  minimo: 0,
+                  medio: 0,
+                  maximo: 0
                 };
+                valorEdificacao = 0;
+                selfCalculo.valoresCalculados.total.minimo = 0;
+                selfCalculo.valoresCalculados.total.medio = 0;
+                selfCalculo.valoresCalculados.total.maximo = 0;
+              }
 
-                if (valorTerreno.minimo === 'NaN') {
-                    valorTerreno = {
-                        minimo: 0,
-                        medio: 0,
-                        maximo: 0
-                    };
-                    valorEdificacao = 0;
-                    selfCalculo.valoresCalculados.total.minimo = 0;
-                    selfCalculo.valoresCalculados.total.medio = 0;
-                    selfCalculo.valoresCalculados.total.maximo = 0;
+
+              let buttons = [
+                {
+                  label: 'Cálculo Resumido',
+                  attributes: {
+                    class: 'btn btn-danger exportarcalculo',
+                    style: 'margin-top: -26px;',
+                    onclick: 'selfCalculo.exportResultCalculo("Resumido")'
+                  }
+                },
+                {
+                  label: 'Cálculo Detalhado',
+                  attributes: {
+                    class: 'btn btn-danger exportarcalculo',
+                    style: 'margin-top: -26px; margin-left: 5px;',
+                    onclick: 'selfCalculo.exportResultCalculo()'
+                  }
+                }]
+
+              selfCalculo.randomValues(valorTerreno, valorEdificacao, total);
+              if (plantaDeValor["sl_cadastro.SDE.ln_Planta_de_Valores.de_grupo"] === null) {
+                DocumentUtil.showMessage('warning', 'ERRO: Para efetuar o cálculo é necessário que o imóvel informado faça parte de um dos blocos da planta de valores. A face de quadra informada não possui o campo "bloco" preenchido. Verifique o cadastro da face de quadra.', true, null, 'errorPlanta');
+              } else {
+                DocumentUtil.showMessageWithButton(buttons, 'info', 'Cálculo realizado com sucesso!', true, null, 'calculoSucesso');
+                if (qtdePavimentos > 1) {
+                  DocumentUtil.showMessage('warning', 'Este imóvel foi calculado com base em ' + qtdePavimentos + ' pavimentos, conforme informações do cadastro do sistema tributário!', true, null, 'realizarCalculoError');
                 }
-
-
-                let buttons = [
-                    {
-                        label: 'Cálculo Resumido',
-                        attributes: {
-                            class: 'btn btn-danger exportarcalculo',
-                            style: 'margin-top: -26px;',
-                            onclick: 'selfCalculo.exportResultCalculo("Resumido")'
-                        }
-                    },
-                    {
-                        label: 'Cálculo Detalhado',
-                        attributes: {
-                            class: 'btn btn-danger exportarcalculo',
-                            style: 'margin-top: -26px; margin-left: 5px;',
-                            onclick: 'selfCalculo.exportResultCalculo()'
-                        }
-                    }]
-
-                selfCalculo.randomValues(valorTerreno, valorEdificacao, total);
-                if (plantaDeValor["sl_cadastro.SDE.ln_Planta_de_Valores.de_grupo"] === null) {
-                    DocumentUtil.showMessage('warning', 'ERRO: Para efetuar o cálculo é necessário que o imóvel informado faça parte de um dos blocos da planta de valores. A face de quadra informada não possui o campo "bloco" preenchido. Verifique o cadastro da face de quadra.', true, null, 'errorPlanta');
-                } else {
-                    DocumentUtil.showMessageWithButton(buttons, 'info', 'Cálculo realizado com sucesso!', true, null, 'calculoSucesso');
-                    if (qtdePavimentos > 1) {
-                        DocumentUtil.showMessage('warning', 'Este imóvel foi calculado com base em '+qtdePavimentos+' pavimentos, conforme informações do cadastro do sistema tributário!', true, null, 'realizarCalculoError');
-                    }
-                    //let valid = areaTerreno / testada
-                    //console.log(valid);
-                    //if (valid < 6) {
-                    //    DocumentUtil.showMessage('warning', 'Este imóvel foi calculado com base em uma testada de ' + testada + 'm, conforme o cadastro!', true, null, 'realizarCalculoError2');
-                    //}
-                }
+                //let valid = areaTerreno / testada
+                //console.log(valid);
+                //if (valid < 6) {
+                //    DocumentUtil.showMessage('warning', 'Este imóvel foi calculado com base em uma testada de ' + testada + 'm, conforme o cadastro!', true, null, 'realizarCalculoError2');
+                //}
+              }
             });
           } else {
             selfCalculo.valoresCalculados = {};
-              DocumentUtil.showMessage('warning', 'ERRO: Não foi possível encontrar uma relação entre o imóvel informado e uma face de quadra da planta de valores! Verifique se o logradouro do imóvel (código Logr.:' + sqcodlog.substring(6, 12) + ') é compatível com as informações da cartografia da planta de valores.', true, null, 'realizarCalculoError');
-              //DocumentUtil.showMessage('warning', 'Não foi possível fazer o cálculo!', true, null, 'realizarCalculoError');
+            DocumentUtil.showMessage('warning', 'ERRO: Não foi possível encontrar uma relação entre o imóvel informado e uma face de quadra da planta de valores! Verifique se o logradouro do imóvel (código Logr.:' + sqcodlog.substring(6, 12) + ') é compatível com as informações da cartografia da planta de valores.', true, null, 'realizarCalculoError');
+            //DocumentUtil.showMessage('warning', 'Não foi possível fazer o cálculo!', true, null, 'realizarCalculoError');
           }
         }
       },
-      getValoresParaCalculo: function(data, callback) {
+      getValoresParaCalculo: function (data, callback) {
         let stmServiceUrl = selfCalculo.config.stmServiceUrl;
         let geocode = document.getElementById('geocode').value;
         let url = stmServiceUrl + geocode;
@@ -751,35 +761,35 @@ define(
               isPredial: isPredial
             };
           } else if (isPredial) {
-              let dadosPredial = {
-                  tipologia: tipologia,
-                  padrao: padrao,
-                  areaConstruida: areaConstruida,
-                  idade: idade,
-                  conservacao: conservacao,
-                  estrutura: estrutura,
-                  pavimento: pavimento,
-                  isPredial: isPredial
-              };
-              if (!tipologia) {
-                  dadosPredial.tipologia = 'Não preenchido';
-              } else if (!padrao) {
-                  dadosPredial.padrao = 'Não preenchido';
-              } else if (!areaConstruida) {
-                  dadosPredial.areaConstruida = 'Não preenchido';
-              } else if (!idade) {
-                  dadosPredial.idade = 'Não preenchido';
-              } else if (!conservacao) {
-                  dadosPredial.conservacao = 'Não preenchido';
-              }
+            let dadosPredial = {
+              tipologia: tipologia,
+              padrao: padrao,
+              areaConstruida: areaConstruida,
+              idade: idade,
+              conservacao: conservacao,
+              estrutura: estrutura,
+              pavimento: pavimento,
+              isPredial: isPredial
+            };
+            if (!tipologia) {
+              dadosPredial.tipologia = 'Não preenchido';
+            } else if (!padrao) {
+              dadosPredial.padrao = 'Não preenchido';
+            } else if (!areaConstruida) {
+              dadosPredial.areaConstruida = 'Não preenchido';
+            } else if (!idade) {
+              dadosPredial.idade = 'Não preenchido';
+            } else if (!conservacao) {
+              dadosPredial.conservacao = 'Não preenchido';
+            }
 
-              DocumentUtil.showMessage('warning', 'Não foi possível realizar o calculo! Valores não preenchidos no STM!' + "\n" +
-                  'Tipologia = ' + dadosPredial.tipologia + '\n' +
-                  'Padrao = ' + dadosPredial.padrao + '\n' +
-                  'Área Construída = ' + dadosPredial.areaConstruida + '\n' +
-                  'Idade = ' + dadosPredial.idade + '\n' +
-                  'Conservação = ' + dadosPredial.conservacao + '\n'
-                  , true, null, 'realizarCalculoError');
+            DocumentUtil.showMessage('warning', 'Não foi possível realizar o calculo! Valores não preenchidos no STM!' + "\n" +
+              'Tipologia = ' + dadosPredial.tipologia + '\n' +
+              'Padrao = ' + dadosPredial.padrao + '\n' +
+              'Área Construída = ' + dadosPredial.areaConstruida + '\n' +
+              'Idade = ' + dadosPredial.idade + '\n' +
+              'Conservação = ' + dadosPredial.conservacao + '\n'
+              , true, null, 'realizarCalculoError');
             return null;
           } else {
             return {
@@ -789,26 +799,33 @@ define(
           }
         }
       },
-      getDataFromStm: function(callback) {
+      getDataFromStm: function (callback) {
         let stmServiceUrl = selfCalculo.config.stmServiceUrl;
         let geocode = document.getElementById('geocode').value;
         let url = stmServiceUrl + geocode;
 
-        $.getJSON(url, function(data) {
-          console.log(data);
-          //data = data[0];
-          callback(null, data);
-        }).fail(function(err) {
-          callback(err);
-        });
+        fetch(url)
+          .then((data) => data.json())
+          .then(data => {
+            console.log(data);
+            callback(null, data);
+          })
+          .catch(err => console.log(err));
+        // $.getJSON(url, function(data) {
+        //   console.log(data);
+        //   // data = data[0];
+        //   callback(null, data);
+        // }).fail(function(err) {
+        //   callback(err);
+        // });
       },
 
-      searchGeocodeUnidade: function(featureSelected, stmData, callback) {
+      searchGeocodeUnidade: function (featureSelected, stmData, callback) {
         let stmServiceUrl = selfCalculo.config.stmServiceUrl;
         let geocode = document.getElementById('geocode').value;
         let url = stmServiceUrl + geocode;
         let geocodeUnidade = geocode;
-          
+
         let geocodeUnidade16Char = geocode.substring(0, 16);
 
         let serviceUrl = selfCalculo.config.unidadeServiceUrl;
@@ -847,16 +864,17 @@ define(
         let caracteristicas;
 
         if (stmData) {
-            let configJson = selfCalculo.config;
-            // selfCalculo.resultadosBuscaModel(stmData, configJson);
+          let configJson = selfCalculo.config;
+          // selfCalculo.resultadosBuscaModel(stmData, configJson);
 
-            // dadosImovel = resultadosBusca.getDadosImovel();
-            // dadosProprietario = resultadosBusca.getDadosProprietario();
-            // dadosTerreno = resultadosBusca.getDadosTerreno();
-            // dadosPredial = resultadosBusca.getDadosPredial();
+          // dadosImovel = resultadosBusca.getDadosImovel();
+          // dadosProprietario = resultadosBusca.getDadosProprietario();
+          // dadosTerreno = resultadosBusca.getDadosTerreno();
+          // dadosPredial = resultadosBusca.getDadosPredial();
 
-            dadosImovel = stmData.imovelWS;
-            caracteristicas = stmData.caracteristicas;
+          dadosImovel = stmData.imovelWS;
+          caracteristicas = stmData.caracteristicas;
+          console.log({ dadosImovel, caracteristicas })
         }
 
         let tableDiv = document.getElementById('unidadeTable');
@@ -876,7 +894,7 @@ define(
           // factoryViewDataSTM("Informações gerais do Predial", tbody, dadosPredial);
         }
       },
-      getGeocodeBuffer: function(featureSelected, unidadeSelected) {
+      getGeocodeBuffer: function (featureSelected, unidadeSelected) {
         //VERIFICAR O GEOMETRY SERVER
         let serviceUrl = selfCalculo.config.loteServiceUrl;
         let gsv = new GeometryService(selfCalculo.config.geometryServerServiceUrl);
@@ -886,12 +904,12 @@ define(
         params.geometries = [featureSelected.geometry.getCentroid()];
         params.outSpatialReference = selfCalculo.map.spatialReference;
         params.unit = GeometryService.UNIT_KILOMETER;
-        params.outFields = ['sjr_cadastro.SDE.Lote.OBJECTID'];
+        params.outFields = ['sjr_cadastro.gis.Lote.OBJECTID'];
         gsv.buffer(params, showBuffer);
 
         function showBuffer(bufferedGeometries) {
           let featureLayer = new FeatureLayer(serviceUrl, {
-            outFields: ['sjr_cadastro.SDE.Lote.OBJECTID']
+            outFields: ['sjr_cadastro.gis.Lote.OBJECTID']
           });
 
           let featureSymbol = new SimpleMarkerSymbol(
@@ -907,7 +925,7 @@ define(
 
           featureLayer.setSelectionSymbol(featureSymbol);
 
-          array.forEach(bufferedGeometries, function(circleGeometry) {
+          array.forEach(bufferedGeometries, function (circleGeometry) {
             console.info("circleGeometry", circleGeometry);
             selfCalculo.circleGeometry = circleGeometry;
             console.info("circleGeometry", circleGeometry);
@@ -920,7 +938,7 @@ define(
                 2
               ), new Color([255, 255, 0, 0.25])
             );
-            
+
             console.info("circleSymb", circleSymb);
 
             let graphic = new Graphic(circleGeometry, circleSymb);
@@ -930,7 +948,7 @@ define(
 
             let query = new Query();
             query.geometry = circleGeometry.getExtent();
-            query.outFields = ['sjr_cadastro.SDE.Lote.stg_geocode', 'sjr_cadastro.SDE.TB_LOTES.DE_GEOCODE_LOTE', 'sjr_cadastro.SDE.Lote.OBJECTID'];
+            query.outFields = ['sjr_cadastro.gis.Lote.stg_geocode', 'sjr_cadastro.gis.TB_LOTES.DE_GEOCODE_LOTE', 'sjr_cadastro.gis.Lote.OBJECTID'];
             // use a fast bounding box query. will only go to the server if bounding box is outside of the visible map
             featureLayer.queryFeatures(query, selectInBuffer);
 
@@ -954,11 +972,11 @@ define(
           });
         }
       },
-      drawSimilar: function(featureList, featureSelected, unidadeSelected) {
+      drawSimilar: function (featureList, featureSelected, unidadeSelected) {
         let count = 0;
         let similarFeatures = [];
 
-        selfCalculo.getTransmissoesWithUnidade(featureList, featureSelected, unidadeSelected, function(transmissoes) {
+        selfCalculo.getTransmissoesWithUnidade(featureList, featureSelected, unidadeSelected, function (transmissoes) {
           let similarGeocode = [];
           let similarUnidade = [];
           let similarSameLote = [];
@@ -1015,7 +1033,7 @@ define(
           }
         });
       },
-      drawPesquisa: function(circleGeometry, unidadeSelected) {
+      drawPesquisa: function (circleGeometry, unidadeSelected) {
         let serviceUrl = selfCalculo.config.pesquisaServiceUrl;
         let layerFieldName = 'Geocode_Correto';
         let shapeFieldName = 'sl_cadastro.SDE.Lote.Shape';
@@ -1109,78 +1127,78 @@ define(
               selfCalculo.map.graphics.add(graphic);
             }
           } else {
-              DocumentUtil.showMessage('warning', 'AVISO: Não foram localizadas Pesquisas de Mercado que tenham características semelhantes à inscrição imobiliária informada. Isso não impede que o cálculo seja efetuado!', true, null, 'semPesquisaSemelhanteError');
+            DocumentUtil.showMessage('warning', 'AVISO: Não foram localizadas Pesquisas de Mercado que tenham características semelhantes à inscrição imobiliária informada. Isso não impede que o cálculo seja efetuado!', true, null, 'semPesquisaSemelhanteError');
           }
           // selfCalculo.drawSimilar(inBuffer, featureSelected, unidadeSelected);
         }
       },
-      goToLayer: function() {
+      goToLayer: function () {
         console.info("go to layer", selfCalculo.geometryLote);
         selfCalculo.map.setExtent(selfCalculo.geometryLote.getExtent(), true);
       },
       exportResultCalculo: function (object) {
-          let inscricao = document.getElementById('geocode').value;
-          let data = selfCalculo.dataToExport;
-          if (object === 'Resumido') {
-              pdfMake.createPdf(pdfObjectBlocosResumido(
-                  data.bloco,
-                  inscricao,
-                  selfCalculo.valoresCalculados
-              )).open();
-          } else {
+        let inscricao = document.getElementById('geocode').value;
+        let data = selfCalculo.dataToExport;
+        if (object === 'Resumido') {
+          pdfMake.createPdf(pdfObjectBlocosResumido(
+            data.bloco,
+            inscricao,
+            selfCalculo.valoresCalculados
+          )).open();
+        } else {
 
-            console.log(
-              data.coodY,
-              data.coodX,
-              data.areaPadrao,
-              data.pavimentacao,
-              data.testadaMedia,
-              data.rendaSetor,
-              data.areaConst,
-              data.padraoConserv,
-              data.tipo,
-              data.idade,
-              data.drenagem,
-              data.esgoto,
-              data.topografia,
-              data.bloco,
-              data.zonaUrbana,
-              data.tipoUso,
-              inscricao,
-              selfCalculo.valoresCalculados,
-              selfCalculo.CUB,
-              selfCalculo.depreciacao,
-              data.pedologia,
-              data.padraoConstrucao
+          console.log(
+            data.coodY,
+            data.coodX,
+            data.areaPadrao,
+            data.pavimentacao,
+            data.testadaMedia,
+            data.rendaSetor,
+            data.areaConst,
+            data.padraoConserv,
+            data.tipo,
+            data.idade,
+            data.drenagem,
+            data.esgoto,
+            data.topografia,
+            data.bloco,
+            data.zonaUrbana,
+            data.tipoUso,
+            inscricao,
+            selfCalculo.valoresCalculados,
+            selfCalculo.CUB,
+            selfCalculo.depreciacao,
+            data.pedologia,
+            data.padraoConstrucao
           );
 
-              pdfMake.createPdf(pdfObjectsBlocos(
-                  data.coodY,
-                  data.coodX,
-                  data.areaPadrao,
-                  data.pavimentacao,
-                  data.testadaMedia,
-                  data.rendaSetor,
-                  data.areaConst,
-                  data.padraoConserv,
-                  data.tipo,
-                  data.idade,
-                  data.drenagem,
-                  data.esgoto,
-                  data.topografia,
-                  data.bloco,
-                  data.zonaUrbana,
-                  data.tipoUso,
-                  inscricao,
-                  selfCalculo.valoresCalculados,
-                  selfCalculo.CUB,
-                  selfCalculo.depreciacao,
-                  data.pedologia,
-                  data.padraoConstrucao
-              )).open();
-          }
+          pdfMake.createPdf(pdfObjectsBlocos(
+            data.coodY,
+            data.coodX,
+            data.areaPadrao,
+            data.pavimentacao,
+            data.testadaMedia,
+            data.rendaSetor,
+            data.areaConst,
+            data.padraoConserv,
+            data.tipo,
+            data.idade,
+            data.drenagem,
+            data.esgoto,
+            data.topografia,
+            data.bloco,
+            data.zonaUrbana,
+            data.tipoUso,
+            inscricao,
+            selfCalculo.valoresCalculados,
+            selfCalculo.CUB,
+            selfCalculo.depreciacao,
+            data.pedologia,
+            data.padraoConstrucao
+          )).open();
+        }
       },
-      putLabel: function(json, labels) {
+      putLabel: function (json, labels) {
         let result = {};
 
         for (let variable in json) {
@@ -1199,7 +1217,7 @@ define(
         }
         return result;
       },
-      saveTerceiraAvaliacao: function() {
+      saveTerceiraAvaliacao: function () {
         let geocode = document.getElementById('geocode').value;
         let valorMinimo = selfCalculo.minimoTerceiraAvaliacao;
         let terceiraAvaliacaoValue = document.getElementById('terceiraAvaliacaoInput').value.replace(/\./g, '').replace(',', '.');
@@ -1222,10 +1240,10 @@ define(
               authorization: headerAuthorization // If your header name has spaces or any other char not appropriate
             },
             dataType: 'json',
-            success: function(data) {
+            success: function (data) {
               DocumentUtil.showMessage('success', 'Terceira Avaliação Salva com Sucesso!', true, null, null);
             },
-            error: function(xhr, ajaxOptions, thrownError) {
+            error: function (xhr, ajaxOptions, thrownError) {
               if (xhr.responseJSON) {
                 DocumentUtil.showMessage('warning', xhr.responseJSON.message, true, null, 'semAutorizacaoTerceiraAvaliacao');
               } else {
@@ -1238,7 +1256,7 @@ define(
           DocumentUtil.showMessage('warning', 'Valor da 3ª Avaliação não pode ser menor que ' + numberParaReal(valorMinimo) + '. ', true, null, 'valorMenorQueMinimoTerceiraAvaliacao');
         }
       },
-      getTransmissoes: function(featureList, featureSelected, unidadeSelected, callback) {
+      getTransmissoes: function (featureList, featureSelected, unidadeSelected, callback) {
         let transmissaoServiceUrl = selfCalculo.config.transmissaoServiceUrl;
         let layerFieldName = 'de_geocode_lote';
         let shapeFieldName = 'sl_cadastro.SDE.Lote.Shape';
@@ -1259,15 +1277,15 @@ define(
         whereQuery += ')';
         // query.where = whereQuery + " AND destinacao = '" + unidadeSelected.attributes.destinacao + "'" + " AND ocupacao = '" + unidadeSelected.attributes.ocupacao + "'" + " AND destinacao = '" + unidadeSelected.attributes.destinacao + "'" + " AND conservacao = '" + unidadeSelected.attributes.conservacao + "'" + " AND tipologia = '" + unidadeSelected.attributes.tipologia + "'" + " AND piscina = '" + unidadeSelected.attributes.piscina + "'" + " AND predial = '" + unidadeSelected.attributes.predial + "'";
         query.where = whereQuery;
-        queryTask.execute(query, function(result) {
+        queryTask.execute(query, function (result) {
           let transmissoes = result.features;
           callback(transmissoes);
         });
       },
-      getTransmissoesWithUnidade: function(featureList, featureSelected, unidadeSelected, callback) {
+      getTransmissoesWithUnidade: function (featureList, featureSelected, unidadeSelected, callback) {
         let unidadeServiceUrl = selfCalculo.config.unidadeServiceUrl;
 
-        selfCalculo.getTransmissoes(featureList, featureSelected, unidadeSelected, function(transmissoes) {
+        selfCalculo.getTransmissoes(featureList, featureSelected, unidadeSelected, function (transmissoes) {
           let query = new Query();
           let queryTask = new QueryTask(unidadeServiceUrl);
           query.returnGeometry = true;
@@ -1286,7 +1304,7 @@ define(
           query.where = whereQuery + " AND DE_TIPOLOGIA = '" + unidadeSelected.attributes.DE_TIPOLOGIA + "'" + " AND DE_DESTINACAO = '" + unidadeSelected.attributes.DE_DESTINACAO + "'" + " AND DE_CONSERVACAO = '" + unidadeSelected.attributes.DE_CONSERVACAO + "'";
           // query.where = whereQuery;
 
-          queryTask.execute(query, function(result) {
+          queryTask.execute(query, function (result) {
             for (let i = 0; i < transmissoes.length; i++) {
               for (let f = 0; f < result.features.length; f++) {
                 if (transmissoes[i].attributes['de_geocode'] === result.features[f].attributes['de_geocode_stm']) {
@@ -1298,7 +1316,7 @@ define(
           });
         });
       },
-      clearGraphics: function(keepGeocodeInput) {
+      clearGraphics: function (keepGeocodeInput) {
         selfCalculo.map.graphics.clear();
         if (keepGeocodeInput !== true) {
           let geocodeInput = document.getElementById('geocode');
@@ -1315,21 +1333,21 @@ define(
           maximo: ''
         }, '', {
           minimo: '',
-          medio: '',    
+          medio: '',
           maximo: ''
         });
 
         selfCalculo.fillStmData(null);
         activeBuscarCalculo();
       },
-      getDepreciacaoFisica: function(idade, conservacao) {
+      getDepreciacaoFisica: function (idade, conservacao) {
         let coef = selfCalculo.config.coeficienteDepreciacao;
-            if (idade === '0') {
-                idade = 2;
-            }
-            if (idade > 99) {
-                idade = 100;
-            }
+        if (idade === '0') {
+          idade = 2;
+        }
+        if (idade > 99) {
+          idade = 100;
+        }
         let round = Math.round(((idade / 80) * 100));
         if (round % 2 !== 0) {
           if (round === 1) {
@@ -1344,42 +1362,42 @@ define(
         }
         return coef[vidaReferencial][conservacao];
       },
-      getCustoUnitarioBasico: function(tipologia, padraoConstrucao, estrutura) {
+      getCustoUnitarioBasico: function (tipologia, padraoConstrucao, estrutura) {
         if (tipologia === 'cobertura metálica' || tipologia === 'cob metalica' || tipologia === 'comércio com residência' || tipologia === 'com c/ residencia') {
-        tipologia = 'comercio com residencia';
+          tipologia = 'comercio com residencia';
         }
-        if (tipologia === 'edificação complementar' || tipologia === 'garagem'){
-            tipologia = 'casa';
+        if (tipologia === 'edificação complementar' || tipologia === 'garagem') {
+          tipologia = 'casa';
         }
-        if (tipologia === 'templo'){
-            tipologia = 'loja/sala/conjunto';
+        if (tipologia === 'templo') {
+          tipologia = 'loja/sala/conjunto';
         }
         if (tipologia.indexOf('ap') > 1) {
-            tipologia = 'apartamento'
+          tipologia = 'apartamento'
         }
 
         var valorCub = selfCalculo.config.cub[tipologia][padraoConstrucao];
 
         if (estrutura.indexOf('mad') > 1) {
-        estrutura = 'madeira'
+          estrutura = 'madeira'
         }
         if (estrutura === 'mista alv/conc') {
-            estrutura = 'concreto'
+          estrutura = 'concreto'
         }
         if (estrutura === 'metálica') {
-            estrutura = 'metalica'
+          estrutura = 'metalica'
         }
         if (tipologia === 'telheiro' || tipologia === 'galpão' || tipologia === 'galpao' || tipologia.indexOf('indus') > 1) {
-            valorCub = selfCalculo.config.cub[tipologia][estrutura];
+          valorCub = selfCalculo.config.cub[tipologia][estrutura];
         }
         if (tipologia === 'deposito' || tipologia === 'depósito') {
-            valorCub = selfCalculo.config.cub[tipologia][padraoConstrucao][estrutura];
+          valorCub = selfCalculo.config.cub[tipologia][padraoConstrucao][estrutura];
         }
 
         let r8n = 1194.74;
         return valorCub * r8n;
       },
-      getValorDaEdificacao: function(tipologia, padraoConstrucao, areaConstruida, idade, estadoDeConservacao, estrutura) {
+      getValorDaEdificacao: function (tipologia, padraoConstrucao, areaConstruida, idade, estadoDeConservacao, estrutura) {
         let custoUnitarioBasico = selfCalculo.getCustoUnitarioBasico(tipologia, padraoConstrucao, estrutura);
         let depreciacaoFisica = selfCalculo.getDepreciacaoFisica(idade, estadoDeConservacao);
         selfCalculo.CUB = custoUnitarioBasico;
@@ -1388,8 +1406,8 @@ define(
         return valorEdificacao;
       },
       resultadosBuscaModel: function (stmData, configJson) {
-          resultadosBusca = new resultadosBuscaModel(stmData, configJson);
-          resultadosBusca.ordenateDataJson();
+        resultadosBusca = new resultadosBuscaModel(stmData, configJson);
+        resultadosBusca.ordenateDataJson();
       }
     });
   });
@@ -1398,60 +1416,85 @@ function activeBuscarCalculo(event) {
   let geocode = document.getElementById('geocode').value;
 
   let searchImovelButton = document.getElementById('searchImovelButton');
-  if (geocode.length == 19) {
-    searchImovelButton.disabled = false;
-  } else {
-    searchImovelButton.disabled = true;
-  }
+  // if (geocode.length == 19) {
+  //   searchImovelButton.disabled = false;
+  // } else {
+  searchImovelButton.disabled = false;
+  // }
 }
 
 function factoryViewDataSTM(title, tbody, dados) {
-    let tr = document.createElement('tr');
-    let tdLabel = document.createElement('td');
-    let tdValue = document.createElement('td');
-    let label = document.createElement('label');
+  let tr = document.createElement('tr');
+  let tdLabel = document.createElement('td');
+  // let tdValue = document.createElement('td');
+  let label = document.createElement('label');
+  tdLabel.appendChild(label);
+  tdLabel.setAttribute('class', 'tbody-blue');
+  tdLabel.setAttribute('colspan', '2');
+  // tdValue.setAttribute('class', 'tbody-blue');
+  tr.appendChild(tdLabel);
+  // tr.appendChild(tdValue);
+  
+  let t = document.createTextNode(title);
+  label.appendChild(t);
+  tbody.appendChild(tr);
+
+  const aliases =  selfCalculo.config.imovelLabels ?
+   selfCalculo.config.imovelLabels : {};
+  
+  Reflect.ownKeys(dados).forEach(function (value) {
+    const tr = document.createElement('tr');
+    const tdLabel = document.createElement('td');
+    const tdValue = document.createElement('td');
+    const label = document.createElement('label');
     tdLabel.appendChild(label);
-    tdLabel.setAttribute('class', 'tbody-blue');
-    tdValue.setAttribute('class', 'tbody-blue');
+    tdLabel.setAttribute('class', 'td-gray');
     tr.appendChild(tdLabel);
     tr.appendChild(tdValue);
-    let t = document.createTextNode(title);
 
-    label.appendChild(t);
-    tbody.appendChild(tr);
+    const t = document.createTextNode(aliases[value] || value);
 
-    let aliases;
-    if (selfCalculo.config.imovelLabels){
-      aliases = selfCalculo.config.imovelLabels;
-    }
-    for (value in dados){
-        let tr = document.createElement('tr');
-        let tdLabel = document.createElement('td');
-        let tdValue = document.createElement('td');
-        let label = document.createElement('label');
-        tdLabel.appendChild(label);
-        tdLabel.setAttribute('class', 'td-gray');
-        tr.appendChild(tdLabel);
-        tr.appendChild(tdValue);
+    const ted = (dados[value] !== 'null' && dados[value] !== null && dados[value] !== undefined && dados[value] !== '') ?
+      document.createTextNode(dados[value]) : document.createTextNode('');
 
-        let t = document.createTextNode(aliases[value]);
+      label.appendChild(t);
+      // if (Array.isArray(dados[value])) {
+      //   tdValue.appendChild(document.createTextNode(''));
+      // } else {
+      tdValue.appendChild(ted);
+      // }
+      tbody.appendChild(tr);
 
-        let ted;
-        
-        if (dados[value] !== 'null' && dados[value] !== null && dados[value] !== undefined && dados[value] !== '') {
-            ted = document.createTextNode(dados[value]);
-        } else {
-            ted = document.createTextNode('');
-        }
+  });
+  // for (value in dados) {
+  //   let tr = document.createElement('tr');
+  //   let tdLabel = document.createElement('td');
+  //   let tdValue = document.createElement('td');
+  //   let label = document.createElement('label');
+  //   tdLabel.appendChild(label);
+  //   tdLabel.setAttribute('class', 'td-gray');
+  //   tr.appendChild(tdLabel);
+  //   tr.appendChild(tdValue);
 
-        if (Array.isArray(dados[value])){
-          ted = document.createTextNode('');
-        }
+  //   // let t = document.createTextNode(aliases[value]);
+  //   let t = document.createTextNode(value);
 
-        label.appendChild(t);
-        tdValue.appendChild(ted);
-        tbody.appendChild(tr);
-    };
+  //   let ted;
+
+  //   if (dados[value] !== 'null' && dados[value] !== null && dados[value] !== undefined && dados[value] !== '') {
+  //     ted = document.createTextNode(dados[value]);
+  //   } else {
+  //     ted = document.createTextNode('');
+  //   }
+
+  //   if (Array.isArray(dados[value])) {
+  //     ted = document.createTextNode('');
+  //   }
+
+  //   label.appendChild(t);
+  //   tdValue.appendChild(ted);
+  //   tbody.appendChild(tr);
+  // };
 
 }
 
@@ -1487,13 +1530,13 @@ function activeCalculoLimpar() {
 }
 
 function activeVisualizarMapa(active) {
-    let visualizarNoMapaButton = document.getElementById('visualizarNoMapaButton');
-    //let exportButton = document.getElementById('exportResultCalculo');
+  let visualizarNoMapaButton = document.getElementById('visualizarNoMapaButton');
+  //let exportButton = document.getElementById('exportResultCalculo');
 
   if (active) {
-      visualizarNoMapaButton.disabled = false;
+    visualizarNoMapaButton.disabled = false;
   } else {
-      visualizarNoMapaButton.disabled = true;
+    visualizarNoMapaButton.disabled = true;
   }
 }
 
@@ -1505,8 +1548,8 @@ function numberParaReal(numero) {
 
 function calcularValorMetroQuadrado(coodY, coodX, areaPadrao, qtdPavimentos, testadaMedia, rendaSetor, areaConst, padraoConserv, tipo, idade, drenagem, esgoto, topografia, bloco, zonaUrbana, tipoUso) {
   //constantes
-    var eLn = 2.718281828459045;
-    var valorUnit;
+  var eLn = 2.718281828459045;
+  var valorUnit;
 
   if (tipo) {
     tipo = 1;
@@ -1552,7 +1595,7 @@ function calcularValorMetroQuadrado(coodY, coodX, areaPadrao, qtdPavimentos, tes
     topografia = 6;
   }
 
-  if (zonaUrbana === 'urbano'){
+  if (zonaUrbana === 'urbano') {
     zonaUrbana = 1;
   } else if (zonaUrbana === 'urbana/industrial') {
     zonaUrbana = 2;
@@ -1562,18 +1605,18 @@ function calcularValorMetroQuadrado(coodY, coodX, areaPadrao, qtdPavimentos, tes
     zonaUrbana = null;
   }
 
-       console.info('dados calculo',coodY, coodX, areaPadrao, qtdPavimentos, testadaMedia, rendaSetor, areaConst, padraoConserv, tipo, idade, drenagem, esgoto, topografia, bloco)
+  console.info('dados calculo', coodY, coodX, areaPadrao, qtdPavimentos, testadaMedia, rendaSetor, areaConst, padraoConserv, tipo, idade, drenagem, esgoto, topografia, bloco)
 
   if (bloco === 'Bloco I') {
     valorUnit = Math.pow((-1244.7487 + (0.000000000019918227 * Math.pow(coodY, 2)) + (-0.0000000018324684 * Math.pow(coodX, 2)) + (0.000000001801289 * Math.pow(areaPadrao, 2)) + (2.4943315 * qtdPavimentos) + (0.0019993246 * Math.pow(testadaMedia, 2)) + (0.0000030366837 * rendaSetor)), 2);
   } else if (bloco === 'Bloco II') {
-    valorUnit = 7.742108705966203352487675899668e+81 * Math.pow(eLn, -0.0000000000031536032 * Math.pow(coodY,2)) * Math.pow(eLn, -0.00000000017332165*Math.pow(coodX,2)) * Math.pow(eLn, -14358.838 * (1/rendaSetor)) * Math.pow(eLn, -0.00000019996231 * Math.pow(areaPadrao, 2)) * Math.pow(eLn,0.00036361237 * areaConst) * Math.pow(eLn, -0.0089674519 * Math.pow(padraoConserv, 2)) * Math.pow(eLn, 0.62922743 * Math.pow(tipo, 0.5)) * Math.pow(eLn, 0.0055415258 * Math.pow(testadaMedia, 2)) * Math.pow(eLn, -0.000049683898 * Math.pow(idade, 2));
+    valorUnit = 7.742108705966203352487675899668e+81 * Math.pow(eLn, -0.0000000000031536032 * Math.pow(coodY, 2)) * Math.pow(eLn, -0.00000000017332165 * Math.pow(coodX, 2)) * Math.pow(eLn, -14358.838 * (1 / rendaSetor)) * Math.pow(eLn, -0.00000019996231 * Math.pow(areaPadrao, 2)) * Math.pow(eLn, 0.00036361237 * areaConst) * Math.pow(eLn, -0.0089674519 * Math.pow(padraoConserv, 2)) * Math.pow(eLn, 0.62922743 * Math.pow(tipo, 0.5)) * Math.pow(eLn, 0.0055415258 * Math.pow(testadaMedia, 2)) * Math.pow(eLn, -0.000049683898 * Math.pow(idade, 2));
   } else if (bloco === 'Bloco III') {
-    valorUnit = 1 / Math.pow(0.9701669 - (0.000000000000019110612 * Math.pow(coodY,2)) + (0.0000000000026379857 * Math.pow(coodX,2)) - (4.7631089 * (1/Math.pow(areaPadrao,2))) - (0.018723065 * drenagem) - (0.0000026963265 * Math.pow(testadaMedia, 2)) + (302964390 * (1/Math.pow(rendaSetor, 2))), 2);
+    valorUnit = 1 / Math.pow(0.9701669 - (0.000000000000019110612 * Math.pow(coodY, 2)) + (0.0000000000026379857 * Math.pow(coodX, 2)) - (4.7631089 * (1 / Math.pow(areaPadrao, 2))) - (0.018723065 * drenagem) - (0.0000026963265 * Math.pow(testadaMedia, 2)) + (302964390 * (1 / Math.pow(rendaSetor, 2))), 2);
   } else if (bloco === 'Bloco IV') {
-    valorUnit = Math.pow( 4356.8578 - 423628850000000000 * 1/Math.pow(coodY,2) + 0.00000000041166656 * Math.pow(coodX,2) - 0.030671871 * Math.pow(areaPadrao, 0.5) + 1.3467551 * qtdPavimentos + 0.00067587177 * Math.pow(testadaMedia,2) + 0.0000000000041779087 * Math.pow(rendaSetor,2), 2);
+    valorUnit = Math.pow(4356.8578 - 423628850000000000 * 1 / Math.pow(coodY, 2) + 0.00000000041166656 * Math.pow(coodX, 2) - 0.030671871 * Math.pow(areaPadrao, 0.5) + 1.3467551 * qtdPavimentos + 0.00067587177 * Math.pow(testadaMedia, 2) + 0.0000000000041779087 * Math.pow(rendaSetor, 2), 2);
   } else if (bloco === 'Bloco V') {
-    valorUnit = 1.6763762010799043448308147134737e+57 * Math.pow(eLn, -12228988000000000 * (1/Math.pow(coodY,2))) * Math.pow(eLn, 0.000000000018534479 * Math.pow(coodX,2)) * Math.pow(eLn, 0.20619312*drenagem) * Math.pow(eLn, 0.52699801 * (1/testadaMedia)) * Math.pow(eLn, -166797.51 * (1/rendaSetor)) * Math.pow(eLn, -0.00000095309642 * Math.pow(areaConst, 2)) * Math.pow(eLn, 0.087573675 * Math.pow(areaPadrao, 0.5)) * Math.pow(eLn, -1.0962437 * Math.pow(padraoConserv, 0.5)) * Math.pow(eLn, -0.000060816151 * Math.pow(idade,2));
+    valorUnit = 1.6763762010799043448308147134737e+57 * Math.pow(eLn, -12228988000000000 * (1 / Math.pow(coodY, 2))) * Math.pow(eLn, 0.000000000018534479 * Math.pow(coodX, 2)) * Math.pow(eLn, 0.20619312 * drenagem) * Math.pow(eLn, 0.52699801 * (1 / testadaMedia)) * Math.pow(eLn, -166797.51 * (1 / rendaSetor)) * Math.pow(eLn, -0.00000095309642 * Math.pow(areaConst, 2)) * Math.pow(eLn, 0.087573675 * Math.pow(areaPadrao, 0.5)) * Math.pow(eLn, -1.0962437 * Math.pow(padraoConserv, 0.5)) * Math.pow(eLn, -0.000060816151 * Math.pow(idade, 2));
   } else if (bloco === 'Bloco VI') {
 
     if (!tipoUso) {
@@ -1583,14 +1626,14 @@ function calcularValorMetroQuadrado(coodY, coodX, areaPadrao, qtdPavimentos, tes
       idade = 0;
     }
 
-    valorUnit = (2.3570325e+89 * Math.pow(eLn, -16758505000000000 * (1/Math.pow(coodY,2))) * Math.pow(eLn, -0.000000000064551228 * Math.pow(coodX, 2)) * Math.pow(eLn, 0.79259538 * esgoto) * Math.pow(eLn, -0.014018364 * testadaMedia) * Math.pow(rendaSetor, 0.075673609) * Math.pow(eLn, 0.0020594044 * areaConst) * Math.pow(areaPadrao, 0.35229635) * Math.pow(eLn, 1.8883073 * (1/padraoConserv)) * Math.pow(eLn, -0.0071952145 * idade) * Math.pow(eLn, 0.15055057 * tipo))/areaPadrao;
-  } else if (bloco === 'Bloco VII'){
-    valorUnit = 1 / Math.pow((0.52324161 - 0.0000000000000054410184 * Math.pow(coodY, 2) + 0.014525888 * (1/Math.pow(testadaMedia, 0.5)) - 0.00013718481 * Math.pow(areaConst, 0.5) - 0.0013009123 * Math.log(areaPadrao) + 0.000038485322 * Math.pow(padraoConserv, 2) + 0.0000018311162 * Math.pow(idade, 2) - 0.0027996973 * (1/Math.pow(topografia, 2)) - 0.0028490535 * (1/Math.pow(zonaUrbana, 2))), 2);
+    valorUnit = (2.3570325e+89 * Math.pow(eLn, -16758505000000000 * (1 / Math.pow(coodY, 2))) * Math.pow(eLn, -0.000000000064551228 * Math.pow(coodX, 2)) * Math.pow(eLn, 0.79259538 * esgoto) * Math.pow(eLn, -0.014018364 * testadaMedia) * Math.pow(rendaSetor, 0.075673609) * Math.pow(eLn, 0.0020594044 * areaConst) * Math.pow(areaPadrao, 0.35229635) * Math.pow(eLn, 1.8883073 * (1 / padraoConserv)) * Math.pow(eLn, -0.0071952145 * idade) * Math.pow(eLn, 0.15055057 * tipo)) / areaPadrao;
+  } else if (bloco === 'Bloco VII') {
+    valorUnit = 1 / Math.pow((0.52324161 - 0.0000000000000054410184 * Math.pow(coodY, 2) + 0.014525888 * (1 / Math.pow(testadaMedia, 0.5)) - 0.00013718481 * Math.pow(areaConst, 0.5) - 0.0013009123 * Math.log(areaPadrao) + 0.000038485322 * Math.pow(padraoConserv, 2) + 0.0000018311162 * Math.pow(idade, 2) - 0.0027996973 * (1 / Math.pow(topografia, 2)) - 0.0028490535 * (1 / Math.pow(zonaUrbana, 2))), 2);
   }
   console.info('VALOR UNIT ----', valorUnit);
 
   var dataToExport = {
-      coodY, coodX, areaPadrao, qtdPavimentos, testadaMedia, rendaSetor, areaConst, padraoConserv, tipo, idade, drenagem, esgoto, topografia, bloco, zonaUrbana, tipoUso
+    coodY, coodX, areaPadrao, qtdPavimentos, testadaMedia, rendaSetor, areaConst, padraoConserv, tipo, idade, drenagem, esgoto, topografia, bloco, zonaUrbana, tipoUso
   }
   selfCalculo.dataToExport = dataToExport;
 
@@ -1598,34 +1641,34 @@ function calcularValorMetroQuadrado(coodY, coodX, areaPadrao, qtdPavimentos, tes
 }
 
 function saveGeocodeInArray(geocode) {
-    recentsGeocodes.push(geocode);
-    if (recentsGeocodes.length > 7) {
-        recentsGeocodes.shift();
-    }
-    updateGeocodesInLocalStorage();
+  recentsGeocodes.push(geocode);
+  if (recentsGeocodes.length > 7) {
+    recentsGeocodes.shift();
+  }
+  updateGeocodesInLocalStorage();
 }
 
 function updateGeocodesInLocalStorage() {
-    for (var i = 0; i < recentsGeocodes.length; i++){
-        localStorage.setItem("Inscrição " + i, recentsGeocodes[i]);
-    }
+  for (var i = 0; i < recentsGeocodes.length; i++) {
+    localStorage.setItem("Inscrição " + i, recentsGeocodes[i]);
+  }
 }
 
 function hinter(event, array) {
-    var input = event.target;
-    var containerGeocodes = document.getElementById('containerGeocodes');
-    var min_characters = 0;
+  var input = event.target;
+  var containerGeocodes = document.getElementById('containerGeocodes');
+  var min_characters = 0;
 
-    if (input.value.length < min_characters) {
-        return;
-    } else {
-        containerGeocodes.innerHTML = "";
-        array.forEach(function (item) {
-            var option = document.createElement('option');
-            if (item !== null){
-                option.value = item;
-                containerGeocodes.appendChild(option);
-            }
-        });
-    }
+  if (input.value.length < min_characters) {
+    return;
+  } else {
+    containerGeocodes.innerHTML = "";
+    array.forEach(function (item) {
+      var option = document.createElement('option');
+      if (item !== null) {
+        option.value = item;
+        containerGeocodes.appendChild(option);
+      }
+    });
+  }
 }

@@ -16,6 +16,7 @@ public class CaracteristicasImovelWSArcServerService {
 		//AS CARACTERISTICAS ESTÃO COM UM DOMINIO NA FRENTE example.substring(example.lastIndexOf("/") + 1)
 		
 		Map<String, Object> imovel = (Map<String, Object>) objectMap.get("imovelWS");
+		Map<String, Object> dadosPlanta = (Map<String, Object>) objectMap.get("dadosPlanta");
 		Map<String, Object> imovelTINUS = (Map<String, Object>) objectMap.get("imovelWSTINUS");
 		
 		Map<String, Object> caracteristicas = new HashMap<>();	
@@ -30,6 +31,8 @@ public class CaracteristicasImovelWSArcServerService {
 				caracteristicas.put("topografia",  imovel.get("DE_TOPOGRAFIA"));
 				caracteristicas.put("conservacao", imovel.get("DE_CONSERVACAO"));
 				caracteristicas.put("pavimentacao", imovel.get("DE_PAVIMENTACAO"));
+				caracteristicas.put("drenagem", dadosPlanta.get("DE_DRENAGEM"));
+				caracteristicas.put("esgoto", dadosPlanta.get("DE_ESGOTO"));
 				//PADRAO DA CONSTRUÇÃO, VER COM A TINUS
 				caracteristicas.put("padraoconstrucao", "1C");
 				if (imovel.get("NU_COD_LOGRADOURO").toString().length() >= 6) {

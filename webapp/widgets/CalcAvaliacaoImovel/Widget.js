@@ -274,8 +274,8 @@ define(
             // }
 
             // temp
-            stmData.caracteristicas.drenagem = "Sim"
-            stmData.caracteristicas.esgoto = "Sim"
+            stmData.caracteristicas["drenagem"] = "Sim"
+            stmData.caracteristicas["esgoto"] = "Sim"
 
             console.log('Testando se chegou aqui 1.3');
             selfCalculo.fillStmData(stmData);
@@ -289,19 +289,31 @@ define(
             selfCalculo.searchLote(3857, function (loteFeature) {
               console.log('Testando se chegou aqui 1.6');
               selfCalculo.map.graphics.clear();
+              console.log('Testando se chegou aqui 1.7');
+              console.log({ loteFeature })
+              console.log('Testando se chegou aqui 1.8');
 
               // selfCalculo.map.setExtent(result.features[0].geometry.getExtent(), true);
               let symbol = new SimpleFillSymbol(SimpleFillSymbol.STYLE_SOLID, new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([0, 255, 255]), 3), new Color([0, 255, 255, 0.6]));
+              console.log('Testando se chegou aqui 1.9');
               if (loteFeature) {
+                console.log('Testando se chegou aqui 1.9.1');
                 let graphic = new Graphic(loteFeature.geometry, symbol);
+                console.log('Testando se chegou aqui 1.9.2');
                 graphic.setSymbol(symbol);
+                console.log('Testando se chegou aqui 1.9.3');
                 selfCalculo.map.graphics.add(graphic);
+                console.log('Testando se chegou aqui 1.9.4');
                 activeVisualizarMapa(true);
+                console.log('Testando se chegou aqui 1.9.5');
 
                 selfCalculo.searchGeocodeUnidade(loteFeature, stmData);
+                console.log('Testando se chegou aqui 1.9.6');
               } else {
+                console.log('Testando se chegou aqui 1.10');
                 DocumentUtil.showMessage('warning', 'AVISO: Não existe um lote na cartografia que represente a localização do imóvel para a inscrição informada. Isso não impede que o cálculo seja efetuado!', true, null, 'buscaGeometriaError');
               }
+              console.log('Testando se chegou aqui 1.11');
 
               let total = {
                 minimo: numberParaReal(stmData.resultado.valorTotalMinimo),
@@ -407,7 +419,8 @@ define(
 
         let inscricao = document.getElementById('geocode').value;
         //STRING = GEOCODE  "0" + string[0] + string.slice(3,8) + string.slice(10,14)
-        let geocode = "0" + inscricao[0] + inscricao.slice(3, 8) + inscricao.slice(10, 14);
+        // let geocode = "0" + inscricao[0] + inscricao.slice(3, 8) + inscricao.slice(10, 14);
+        let geocode = inscricao;
         let setor = geocode.substring(2, 4);
         let serviceUrl;
         let layerFieldName;
@@ -429,7 +442,7 @@ define(
           wkid: wkid
         };
         query.where = layerFieldName + ' = ' + "'" + geocode + "'";
-
+        console.info("where 0", layerFieldName + ' = ' + "'" + geocode + "'");
         queryTask.execute(query, showResults);
 
         function showResults(result) {
@@ -494,7 +507,7 @@ define(
           var valorTerrenoMaximo;
 
           let serviceUrl = selfCalculo.config.plantaQuadraServiceUrl;
-          let layerFieldName = 'sl_cadastro.SDE.ln_Planta_de_Valores.de_SQCODLOG';
+          let layerFieldName = 'sjr_cadastro.GIS.ln_Planta_de_Valores.de_SQCODLOG';
 
           let query = new Query();
           let queryTask = new QueryTask(serviceUrl);
@@ -503,7 +516,7 @@ define(
           query.outSpatialReference = {
             wkid: 3857
           };
-          query.where = layerFieldName + ' = ' + "'" + sqcodlog + "' AND sl_cadastro.SDE.ln_Planta_de_Valores.de_n_face = '01'";
+          query.where = layerFieldName + ' = ' + "'" + sqcodlog + "' AND sjr_cadastro.gis.ln_Planta_de_Valores.de_n_face = '01'";
           console.info(query.where);
           queryTask.execute(query, showResults);
         } else {
@@ -520,8 +533,8 @@ define(
               var centroidY;
 
               if (!loteResult.geometry) {
-                centroidX = plantaDeValor["sl_cadastro.SDE.ln_Planta_de_Valores.nu_x"];
-                centroidY = plantaDeValor["sl_cadastro.SDE.ln_Planta_de_Valores.nu_y"];
+                centroidX = plantaDeValor["sjr_cadastro.gis.ln_Planta_de_Valores.nu_x"];
+                centroidY = plantaDeValor["sjr_cadastro.gis.ln_Planta_de_Valores.nu_y"];
               } else {
                 var centroid = loteResult.geometry.getCentroid();
                 centroidX = centroid.x
@@ -549,9 +562,9 @@ define(
                 qtdePavimentos = valoresPredial.pavimento;
               }
 
-              var valorMinimo = plantaDeValor["sl_cadastro.SDE.ln_Planta_de_Valores.nu_Lim_Inf"];
-              var valorMedio = plantaDeValor["sl_cadastro.SDE.ln_Planta_de_Valores.nu_Val_Unit2"];
-              var valorMaximo = plantaDeValor["sl_cadastro.SDE.ln_Planta_de_Valores.nu_Lim_Sup"];
+              var valorMinimo = plantaDeValor["sjr_cadastro.GIS.ln_Planta_de_Valores.nu_Lim_Inf"];
+              var valorMedio = plantaDeValor["sjr_cadastro.GIS.ln_Planta_de_Valores.nu_Val_Unit2"];
+              var valorMaximo = plantaDeValor["sjr_cadastro.GIS.ln_Planta_de_Valores.nu_Lim_Sup"];
               //======================FRAÇÃO IDEAL====================//
               if (valoresGeral.predial.fracaoIdeal) {
                 console.log('frcaoideal')
@@ -565,7 +578,7 @@ define(
                 areaTerreno,
                 qtdePavimentos,
                 testada,
-                plantaDeValor["sl_cadastro.SDE.ln_Planta_de_Valores.nu_Renda_V003"],
+                plantaDeValor["sjr_cadastro.GIS.ln_Planta_de_Valores.nu_Renda_V003"],
                 areaConst,
                 padraoConserv,
                 tipolog,
@@ -573,8 +586,8 @@ define(
                 valoresTerreno.drenagem,
                 valoresTerreno.esgoto,
                 valoresTerreno.topografia,
-                plantaDeValor["sl_cadastro.SDE.ln_Planta_de_Valores.de_grupo"],
-                plantaDeValor["sl_cadastro.SDE.ln_Planta_de_Valores.de_zonas"],
+                plantaDeValor["sjr_cadastro.GIS.ln_Planta_de_Valores.de_grupo"],
+                plantaDeValor["sjr_cadastro.GIS.ln_Planta_de_Valores.de_zonas"],
                 usoImovel
               );
 
@@ -654,7 +667,7 @@ define(
                 }]
 
               selfCalculo.randomValues(valorTerreno, valorEdificacao, total);
-              if (plantaDeValor["sl_cadastro.SDE.ln_Planta_de_Valores.de_grupo"] === null) {
+              if (plantaDeValor["sjr_cadastro.GIS.ln_Planta_de_Valores.de_grupo"] === null) {
                 DocumentUtil.showMessage('warning', 'ERRO: Para efetuar o cálculo é necessário que o imóvel informado faça parte de um dos blocos da planta de valores. A face de quadra informada não possui o campo "bloco" preenchido. Verifique o cadastro da face de quadra.', true, null, 'errorPlanta');
               } else {
                 DocumentUtil.showMessageWithButton(buttons, 'info', 'Cálculo realizado com sucesso!', true, null, 'calculoSucesso');
@@ -827,26 +840,32 @@ define(
         let geocodeUnidade = geocode;
 
         let geocodeUnidade16Char = geocode.substring(0, 16);
+        // let geocodeUnidade16Char = geocode
 
         let serviceUrl = selfCalculo.config.unidadeServiceUrl;
+        // let serviceUrl = selfCalculo.config.loteServiceUrl;
+
         let layerFieldName = 'DE_GEOCODE_LOTE';
-        let shapeFieldName = 'sl_cadastro.SDE.Lote.Shape';
+        let shapeFieldName = 'sjr_cadastro.GIS.Lote.Shape';
 
         let query = new Query();
         let queryTask = new QueryTask(serviceUrl);
-
+        query.returnGeometry
         query.returnGeometry = true;
         query.outFields = ['*'];
         query.outSpatialReference = {
           wkid: 3857
         };
         query.where = layerFieldName + ' = ' + "'" + geocodeUnidade16Char + "'";
+        // query.where = "DE_GEOCODE_LOTE='01031130241'";
         console.info('query where', query.where);
-
+        
+        console.log({query, queryTask});
         queryTask.execute(query, showResults);
 
         function showResults(result) {
           console.info("result", result);
+          console.info("feature", featureSelected);
           if (result.features[0]) {
             console.info("entrou no searchGeocodeUnidade - result - if");
             selfCalculo.getGeocodeBuffer(featureSelected, result.features[0]);
@@ -998,7 +1017,7 @@ define(
                   }
                 }
 
-                if (!hasGeocode && (transmissoes[i].attributes['de_geocode_lote'] === featureList[f].attributes['sl_cadastro.SDE.Lote.GEOC_RENU'])) {
+                if (!hasGeocode && (transmissoes[i].attributes['de_geocode_lote'] === featureList[f].attributes['sjr_cadastro.GIS.Lote.GEOC_RENU'])) {
                   if (transmissoes[i].attributes['de_geocode_lote'] === unidadeSelected.attributes['GEOCODE_LOTE']) {
                     similarSameLote.push(transmissoes[i].unidade.attributes.de_geocode_stm);
                   } else {
@@ -1006,7 +1025,7 @@ define(
                   }
                   similarGeocode.push(transmissoes[i].attributes['de_geocode_lote']);
                 }
-                if (!hasUnidade && (transmissoes[i].attributes['de_geocode_lote'] === featureList[f].attributes['sl_cadastro.SDE.Lote.GEOC_RENU'])) {
+                if (!hasUnidade && (transmissoes[i].attributes['de_geocode_lote'] === featureList[f].attributes['sjr_cadastro.GIS.Lote.GEOC_RENU'])) {
                   if (transmissoes[i].attributes['de_geocode_lote'] === unidadeSelected.attributes['GEOCODE_LOTE']) {
                     similarSameLote.push(transmissoes[i].unidade.attributes.de_geocode_stm);
                   }
@@ -1036,7 +1055,7 @@ define(
       drawPesquisa: function (circleGeometry, unidadeSelected) {
         let serviceUrl = selfCalculo.config.pesquisaServiceUrl;
         let layerFieldName = 'Geocode_Correto';
-        let shapeFieldName = 'sl_cadastro.SDE.Lote.Shape';
+        let shapeFieldName = 'sjr_cadastro.GIS.Lote.Shape';
 
         let featureLayer = new FeatureLayer(serviceUrl, {
           outFields: ['OBJECTID']
@@ -1259,7 +1278,7 @@ define(
       getTransmissoes: function (featureList, featureSelected, unidadeSelected, callback) {
         let transmissaoServiceUrl = selfCalculo.config.transmissaoServiceUrl;
         let layerFieldName = 'de_geocode_lote';
-        let shapeFieldName = 'sl_cadastro.SDE.Lote.Shape';
+        let shapeFieldName = 'sjr_cadastro.GIS.Lote.Shape';
         let query = new Query();
         let queryTask = new QueryTask(transmissaoServiceUrl);
         query.returnGeometry = true;
@@ -1269,7 +1288,7 @@ define(
         };
         let whereQuery = layerFieldName + ' IN(';
         for (let i = 0; i < featureList.length; i++) {
-          whereQuery += "'" + featureList[i].attributes['sl_cadastro.SDE.Lote.GEOC_RENU'] + "'";
+          whereQuery += "'" + featureList[i].attributes['sjr_cadastro.GIS.Lote.GEOC_RENU'] + "'";
           if (i + 1 < featureList.length) {
             whereQuery += ', ';
           }
@@ -1434,14 +1453,14 @@ function factoryViewDataSTM(title, tbody, dados) {
   // tdValue.setAttribute('class', 'tbody-blue');
   tr.appendChild(tdLabel);
   // tr.appendChild(tdValue);
-  
+
   let t = document.createTextNode(title);
   label.appendChild(t);
   tbody.appendChild(tr);
 
-  const aliases =  selfCalculo.config.imovelLabels ?
-   selfCalculo.config.imovelLabels : {};
-  
+  const aliases = selfCalculo.config.imovelLabels ?
+    selfCalculo.config.imovelLabels : {};
+
   Reflect.ownKeys(dados).forEach(function (value) {
     const tr = document.createElement('tr');
     const tdLabel = document.createElement('td');
@@ -1457,13 +1476,13 @@ function factoryViewDataSTM(title, tbody, dados) {
     const ted = (dados[value] !== 'null' && dados[value] !== null && dados[value] !== undefined && dados[value] !== '') ?
       document.createTextNode(dados[value]) : document.createTextNode('');
 
-      label.appendChild(t);
-      // if (Array.isArray(dados[value])) {
-      //   tdValue.appendChild(document.createTextNode(''));
-      // } else {
-      tdValue.appendChild(ted);
-      // }
-      tbody.appendChild(tr);
+    label.appendChild(t);
+    // if (Array.isArray(dados[value])) {
+    //   tdValue.appendChild(document.createTextNode(''));
+    // } else {
+    tdValue.appendChild(ted);
+    // }
+    tbody.appendChild(tr);
 
   });
   // for (value in dados) {
